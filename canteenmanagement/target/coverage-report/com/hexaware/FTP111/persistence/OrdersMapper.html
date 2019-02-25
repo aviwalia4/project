@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OrdersMapper.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>canteenmanagement\src\main\java\com\hexaware\FTP111\persistence\OrdersMapper.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.hexaware.FTP111.persistence;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+import com.hexaware.FTP111.model.Orders;
+import com.hexaware.FTP111.model.OrderStatus;
+import org.skife.jdbi.v2.tweak.ResultSetMapper;
+import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * OrdersMapper class used to fetch Orders data from database.
+ * @author hexaware
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l14s0'>public class OrdersMapper implements ResultSetMapper&lt;Orders> {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 32</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @param idx the index
+     * @param rs the resultset
+     * @param ctx the context
+     * @return the mapped customer object
+     * @throws SQLException in case there is an error in fetching data from the resultset
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final Orders map(final int idx, final ResultSet rs, final StatementContext ctx) throws SQLException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return Orders
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l26s0'>    Orders orders = new Orders(rs.getInt("ORD_ID"), rs.getInt("CUS_ID"),</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l27s0'>        rs.getInt("WAL_TRAN_ID"),</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l28s0'>        rs.getDouble("ORD_TOTAL_PRICE"));</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l29s0'>    orders.setOrderStatus(OrderStatus.valueOf(rs.getString("ORD_STATUS")));</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>30</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l30s0'>    orders.setOrderDate(rs.getDate("ORD_DATE_TIME"));</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l31s0'>    return orders;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>32</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

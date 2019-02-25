@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MenuFactory.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>canteenmanagement\src\main\java\com\hexaware\FTP111\factory\MenuFactory.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.hexaware.FTP111.factory;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.hexaware.FTP111.persistence.MenuDAO;
+import com.hexaware.FTP111.persistence.DbConnection;
+import java.util.List;
+import com.hexaware.FTP111.model.MenuDetails;
+import com.hexaware.FTP111.model.Menu;</div><span>import ...</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* MenuFactory class used to fetch menu data from database.
+* @author hexware
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>12</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public class MenuFactory {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+*Protected constructor.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>16</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l16s0'>  protected MenuFactory() {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testMenuFactoryConstructor2: 114</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>17</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l17s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testMenuFactoryConstructor2: 114</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Call the data base connection.
+* @return the connection object.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static MenuDAO dao() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l23s0'>    DbConnection db = new DbConnection();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l24s0'>    return db.getConnect().onDemand(MenuDAO.class);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Call the data base connection.
+* @return the connection object.
+ */
+//  public static List showMenu() {
+//    List&lt;Menu> menu = dao().show();
+//    return menu.toArray(new Menu[menu.size()]);</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final List&lt;Menu> showMenu() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l34s0'>    List&lt;Menu> menu = dao().show();</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testMenuDetails: 141</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l35s0'>    return menu;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testMenuDetails: 141</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Call the data base connection.
+* @param menId to Intitalize the menId.
+* @return the array of menuDetails object.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final List&lt;MenuDetails> getMenuDetails(final int menId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>    List&lt;MenuDetails> foodlist = dao().createOrder(menId);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testGetMenuDetails: 54</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>    return foodlist;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testGetMenuDetails: 54</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return the Menu Item Id.
+* @param menItemId to Initialize menu Item Id.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static int findByMenItemId(final int menItemId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>    int id = dao().fetchMenItemId(menItemId);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#findByMenItemId: 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>    return id;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#findByMenItemId: 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Call the data base connection.
+* @param menId to Intitalize the menId.
+* @param venId to Intitalize the venId.
+* @return the array of orderPrice object.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final double getOrderPrice(final int menId, final int venId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>    double orderPrice = dao().fetchOrderPrice(menId, venId);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#getOrderPrice: 102</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>    return orderPrice;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#getOrderPrice: 102</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

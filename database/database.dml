@@ -1,0 +1,232 @@
+use FTP111;
+
+
+
+-- INSERT INTO CUSTOMER TABLE
+
+
+insert into customer(CUS_NAME,CUS_PWD,CUS_PHONE,CUS_EMAIL)
+       
+   values
+			
+('AVI','PASSWORD0','9812556780','AVI@GMAIL.COM'),
+			
+('TARANJOT','PASSWORD1','9812556781','TARANJOT@GMAIL.COM'),
+	
+('KOMAL','PASSWORD2','9812556782','KOMAL@GMAIL.COM'),
+           
+ ('ISHANT','PASSWORD3','9812556783','ISHANT@GMAIL.COM'),
+		
+('PRIYANAKA','PASSWORD4','9812556784','PRIYANKA@GMAIL.COM'),
+	
+('BHAVUK','PASSWORD5','9812556785','BHAVUK@GMAIL.COM'),
+	
+('GAURAV','PASSWORD6','9812556786','GAURAV@GMAIL.COM'),
+	
+('AMAN','PASSWORD7','9812556787','AMAN@GMAIL.COM'),
+	
+('LISI','PASSWORD8','9812556788','LISI@GMAIL.COM'),
+	
+('THANU','PASSWORD9','9812556789','THANU@GMAIL.COM');
+
+
+
+insert into MENU(MEN_FOOD_TYPE,MEN_VEG_NON_VEG,MEN_ITEM_NAME,MEN_CALORIES)
+
+
+VALUES
+ ('SOUTH','VEG','DOSA',15),
+
+('SOUTH','VEG','IDLI',10),
+
+('NORTH','VEG','MUTTER_PARATHA',25),
+
+('NORTH','VEG','RICE',20),
+
+('NORTH','NON_VEG','CURRY',10),
+
+('NORTH','VEG','CHAPATI',5),
+
+('SOUTH','VEG','DAL_FRY',30),
+
+('NORTH','NON_VEG','BIRIYANI',35),
+
+('SOUTH','VEG','PONGAL',10),
+
+('NORTH','VEG','DAL_MAKHANI',40);
+
+
+
+ insert into vendor(VEN_PASSWORD,VEN_FEEDBACK,VEN_PHONE,VEN_ACCOUNT_NO, VEN_EMAIL)
+
+values
+
+("1235C@@","GREAT","9914475592","348556444", "vijay@gmail.com"),
+
+
+("2574A@@","AWESOME","9914475410","3488754744", "ajay@gmail.com"),
+
+
+("48235B!E","NICE FOOD","8504475592","34887545", "amam@gmail.com"),
+
+
+("1232Q@((O","GOOD FOOD","9910005592","387545022","tani@gmail.com");
+
+
+
+insert INTO WALLET(  CUS_ID, WAL_PAYMENT_METHOD, WAL_CURRENT_BALANCE )
+ 
+
+VALUES
+(1,'NET_BANKING',500),
+
+ 
+(2,'NET_BANKING',100),
+
+ 
+(3, 'NET_BANKING',205),
+ 
+
+(1,'DEBIT_CARD',600),
+
+ 
+(2, 'DEBIT_CARD',652),
+
+ 
+(3, 'DEBIT_CARD',20),
+
+ 
+(1,'PAYTM',450),
+
+ 
+(2,'PAYTM',100),
+ 
+
+(3,'PAYTM',250);
+
+
+insert into ORDERS(CUS_ID ,VEN_ID, WAL_TRAN_ID  ,ORD_TOTAL_PRICE, ORD_STATUS)
+
+
+
+VALUES
+(1, 1,1, 15,'PENDING' ),
+
+
+
+
+( 1, 1,2, 10,'PENDING'),
+
+
+
+
+( 1, 1 ,3, 30,'PENDING'),
+
+
+
+
+(2, 2,4, 45, 'PARTIAL'),
+
+
+
+
+(2, 2,5, 15, 'PARTIAL'),
+
+
+
+
+(2, 2,6,20, 'PARTIAL'),
+
+
+
+
+(3,3,7, 40, 'APPROVED'),
+
+
+
+
+(3, 3,8,25, 'APPROVED'),
+
+
+
+
+(3, 3,9,35, 'APPROVED');
+
+
+insert into menu_vendor( MEN_ITEM_ID ,VEN_ID,MEN_VEN_PRICE
+,MEN_VEN_RATING )
+
+
+values
+
+(1,1,12,4),
+
+
+(2,1,25,2),
+
+
+(3,1,15,4),
+
+
+(4,1,15,5),
+
+
+(5,1,10,3),
+
+
+(7,3,12,3),
+
+
+(1,2,12,1),
+
+(2,2,15,4),
+
+(3,2,25,3),
+
+(4,2,36,2),
+
+(5,3,14,5),
+
+(6,3,48,4)
+;
+
+
+insert into ORDER_ITEM( CUS_ID, Men_Item_Id, Ven_Id, Ord_Id, ORD_QUANTITY, Ord_Item_Price, ORD_STATUS)
+
+
+
+values
+
+(1, 1,1,1,1,12,'PENDING'),
+
+
+
+(1, 2,1,2,1,25,'PENDING'),
+
+
+
+(1, 3,1,3,2,15,'PENDING'),
+ 
+
+ 
+(2, 3,2,4,1,25,'APPROVED'),
+    
+ 
+
+(2, 4,2,5,1,36,'APPROVED'),
+    
+
+ 
+(2, 1,2,6,1,12,'PENDING'),
+    
+ 
+ 
+(3, 6,3,7,2,48,'APPROVED'),
+  
+ 
+
+(3, 7,3,8,1,12,'APPROVED'),
+  
+
+ 
+(3, 5,3,9,2,14,'APPROVED');

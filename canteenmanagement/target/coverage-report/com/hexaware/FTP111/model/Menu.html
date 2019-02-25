@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>canteenmanagement\src\main\java\com\hexaware\FTP111\model\Menu.java</caption>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>2</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.hexaware.FTP111.model;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='comment'>//import com.hexaware.FTP111.persistence.DbConnection;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>5</td><td>&nbsp;</td>
+      <td><pre class='comment'>//import com.hexaware.FTP111.persistence.MenuDAO;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.Objects;</div><span>import ...</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>9</td><td>&nbsp;</td>
+      <td><pre class='comment'>//import java.util.List;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Menu class used to display menu information.
+* @author hexware
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>@JsonIgnoreProperties(ignoreUnknown = true)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>16</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public class Menu {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* MenItemId to store MenItemId.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 41 Writes: 42'>menItemId</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 29 Writes: 42'>menFoodType</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 29 Writes: 42'>menVegNonVeg</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 29 Writes: 42'>menItemName</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 29 Writes: 42'>menCalories</span>;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Default Constructor.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l31s0'>  public Menu() {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testNonParamMenu: 93</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>33</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l33s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testNonParamMenu: 93</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argMenItemID to intitalize menu Item Id.
+* @param argMenFoodType to intitalize menu Food Type.
+* @param argMenVegNonVeg to intitalize menu Veg NonVeg.
+* @param argMenItemName to intitalize menu Item Name.
+* @param argMenCalories to intitalize menu Calories.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Menu(final int argMenItemID, final String argMenFoodType, final String argMenVegNonVeg,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l42s0'>      final String argMenItemName, final int argMenCalories) {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testMenuDetails: 131, 132, 134x2</li>
+          <li>com.hexaware.FTP111.model.MenuTest#setUp: 19x7</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEmptyObjs: 112, 113</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 123, 124</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMFT: 149, 150</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>    this.menItemId = argMenItemID;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testMenuDetails: 131, 132, 134x2</li>
+          <li>com.hexaware.FTP111.model.MenuTest#setUp: 19x7</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEmptyObjs: 112, 113</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 123, 124</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMFT: 149, 150</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>    this.menFoodType = argMenFoodType;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testMenuDetails: 131, 132, 134x2</li>
+          <li>com.hexaware.FTP111.model.MenuTest#setUp: 19x7</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEmptyObjs: 112, 113</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 123, 124</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMFT: 149, 150</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>    this.menVegNonVeg = argMenVegNonVeg;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testMenuDetails: 131, 132, 134x2</li>
+          <li>com.hexaware.FTP111.model.MenuTest#setUp: 19x7</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEmptyObjs: 112, 113</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 123, 124</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMFT: 149, 150</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>    this.menItemName = argMenItemName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testMenuDetails: 131, 132, 134x2</li>
+          <li>com.hexaware.FTP111.model.MenuTest#setUp: 19x7</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEmptyObjs: 112, 113</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 123, 124</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMFT: 149, 150</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>    this.menCalories = argMenCalories;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testMenuDetails: 131, 132, 134x2</li>
+          <li>com.hexaware.FTP111.model.MenuTest#setUp: 19x7</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEmptyObjs: 112, 113</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 123, 124</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMFT: 149, 150</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>39</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.MenuFactoryTest#testMenuDetails: 131, 132, 134x2</li>
+          <li>com.hexaware.FTP111.model.MenuTest#setUp: 19x7</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEmptyObjs: 112, 113</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 123, 124</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMFT: 149, 150</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argMenuItemId to initialize menu item id.
+* used to get details through constructor.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public final boolean equals(final Object obj) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>10</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 4/8</span>
+        <span class='covered' onclick="showPath(this,'l56s0 l57s0')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l56s0 l59s0 l60s0')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l56s0 l59s0 l62s0 l63s0 l63s1 l64s0 l64s1 l65s0 l65s1 l66s0 l66s1 l67s0 l68s0')">C: 2</span>
+        <span class='covered' onclick="showPath(this,'l56s0 l59s0 l62s0 l63s0 l70s0')">D: 6</span>
+        <span class='uncovered' onclick="showPath(this,'l56s0 l59s0 l62s0 l63s0 l63s1 l64s0 l70s0')">E: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l56s0 l59s0 l62s0 l63s0 l63s1 l64s0 l64s1 l65s0 l70s0')">F: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l56s0 l59s0 l62s0 l63s0 l63s1 l64s0 l64s1 l65s0 l65s1 l66s0 l70s0')">G: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l56s0 l59s0 l62s0 l63s0 l63s1 l64s0 l64s1 l65s0 l65s1 l66s0 l66s1 l67s0 l70s0')">H: 0</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>10</td>
+      <td><pre class='prettyprint jmp'>    <span id='l56s0' title='Executions: 10' class='covered cp' onclick='showHide(this,0)'>if (obj == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testEmptyObjs: 114</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 126</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2, 206, 209, 212, 215, 218</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testNotEquals: 229</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l57s0'>      return false;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testEmptyObjs: 114</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>9</td>
+      <td><pre class='prettyprint jmp'>    <span id='l59s0' title='Executions: 9' class='covered cp' onclick='showHide(this,0)'>if (getClass() != obj.getClass())</span> {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 126</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2, 206, 209, 212, 215, 218</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testNotEquals: 229</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>      return false;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 126</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>    Menu menu = (Menu) obj;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2, 206, 209, 212, 215, 218</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testNotEquals: 229</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>8</td>
+      <td><pre class='prettyprint jmp'>    <span id='l63s0' title='Executions: 8' class='covered cp' onclick='showHide(this,0)'>if (Objects.equals(menItemId, menu.getMenItemId())</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2, 206, 209, 212, 215, 218</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testNotEquals: 229</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l64s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>Objects.equals(menFoodType, menu.getMenFoodType())</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l65s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>Objects.equals(menVegNonVeg, menu.getMenVegNonVeg())</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l66s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>Objects.equals(menItemName, menu.getMenItemName())</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l67s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>Objects.equals(menCalories, menu.getMenCalories())) {</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>      return true;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l70s0'>    return false;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 206, 209, 212, 215, 218</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testNotEquals: 229</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public final int hashCode() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>    return Objects.hash(menItemId, menFoodType, menVegNonVeg, menItemName, menCalories);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMFT: 151x2, 153x2</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMID: 138x2, 140x2</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMIN: 177x2, 179x2</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMVN: 164x2, 166x2</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMC: 190x2, 192</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='comment'>// /**</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * Call the data base connection.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * @return the connection object.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td>&nbsp;</td>
+      <td><pre class='comment'>//  */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='comment'>//   private static MenuDAO dao() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td>&nbsp;</td>
+      <td><pre class='comment'>//     DbConnection db = new DbConnection();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td>&nbsp;</td>
+      <td><pre class='comment'>//     return db.getConnect().onDemand(MenuDAO.class);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td>&nbsp;</td>
+      <td><pre class='comment'>//   }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td>&nbsp;</td>
+      <td><pre class='comment'>// /**</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * Call the data base connection.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * @return the array of menu object.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='comment'>//  */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td>&nbsp;</td>
+      <td><pre class='comment'>//   public static Menu[] showMenu() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='comment'>//     List&lt;Menu> menu = dao().show();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td>&nbsp;</td>
+      <td><pre class='comment'>//     return menu.toArray(new Menu[menu.size()]);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td>&nbsp;</td>
+      <td><pre class='comment'>//   }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argMenItemID to intitalize the menu Id.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setMenItemId(final int argMenItemID) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l96s0'>    this.menItemId = argMenItemID;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMID: 139</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenItemId: 41</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 205</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMID: 139</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenItemId: 41</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 205</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argMenFoodType to intitalize the menu Food Type.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setMenFoodType(final String argMenFoodType) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>    this.menFoodType = argMenFoodType;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenFoodType: 51</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMFT: 152</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 208</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l103s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenFoodType: 51</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMFT: 152</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 208</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argMenVegNonVeg to intitalize the menu Veg or Non Veg.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setMenVegNonVeg(final String argMenVegNonVeg) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>    this.menVegNonVeg = argMenVegNonVeg;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMVN: 165</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenVegNonVeg: 61</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 211</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMVN: 165</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenVegNonVeg: 61</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 211</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argMenItemName to intitalize the menu item name.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setMenItemName(final String argMenItemName) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l114s0'>    this.menItemName = argMenItemName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenItemName: 71</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMIN: 178</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 214</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenItemName: 71</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMIN: 178</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 214</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argMenCalories to intitalize the menu calories.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setMenCalories(final int argMenCalories) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l120s0'>    this.menCalories = argMenCalories;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenCalories: 81</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMC: 191</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 217</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenCalories: 81</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testHashcodeMC: 191</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 217</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return this menu id.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final int getMenItemId() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>    return this.menItemId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testMenu: 29</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenItemId: 40, 42</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testNonParamMenu: 95</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2, 206, 209, 212, 215, 218</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return this menu food type.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getMenFoodType() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l132s0'>    return this.menFoodType;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testMenu: 30</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenFoodType: 50, 52</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testNonParamMenu: 97</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2</li>
+          <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 37</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return this menu Veg or Non Veg.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getMenVegNonVeg() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>138</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l138s0'>    return this.menVegNonVeg;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testMenu: 31</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testNonParamMenu: 99</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenVegNonVeg: 60, 62</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2</li>
+          <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 38</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>139</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return this menu item name.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getMenItemName() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l144s0'>    return this.menItemName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testMenu: 32</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenItemName: 70, 72</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testNonParamMenu: 101</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2</li>
+          <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 39</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>145</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return this menu Calories.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>149</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final int getMenCalories() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>150</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l150s0'>    return this.menCalories;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuTest#testSetMenCalories: 80, 82</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testMenu: 33</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testNonParamMenu: 103</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testEquals: 203x2</li>
+          <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>canteenmanagement\src\main\java\com\hexaware\FTP111\model\Customer.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.hexaware.FTP111.model;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>3</td><td>&nbsp;</td>
+      <td><pre class='comment'>//import com.hexaware.FTP111.persistence.DbConnection;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='comment'>//import com.hexaware.FTP111.persistence.CustomerDAO;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.Objects;</div><span>import ...</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>8</td><td>&nbsp;</td>
+      <td><pre class='comment'>//import java.util.List;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Customer class used to display class information.
+* @author hexaware
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>@JsonIgnoreProperties(ignoreUnknown = true)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public class Customer {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 15 Writes: 29'>customerId</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>16</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 13 Writes: 29'>customerName</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>17</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 11 Writes: 2'>customerPass</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>18</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 13 Writes: 29'>customerPhone</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 13 Writes: 29'>customerEmail</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Default Constructor.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l23s0'>  public Customer() {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuDetailsTest#testGetClass: 124</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 125</li>
+          <li>com.hexaware.FTP111.model.OrderItemTest#testGetEmptyClass: 151</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testCusEmptyObjs: 120</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testCusConstructor2: 39</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>25</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l25s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.model.MenuDetailsTest#testGetClass: 124</li>
+          <li>com.hexaware.FTP111.model.MenuTest#testGetEmptyObjs: 125</li>
+          <li>com.hexaware.FTP111.model.OrderItemTest#testGetEmptyClass: 151</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testCusEmptyObjs: 120</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testCusConstructor2: 39</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argCustomerId to initialize Customer Id.
+* @param argCustomerName to initialize customerName.
+* @param argCustomerPhone to initialize customerPhone.
+* @param argCustomerEmail to initialize customerEmail.
+* used to get details through constructor.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Customer(final int argCustomerId, final String argCustomerName, final String argCustomerPhone,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td class='count'>28</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l35s0'>      final String argCustomerEmail) {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.CustomerFactoryTest#testGetCustomerDetails: 43, 44, 46x2</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testGetClass: 99</li>
+          <li>com.hexaware.FTP111.persistence.CustomerMapperTest#testMap: 32</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#setup: 22x4</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeTrue: 112, 113</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeFalse: 121, 122</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td class='count'>28</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l36s0'>    this.customerId = argCustomerId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.CustomerFactoryTest#testGetCustomerDetails: 43, 44, 46x2</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testGetClass: 99</li>
+          <li>com.hexaware.FTP111.persistence.CustomerMapperTest#testMap: 32</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#setup: 22x4</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeTrue: 112, 113</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeFalse: 121, 122</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td class='count'>28</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l37s0'>    this.customerName = argCustomerName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.CustomerFactoryTest#testGetCustomerDetails: 43, 44, 46x2</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testGetClass: 99</li>
+          <li>com.hexaware.FTP111.persistence.CustomerMapperTest#testMap: 32</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#setup: 22x4</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeTrue: 112, 113</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeFalse: 121, 122</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td class='count'>28</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l38s0'>    this.customerPhone = argCustomerPhone;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.CustomerFactoryTest#testGetCustomerDetails: 43, 44, 46x2</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testGetClass: 99</li>
+          <li>com.hexaware.FTP111.persistence.CustomerMapperTest#testMap: 32</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#setup: 22x4</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeTrue: 112, 113</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeFalse: 121, 122</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td class='count'>28</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l39s0'>    this.customerEmail = argCustomerEmail;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.CustomerFactoryTest#testGetCustomerDetails: 43, 44, 46x2</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testGetClass: 99</li>
+          <li>com.hexaware.FTP111.persistence.CustomerMapperTest#testMap: 32</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#setup: 22x4</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeTrue: 112, 113</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeFalse: 121, 122</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td class='count'>28</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l40s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.CustomerFactoryTest#testGetCustomerDetails: 43, 44, 46x2</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testGetClass: 99</li>
+          <li>com.hexaware.FTP111.persistence.CustomerMapperTest#testMap: 32</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#setup: 22x4</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeTrue: 112, 113</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeFalse: 121, 122</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argCustomerId to initialize CustomerId.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setCustomerId(final int argCustomerId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>    this.customerId = argCustomerId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerId: 47</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerId: 47</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return CustomerId to get CustomerId.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final int getCustomerId() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>    return this.customerId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.CustomerMapperTest#testMap: 33</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testCusConstructor: 29</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerId: 46, 48, 49</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testNotEquals: 139</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argCustomerName to initialize CustomerName.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setCustomerName(final String argCustomerName) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l57s0'>    this.customerName = argCustomerName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerName: 57</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l58s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerName: 57</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return CustomerName to get CustomerName.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getCustomerName() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>    return this.customerName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.CustomerMapperTest#testMap: 34</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testCusConstructor: 30</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerName: 56, 58, 59</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argCustomerPass to initialize CustomerPass.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setCustomerPass(final String argCustomerPass) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l69s0'>    this.customerPass = argCustomerPass;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerPass: 66, 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l70s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerPass: 66, 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return CustomerPass to get CustomerPass.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getCustomerPass() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>    return this.customerPass;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerPass: 67, 69, 70</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argCustomerPhone to initialize CustomerPhone.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setCustomerPhone(final String argCustomerPhone) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>    this.customerPhone = argCustomerPhone;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerPhone: 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerPhone: 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return CustomerPhone to get CustomerPhone.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getCustomerPhone() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>    return this.customerPhone;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.CustomerMapperTest#testMap: 35</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testCusConstructor: 31</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testSetCustomerPhone: 77, 79, 80</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argCustomerEmail to initialize CustomerEmail.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setCustomerEmail(final String argCustomerEmail) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l93s0'>    this.customerEmail = argCustomerEmail;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testCustomerEmail: 88</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l94s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testCustomerEmail: 88</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return CustomerEmail to get CustomerEmail.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getCustomerEmail() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l99s0'>    return this.customerEmail;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.CustomerMapperTest#testMap: 36</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testCusConstructor: 32</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testCustomerEmail: 87, 89, 90</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final boolean equals(final Object obj) {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>6</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 4/8</span>
+        <span class='covered' onclick="showPath(this,'l103s0 l104s0')">A: 2</span>
+        <span class='covered' onclick="showPath(this,'l103s0 l106s0 l107s0')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l103s0 l106s0 l109s0 l110s0 l110s1 l111s0 l111s1 l112s0 l112s1 l113s0 l113s1 l114s0 l115s0')">C: 2</span>
+        <span class='covered' onclick="showPath(this,'l103s0 l106s0 l109s0 l110s0 l117s0')">D: 1</span>
+        <span class='uncovered' onclick="showPath(this,'l103s0 l106s0 l109s0 l110s0 l110s1 l111s0 l117s0')">E: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l103s0 l106s0 l109s0 l110s0 l110s1 l111s0 l111s1 l112s0 l117s0')">F: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l103s0 l106s0 l109s0 l110s0 l110s1 l111s0 l111s1 l112s0 l112s1 l113s0 l117s0')">G: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l103s0 l106s0 l109s0 l110s0 l110s1 l111s0 l111s1 l112s0 l112s1 l113s0 l113s1 l114s0 l117s0')">H: 0</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>    <span id='l103s0' title='Executions: 6' class='covered cp' onclick='showHide(this,0)'>if (obj == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testGetClass: 105</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testObjectIsNull: 97</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEmptyObject: 130</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testNotEquals: 139</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>      return false;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testObjectIsNull: 97</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEmptyObject: 130</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>    <span id='l106s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (getClass() != obj.getClass())</span> {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testGetClass: 105</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testNotEquals: 139</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l107s0'>      return false;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testGetClass: 105</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>    Customer customer = (Customer) obj;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testNotEquals: 139</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>    <span id='l110s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (Objects.equals(customerId, customer.getCustomerId())</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testNotEquals: 139</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l111s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>Objects.equals(customerName, customer.getCustomerName())</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l112s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>Objects.equals(customerPass, customer.getCustomerPass())</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l113s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>Objects.equals(customerPhone, customer.getCustomerPhone())</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l114s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>Objects.equals(customerEmail, customer.getCustomerEmail())) {</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>      return true;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testEquals: 148x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l117s0'>    return false;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testNotEquals: 139</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public final int hashCode() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>    return Objects.hash(customerId, customerName, customerPass, customerPhone, customerEmail);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeTrue: 114x2</li>
+          <li>com.hexaware.FTP111.test.models.CustomerTest#testHashCodeFalse: 123x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

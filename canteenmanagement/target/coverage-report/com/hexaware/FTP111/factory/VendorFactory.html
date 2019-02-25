@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VendorFactory.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>canteenmanagement\src\main\java\com\hexaware\FTP111\factory\VendorFactory.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.hexaware.FTP111.factory;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.hexaware.FTP111.persistence.VendorDAO;
+import com.hexaware.FTP111.persistence.DbConnection;
+import java.util.List;
+import com.hexaware.FTP111.model.Vendor;</div><span>import ...</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Vendor Factory class used to fetch Vendor data from database.
+* @author hexware
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>11</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public class VendorFactory {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+*Protected constructor.
+ */
+/**
+*empty method.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>18</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l18s0'>  protected VendorFactory() {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorFactoryConstructor2: 110</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l19s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorFactoryConstructor2: 110</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Call the data base connection.
+* @return the connection object.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static VendorDAO dao() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l25s0'>    DbConnection db = new DbConnection();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l26s0'>    return db.getConnect().onDemand(VendorDAO.class);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Call the data base connection.
+* @param venId to Intitalize the orderId.
+* @param venPass to Initialize the Vendor Password.
+* @return the array of validateVendor object.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final int findByVendor(final int venId, final String venPass) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l35s0'>    int validate = dao().validateVendor(venId, venPass);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testfindByVendor: 162</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l36s0'>    return validate;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testfindByVendor: 162</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Call the data base connection.
+* @param venId to Intitalize the orderId.
+* @return the array of vendorDetails object.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final List&lt;Vendor> vendorDetails(final int venId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>    List&lt;Vendor> vendorlist = dao().show(venId);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 140</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>    return vendorlist;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 140</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param venId t initialize Vendor Id.
+* @return venBal.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final double fetchVenBalance(final int venId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>    double venBal = dao().fetchVenBalance(venId);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testFetchVenBalance: 79</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>    return venBal;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testFetchVenBalance: 79</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param vendorAmount to initialize Vendor Amount.
+* @param venId to initialize Vendor Id.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final void updateVenBal(final double vendorAmount, final int venId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>    dao().updateVenBal(vendorAmount, venId);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testupdateVenBal: 60</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testupdateVenBal: 60</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return vendor Id.
+* @param venId to initialize Vendor Id.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static int findByVendorId(final int venId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>    int id = dao().fetchVendorId(venId);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testfindByVendorId: 99</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>    return id;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testfindByVendorId: 99</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param updateVenBal to update Vendor Balance.
+* @param venId to initialize Vendor Id.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final void venUpdate(final double updateVenBal, final int venId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>    dao().venUpdate(updateVenBal, venId);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testvenUpdate: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l76s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testvenUpdate: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param refundAmount to initialize refund amount.
+* @param venId to initialize vendor id.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final void updateRefund(final double refundAmount, final int venId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l82s0'>    dao().venDeductAmount(refundAmount, venId);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l83s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Call the data base connection.
+* @param venId to Intitalize the ven id.
+* @param ordId to Initialize the order id.
+* @return the array of validateVendor object.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final int validateVendorIdAndOrdId(final int venId, final int ordId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l91s0'>    int validate = dao().validateVendorIdAndOrdId(venId, ordId);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l92s0'>    return validate;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>
