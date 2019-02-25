@@ -1,0 +1,59 @@
+
+<div class="container login-container">
+    <div class="row" *ngIf="errorMessage">
+        <span class="alert alert-danger">{{errorMessage}}</span>
+    </div>
+    <div class="row">
+        <div class="col-md-6 login-form-1">
+                <form #f="ngForm" (click)="customersubmit(f)">
+            <h3>CUSTOMER LOGIN</h3>
+                <div class="form-group">
+                    <input ngModel #id="ngModel" name="id" type="text" required class="form-control" id="exampleInputId" placeholder="Enter ID*"/>
+                <div class="alert alert-danger" *ngIf="id.touched && id.invalid ">
+                        <span *ngIf="id.errors.required">User ID is required</span>
+                      </div>
+                    </div>
+                <div class="form-group">
+
+                    <input ngModel #password="ngModel" name="password" type="password" required class="form-control" password="exampleInputPassword" placeholder="Enter Password*"/>
+                    <div class="alert alert-danger" *ngIf="password.touched && password.invalid ">
+                            <span *ngIf="password.errors.required">Password is required</span>
+                          </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btnSubmit" value="Login" [disabled]="f.invalid"/>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="col-md-6 login-form-2">
+            <div class="login-logo">
+                <img src="assets/images/food.jpg" height="100" width="200" alt=""/>
+            </div>
+            <form #p="ngForm" (click)="vendorsubmit(p)">
+            <h3>VENDOR LOGIN</h3>
+                <div class="form-group">
+                    <input ngModel #vid = "ngModel" name="vid" type="text" required class="form-control" vid="exampleVendorId" placeholder="Enter Id*" value="" />
+                    <div class="alert alert-danger" *ngIf="vid.touched && vid.invalid ">
+                            <span *ngIf="vid.errors.required">Vendor ID is required.</span>
+                          </div>
+                </div>
+                <div class="form-group">
+                    <input ngModel #vpass = "ngModel" name="vpass" type="password" required class="form-control" vpass="exampleInputPass" placeholder="Enter Password*" value="" />
+                    <div class="alert alert-danger" *ngIf="vpass.touched && vpass.invalid ">
+                            <span *ngIf="vpass.errors.required">Vendor Password is required.</span>
+                          </div>
+
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btnSubmit" value="Login" [disabled]="p.invalid"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
