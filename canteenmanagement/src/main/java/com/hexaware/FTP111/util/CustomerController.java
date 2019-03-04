@@ -15,6 +15,9 @@ import com.hexaware.FTP111.factory.MenuFactory;
 import com.hexaware.FTP111.model.Orders;
 import com.hexaware.FTP111.model.OrderItem;
 import com.hexaware.FTP111.factory.OrdersFactory;
+import com.hexaware.FTP111.factory.VendorFactory;
+import com.hexaware.FTP111.model.Wallet;
+import com.hexaware.FTP111.factory.WalletFactory;
 import java.util.List;
 import javax.ws.rs.core.Response;
 
@@ -36,15 +39,27 @@ public class CustomerController {
     return CustomerFactory.customerDetails(cusId);
   }
 /**
+* Return wallet details.
+* @param cusId to Intitalize the customer Id.
+* @param wallet to Intitalize the wallet.
+* @return the wallet details.
+ */
+  @GET
+  @Path("/{cusId}/wallets")
+  @Produces(MediaType.APPLICATION_JSON)
+  public final List<Wallet> showWalletById(@PathParam ("cusId") final int cusId, final Wallet wallet) {
+    Validators.validateCusId(cusId);
+    return WalletFactory.showWallet(cusId);
+  }
+/**
 * Return customer details.
 * @param cusId to Intitalize the customer Id.
-* @param ordId to Intitalize the ord Id.
 * @return the customer details.
  */
   @GET
-  @Path("/{cusId}/orders/{ordId}")
+  @Path("/{cusId}/orders")
   @Produces(MediaType.APPLICATION_JSON)
-  public final List<Orders> findByCusId(@PathParam ("cusId") final int cusId, @PathParam ("ordId") final int ordId) {
+  public final List<Orders> findOrderDetails(@PathParam ("cusId") final int cusId) {
     Validators.validateCusId(cusId);
     return OrdersFactory.getOrderDetails(cusId);
   }
@@ -62,11 +77,19 @@ public class CustomerController {
   public final int placeOrder(@PathParam ("menItemId") final int menItemId, final Orders orders,
       @PathParam ("orderQuantity") final int orderQuantity) {
     Validators.validateMenuItemId(menItemId);
+    Validators.validateMenVenId(orders.getVenId(), menItemId);
     double orderPrice = MenuFactory.getOrderPrice(menItemId, orders.getVenId());
     orders.setOrderTotalPrice(orderPrice * orderQuantity);
+    double totalOrderPrice = orders.getOrderTotalPrice();
     int ordId = OrdersFactory.setPlaceOrder(orders);
     OrderItem ordit1 = new OrderItem(orders.getCusId(), orders.getVenId(), menItemId, orderQuantity, orderPrice, ordId);
     OrdersFactory.updateOrderItems(ordit1);
+    double venAmount = VendorFactory.fetchVenBalance(orders.getVenId());
+    double wallAmount = WalletFactory.findByOrderPrice(orders.getWalTransId());
+    double updateCusBal = wallAmount - totalOrderPrice;
+    double updateVenBal = venAmount + totalOrderPrice;
+    WalletFactory.cusUpdate(updateCusBal, orders.getCusId(), orders.getWalTransId());
+    VendorFactory.venUpdate(updateVenBal, orders.getVenId());
     return ordId;
   }
 

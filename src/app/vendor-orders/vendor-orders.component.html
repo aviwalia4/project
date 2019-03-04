@@ -1,0 +1,67 @@
+<!-- 
+<div>
+  <div class="container">
+    <br><br><br>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col"><u>Order Id</u></th>
+          <th scope="col"><u>Customer Id</u></th>
+          <th scope="col"><u>Total Price</u></th>
+          <th scope="col"><u>Order Date Time</u></th>
+          <th scope="col"><u>Comments</u></th>
+          <th scope="col"><u>Update Status</u></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vendorOrd of vendorOrd">
+          <td>{{vendorOrd.orderId}}</td>
+          <td>{{vendorOrd.cusId}}</td>
+          <td>{{vendorOrd.orderTotalPrice}}</td>
+          <td>{{vendorOrd.orderDate}}</td>
+          <td><textarea  class="form-control" rows="1" id="str" ngModel #comments="ngModel" name="comments"></textarea></td>
+          <td> <button type="submit"  class="btn btn-outline-success" (click)="orderApproved(vendorOrd, comments.value)" >Approve</button>
+            <button type="submit" class="btn btn-outline-danger" (click)="orderRejected(vendorOrd, comments.value)" >Reject</button></td>
+        </tr>
+      </tbody>
+    </table>
+    </div> 
+  </div>
+ -->
+
+ 
+<div>
+  <div class="container">
+    <br><br><br>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col"><u>Order Id</u></th>
+          <th scope="col"><u>Customer Id</u></th>
+          <th scope="col"><u>Total Price</u></th>
+          <th scope="col"><u>Order Date Time</u></th>
+          <th scope="col"><u>Comments</u></th>
+          <th scope="col"><u>Update Status</u></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vendorOrd of vendorOrd | paginate: { itemsPerPage: 5, currentPage: p }; let i = index" >
+            <!-- <td>i</td> -->
+          <td>{{vendorOrd.orderId}}</td>
+          <td>{{vendorOrd.cusId}}</td>
+          <td>{{vendorOrd.orderTotalPrice}}</td>
+          <td>{{vendorOrd.orderDate}}</td>
+          <td><textarea  class="form-control" rows="1" id="str" ngModel #comments="ngModel" name="comments"></textarea></td>
+          <td> <button type="submit"  class="btn btn-outline-success" (click)="orderApproved(vendorOrd, comments.value)" >Approve</button>
+            <button type="submit" class="btn btn-outline-danger" (click)="orderRejected(vendorOrd, comments.value)" >Reject</button></td>
+        
+
+           </tr>
+
+      </tbody>
+      <div><pagination-controls class= 'pull-'(pageChange)="p = $event"></pagination-controls></div>
+    </table>
+   
+  </div> 
+  </div>
+

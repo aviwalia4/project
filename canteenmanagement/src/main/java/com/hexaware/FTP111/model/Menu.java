@@ -22,7 +22,10 @@ public class Menu {
   private String menVegNonVeg;
   private String menItemName;
   private int menCalories;
-
+  private int vendorId;
+  private String vendorName;
+  private double menVenPrice;
+  private int menVenRating;
 
 
 /**
@@ -47,6 +50,26 @@ public class Menu {
     this.menCalories = argMenCalories;
   }
 /**
+* @param argMenFoodType to intitalize menu Food Type.
+* @param argMenVegNonVeg to intitalize menu Veg NonVeg.
+* @param argMenItemName to intitalize menu Item Name.
+* @param argMenCalories to intitalize menu Calories.
+* @param argMenItemID to intitalize menu Item Id.
+* @param argVendorId to intitalize menu vendor Id.
+* @param argMenVenPrice to intitalize menu vendor price.
+ */
+  public Menu(final String argMenFoodType, final String argMenVegNonVeg,
+      final String argMenItemName, final int argMenCalories, final int argMenItemID, final int argVendorId,
+       final double argMenVenPrice) {
+    this.menFoodType = argMenFoodType;
+    this.menVegNonVeg = argMenVegNonVeg;
+    this.menItemName = argMenItemName;
+    this.menCalories = argMenCalories;
+    this.menItemId = argMenItemID;
+    this.vendorId = argVendorId;
+    this.menVenPrice = argMenVenPrice;
+  }
+/**
 * @param argMenuItemId to initialize menu item id.
 * used to get details through constructor.
  */
@@ -64,7 +87,11 @@ public class Menu {
         && Objects.equals(menFoodType, menu.getMenFoodType())
         && Objects.equals(menVegNonVeg, menu.getMenVegNonVeg())
         && Objects.equals(menItemName, menu.getMenItemName())
-        && Objects.equals(menCalories, menu.getMenCalories())) {
+        && Objects.equals(menCalories, menu.getMenCalories())
+        && Objects.equals(vendorId, menu.getVendorId())
+        && Objects.equals(vendorName, menu.getVendorName())
+        && Objects.equals(menVenPrice, menu.getMenVenPrice())
+        && Objects.equals(menVenRating, menu.getMenVenRating())) {
       return true;
     }
     return false;
@@ -73,22 +100,6 @@ public class Menu {
     public final int hashCode() {
     return Objects.hash(menItemId, menFoodType, menVegNonVeg, menItemName, menCalories);
   }
-// /**
-// * Call the data base connection.
-// * @return the connection object.
-//  */
-//   private static MenuDAO dao() {
-//     DbConnection db = new DbConnection();
-//     return db.getConnect().onDemand(MenuDAO.class);
-//   }
-// /**
-// * Call the data base connection.
-// * @return the array of menu object.
-//  */
-//   public static Menu[] showMenu() {
-//     List<Menu> menu = dao().show();
-//     return menu.toArray(new Menu[menu.size()]);
-//   }
 /**
 * @param argMenItemID to intitalize the menu Id.
  */
@@ -122,8 +133,8 @@ public class Menu {
 /**
 * @return this menu id.
  */
-  public final int getMenItemId() {
-    return this.menItemId;
+  public final int getMenCalories() {
+    return this.menCalories;
   }
 /**
 * @return this menu food type.
@@ -144,9 +155,59 @@ public class Menu {
     return this.menItemName;
   }
 /**
+* @return this menu id.
+ */
+  public final int getMenItemId() {
+    return this.menItemId;
+  }
+/**
+* @param argVendorId to intitalize the menu item name.
+ */
+  public final void setVendorId(final int argVendorId) {
+    this.vendorId = argVendorId;
+  }
+
+/**
 * @return this menu Calories.
  */
-  public final int getMenCalories() {
-    return this.menCalories;
+  public final int getVendorId() {
+    return this.vendorId;
   }
+/**
+* @param argVendorName to intitalize the menu item name.
+ */
+  public final void setVendorName(final String argVendorName) {
+    this.vendorName = argVendorName;
+  }
+/**
+* @return this menu Calories.
+ */
+  public final String getVendorName() {
+    return this.vendorName;
+  }
+/**
+* @param argMenVenPrice to intitalize the menu item name.
+ */
+  public final void setMenVenPrice(final double argMenVenPrice) {
+    this.menVenPrice = argMenVenPrice;
+  }
+/**
+* @return this menu Calories.
+ */
+  public final double getMenVenPrice() {
+    return this.menVenPrice;
+  }
+/**
+* @param argMenVenRating to intitalize the menu vendor rating.
+ */
+  public final void setMenVenRating(final int argMenVenRating) {
+    this.menVenRating = argMenVenRating;
+  }
+/**
+* @return this menu rating.
+ */
+  public final int getMenVenRating() {
+    return this.menVenRating;
+  }
+
 }

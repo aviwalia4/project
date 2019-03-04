@@ -1,11 +1,6 @@
 package com.hexaware.FTP111.model;
-
-//import com.hexaware.FTP111.persistence.DbConnection;
-//import com.hexaware.FTP111.persistence.OrdersDAO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.util.Objects;
-//import java.util.List;
 
 /**
 * Vendor class used to display Vendor information.
@@ -14,11 +9,13 @@ import java.util.Objects;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Vendor {
   private int vendorId;
+  private String vendorName;
   private String venPass;
   private String vendorFeedback;
   private String vendorPhone;
   private String vendorAccNo;
   private double vendorBalance;
+  private String vendorEmail;
 /**
 * Default Constructor.
 */
@@ -27,29 +24,58 @@ public class Vendor {
   }
 /**
 * @param argVendorId
+* @param argVendorName
 * @param argVenPass
 * @param argVendorFeedback
 * @param argVendorPhone
 * @param argVendorAccNo
 * @param argVendorBalance
+* @param argVendorEmail
  */
 /**
 * @param argVendorId to initialize vendor id used to get details through constructor.
+* @param argVendorName to initialize vendor name used to get details through constructor.
 * @param argVendorPhone to initialize vendor Phone used to get details through constructor.
 * @param argVendorAccNo to initialize vendor Acc. No. used to get details through constructor.
 * @param argVendorBalance to initialize vendor Balance used to get details through constructor.
+* @param argVendorEmail to initialize vendor email through constructor.
  */
-  public Vendor(final int argVendorId, final String argVendorPhone, final String argVendorAccNo, final double argVendorBalance) {
+  public Vendor(final int argVendorId, final String argVendorName, final String argVendorPhone,
+      final String argVendorAccNo, final double argVendorBalance, final String argVendorEmail) {
     this.vendorId = argVendorId;
+    this.vendorName = argVendorName;
     this.vendorPhone = argVendorPhone;
     this.vendorAccNo = argVendorAccNo;
     this.vendorBalance = argVendorBalance;
+    this.vendorEmail = argVendorEmail;
   }
+// /**
+// * @param argVendorId to initialize vendor id used to get details through constructor.
+// * @param argVendorPhone to initialize vendor Phone used to get details through constructor.
+// * @param argVendorAccNo to initialize vendor Acc. No. used to get details through constructor.
+// * @param argVendorBalance to initialize vendor Balance used to get details through constructor.
+// * @param argVendorEmail to initialize vendor email through constructor.
+//  */
+//   public Vendor(final int argVendorId, final String argVendorPhone,
+//       final String argVendorAccNo, final double argVendorBalance, final String argVendorEmail) {
+//     this.vendorId = argVendorId;
+//     this.vendorPhone = argVendorPhone;
+//     this.vendorAccNo = argVendorAccNo;
+//     this.vendorBalance = argVendorBalance;
+//     this.vendorEmail = argVendorEmail;
+//   }
+
 /**
 * @param argVendorId Initialize the vendor id.
  */
   public final void setVendorId(final int argVendorId) {
     this.vendorId = argVendorId;
+  }
+/**
+* @param argVendorName Initialize the vendor Name.
+ */
+  public final void setVendorName(final String argVendorName) {
+    this.vendorName = argVendorName;
   }
 /**
 * @param argVenPass Initialize the vendor pass.
@@ -82,10 +108,22 @@ public class Vendor {
     this.vendorBalance = argVendorBalance;
   }
 /**
+* @param argVendorEmail Initialize the vendor Email.
+ */
+  public final void setVendorEmail(final String argVendorEmail) {
+    this.vendorEmail = argVendorEmail;
+  }
+/**
 * @return this vendor id.
  */
   public final int getVendorId() {
     return this.vendorId;
+  }
+/**
+* @return this vendor Name.
+ */
+  public final String getVendorName() {
+    return this.vendorName;
   }
 /**
 * @return this vendor pass.
@@ -117,6 +155,13 @@ public class Vendor {
   public final double getVendorBalance() {
     return this.vendorBalance;
   }
+/**
+* @return this vendor email.
+ */
+  public final String getVendorEmail() {
+    return this.vendorEmail;
+  }
+
   @Override
   public final boolean equals(final Object obj) {
     if (obj == null) {
@@ -127,17 +172,19 @@ public class Vendor {
     }
     Vendor vendor = (Vendor) obj;
     if (Objects.equals(vendorId, vendor.getVendorId())
-        && Objects.equals(venPass, vendor.getVenPass())
+        && Objects.equals(vendorName, vendor.getVendorName())
+         && Objects.equals(venPass, vendor.getVenPass())
         && Objects.equals(vendorFeedback, vendor.getVendorFeedback())
         && Objects.equals(vendorPhone, vendor.getVendorPhone())
         && Objects.equals(vendorAccNo, vendor.getVendorAccNo())
-        && Objects.equals(vendorBalance, vendor.getVendorBalance())) {
+        && Objects.equals(vendorBalance, vendor.getVendorBalance())
+        && Objects.equals(vendorEmail, vendor.getVendorEmail())) {
       return true;
     }
     return false;
   }
   @Override
     public final int hashCode() {
-    return Objects.hash(vendorId, venPass, vendorFeedback, vendorPhone, vendorAccNo, vendorBalance);
+    return Objects.hash(vendorId, vendorName, venPass, vendorFeedback, vendorPhone, vendorAccNo, vendorBalance, vendorEmail);
   }
 }

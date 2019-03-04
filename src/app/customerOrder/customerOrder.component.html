@@ -1,0 +1,76 @@
+<!-- 
+<div>
+<h4>Order History</h4>
+<img width="300" alt="food Logo" src="https://fairwaysatbeylea.com/wp-content/uploads/2015/02/Ordering-Food-Online.jpg">
+</div>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<table>
+  <thead>
+      <tr><b><i><u>Ordershistory of customers</u></i></b> </tr>
+  <tr>
+    <th>OrderId</th>
+    <th>CustomerId</th>
+    <th>Wallet Trans Id</th>
+    <th>Order Total Price</th>
+    <th>Order Status</th>
+    <th>Order Date</th>
+  </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let o of customerOrder">
+        <td>{{o.orderId}}</td>
+        <td>{{o.cusId}}</td>
+        <td>{{o.walTransId}}</td>
+        <td>{{o.orderTotalPrice}}</td>
+        <td>{{o.orderStatus}}</td>
+        <td>{{o.orderDate | date : 'yyyy-MM-dd'}}</td>
+      </tr>
+</tbody>
+</table>
+ -->
+ <div class="container">
+  <table class="table table-dark">
+    <thead>
+       
+    <tr>
+      <th>OrderId</th>
+      <th>CustomerId</th>
+      <th>Vendor Name</th>
+      <th>Wallet Trans Id</th>
+      <th>Order Total Price</th>
+      <th>Order Status</th>
+      <th>Order Date</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let o of customerOrder | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+          <td>{{o.orderId}}</td>
+          <td>{{o.cusId}}</td>
+          <td>{{o.vendorName}}</td>
+          <td>{{o.walTransId}}</td>
+          <td>{{o.orderTotalPrice}}</td>
+          <td>{{o.orderStatus}}</td>
+          <td>{{o.orderDate | date : 'yyyy-MM-dd'}}</td>
+        </tr>
+  </tbody>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </table>
+  </div>
+  
+  

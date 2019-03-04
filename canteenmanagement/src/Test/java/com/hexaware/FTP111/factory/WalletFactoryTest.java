@@ -63,17 +63,17 @@ public class WalletFactoryTest {
         }
     };
     List<Wallet> list = new ArrayList<Wallet>();
-    Wallet o1 = new Wallet(1, 500, "Paypal");
-    Wallet o2 = new Wallet(2, 4589, "Cash");
-    Wallet o3 = new Wallet(3, 2056, "Paytm");
+    Wallet o1 = new Wallet(1, 2, 500, "Paypal");
+    Wallet o2 = new Wallet(2, 2, 4589, "Cash");
+    Wallet o3 = new Wallet(3, 2, 2056, "Paytm");
     list.add(o1);
     list.add(o2);
     list.add(o3);
     new Expectations() { {
         List<Wallet> list = new ArrayList<Wallet>();
-        Wallet o1 = new Wallet(1, 500, "Paypal");
-        Wallet o2 = new Wallet(2, 4589, "Cash");
-        Wallet o3 = new Wallet(3, 2056, "Paytm");
+        Wallet o1 = new Wallet(1, 2, 500, "Paypal");
+        Wallet o2 = new Wallet(2, 2, 4589, "Cash");
+        Wallet o3 = new Wallet(3, 2, 2056, "Paytm");
         list.add(o1);
         list.add(o2);
         list.add(o3);

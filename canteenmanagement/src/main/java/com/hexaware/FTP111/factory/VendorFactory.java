@@ -4,6 +4,8 @@ import com.hexaware.FTP111.persistence.VendorDAO;
 import com.hexaware.FTP111.persistence.DbConnection;
 import java.util.List;
 import com.hexaware.FTP111.model.Vendor;
+import com.hexaware.FTP111.model.Menu;
+
 /**
 * Vendor Factory class used to fetch Vendor data from database.
 * @author hexware
@@ -33,6 +35,16 @@ public class VendorFactory {
  */
   public static final int findByVendor(final int venId, final String venPass) {
     int validate = dao().validateVendor(venId, venPass);
+    return validate;
+  }
+  /**
+* Call the data base connection.
+* @param venId to Intitalize the orderId.
+* @param menItemId to Initialize the menu item id.
+* @return the array of validateMenVenId object.
+ */
+  public static final int findByMenVenId(final int venId, final int menItemId) {
+    int validate = dao().validateMenVenId(venId, menItemId);
     return validate;
   }
 /**
@@ -90,5 +102,19 @@ public class VendorFactory {
   public static final int validateVendorIdAndOrdId(final int venId, final int ordId) {
     int validate = dao().validateVendorIdAndOrdId(venId, ordId);
     return validate;
+  }
+/**
+* Call the data base connection.
+* @param menuAdd to Intitalize the orderItem.
+ */
+  public static final void addFoodItem(final Menu menuAdd) {
+    dao().addFoodItem(menuAdd);
+  }
+/**
+* Call the data base connection.
+* @param menuAdd to Intitalize the orderItem.
+ */
+  public static final void addFoodItem1(final Menu menuAdd) {
+    dao().addFoodItem1(menuAdd);
   }
 }

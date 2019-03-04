@@ -21,7 +21,7 @@ public class OrderItemTest {
   @Before
     public final void setUp() {
     ordit = new OrderItem(12, 81, 15, 3, 54.0, 32);
-    ordit2 = new OrderItem(14, 81, 12, 54.0, "APPROVED");
+    ordit2 = new OrderItem(14, 81, 12, 54.0, OrderStatus.PENDING);
   }
 
 /**
@@ -46,7 +46,7 @@ public class OrderItemTest {
     assertEquals(81, ordit2.getVenId());
     assertEquals(12, ordit2.getCusId());
     assertEquals(54.0, ordit2.getOrdItemPrice(), 0);
-    assertEquals("APPROVED", ordit2.getOrdStatus());
+    assertEquals(OrderStatus.PENDING, ordit2.getOrderStatus());
   }
 
 /**
@@ -104,9 +104,9 @@ public class OrderItemTest {
  */
   @Test
     public final void testSetOrdStatus() {
-    assertEquals("APPROVED", ordit2.getOrdStatus());
-    ordit2.setOrdStatus("denied");
-    assertNotEquals("REJECTED", ordit2.getOrdStatus());
+    assertEquals(OrderStatus.PENDING, ordit2.getOrderStatus());
+    ordit2.setOrderStatus(OrderStatus.PENDING);
+    assertNotEquals(OrderStatus.APPROVED, ordit2.getOrderStatus());
   }
 
 /**

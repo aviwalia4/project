@@ -26,8 +26,8 @@ public class OrdersTest {
  */
   @Before
   public final void setup() {
-    order1 = new Orders(1, 2, 4, 100d, OrderStatus.PENDING);
-    order2 = new Orders(1, 2, 4, 100d, OrderStatus.PENDING);
+    order1 = new Orders(1, 2, 3, "hello", 4, 100d, OrderStatus.PENDING);
+    order2 = new Orders(1, 2, 3, "hello", 4, 100d, OrderStatus.PENDING);
   }
 /**
 * setValue1 method.
@@ -60,6 +60,7 @@ public class OrdersTest {
   public final void testOrdersConstructor1() {
     assertEquals(1, order1.getOrderId());
     assertEquals(2, order1.getCusId());
+    assertEquals("hello", order1.getVendorName());
     assertEquals(4, order1.getWalTransId());
     assertEquals(100d, order1.getOrderTotalPrice(), 0);
     assertEquals(OrderStatus.PENDING, order1.getOrderStatus());
@@ -105,14 +106,14 @@ public class OrdersTest {
     assertEquals(20, order1.getOrderId());
   }
 /**
-*Test for Customer Id.
+*Test for Vendor Name.
  */
   @Test
-  public final void testCusId() {
-    assertEquals(2, order1.getCusId());
-    order1.setCusId(10);
-    assertNotEquals(20, order1.getCusId());
-    assertEquals(10, order1.getCusId());
+  public final void testVendorName() {
+    assertEquals("hello", order1.getVendorName());
+    order1.setVendorName("bye");
+    assertNotEquals("gj", order1.getVendorName());
+    assertEquals("bye", order1.getVendorName());
   }
 /**
 *Test for Vendor Id.
@@ -123,6 +124,16 @@ public class OrdersTest {
     order3.setVenId(10);
     assertNotEquals(20, order3.getVenId());
     assertEquals(10, order3.getVenId());
+  }
+/**
+*Test for customer Id.
+ */
+  @Test
+  public final void testCusId() {
+    assertEquals(15, order3.getCusId());
+    order3.setCusId(10);
+    assertNotEquals(20, order3.getCusId());
+    assertEquals(10, order3.getCusId());
   }
 /**
 *Test for Wallet Trans Id.
@@ -159,8 +170,8 @@ public class OrdersTest {
  */
   @Test
   public final void testNotEquals1() {
-    Orders ord1 = new Orders(1, 2, 4, 100d, OrderStatus.PENDING);
-    Orders ord2 = new Orders(2, 20, 14, 200d, OrderStatus.APPROVED);
+    Orders ord1 = new Orders(1, 2, 3, "hello", 4, 100d, OrderStatus.PENDING);
+    Orders ord2 = new Orders(2, 3, 4, "ghjg", 14, 200d, OrderStatus.APPROVED);
     assertFalse(ord1.equals(ord2) && ord2.equals(ord1));
   }
 /**
@@ -168,8 +179,8 @@ public class OrdersTest {
  */
   @Test
   public final void testEquals1() {
-    Orders ord1 = new Orders(1, 2, 4, 100d, OrderStatus.PENDING);
-    Orders ord2 = new Orders(1, 2, 4, 100d, OrderStatus.PENDING);
+    Orders ord1 = new Orders(1, 2, 3, "hello", 4, 100d, OrderStatus.PENDING);
+    Orders ord2 = new Orders(1, 2, 3, "hello", 4, 100d, OrderStatus.PENDING);
     assertTrue(ord1.equals(ord2) && ord2.equals(ord1));
     assertFalse(ord1.equals(null));
     assertFalse(ord1.equals(new Vendor()));
@@ -245,6 +256,15 @@ public class OrdersTest {
   public final void testHashCodeOrderTotalPrice() {
     assertTrue(order1.hashCode() == order2.hashCode());
     order1.setOrderTotalPrice(343);
+    assertFalse(order1.hashCode() == order2.hashCode());
+  }
+/**
+*Test for HashCode WalTranId.
+ */
+  @Test
+  public final void testHashCodeVendorName() {
+    assertTrue(order1.hashCode() == order2.hashCode());
+    order1.setVendorName("fdsf");
     assertFalse(order1.hashCode() == order2.hashCode());
   }
 }

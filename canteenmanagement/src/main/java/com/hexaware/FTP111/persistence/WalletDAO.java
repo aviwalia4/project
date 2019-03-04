@@ -16,7 +16,7 @@ public interface WalletDAO {
 * @return the all the Wallet record.
 * @param cusId to intialize the wallet details.
  */
-  @SqlQuery(" Select wal_tran_id,"
+  @SqlQuery(" Select wal_tran_id, cus_id,"
             + " wal_current_balance,"
             + " wal_payment_method"
             + " from wallet"

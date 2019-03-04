@@ -53,12 +53,17 @@ public final class Validators {
       throw new IllegalArgumentException("Invalid Wallet Id");
     }
   }
-    // public static void validateVendorId(int venId) {
-    //     int vendor = VendorFactory.findByVenId(venId);
-    //     if (vendor == 0) {
-    //         throw new IllegalArgumentException("Invalid Vendor Id");
-    //     }
-    // }
+
+  /**
+* @param venId to intialize the Vendor Id.
+* @param menItemId to intialize the menu item Id.
+ */
+  public static void validateMenVenId(final int venId, final int menItemId) {
+    int menItemId1 = VendorFactory.findByMenVenId(venId, menItemId);
+    if (menItemId1 == 0) {
+      throw new IllegalArgumentException("This item is not prepared by this Vendor.");
+    }
+  }
 /**
 * @param menItemId to intialize the menu item Id.
  */

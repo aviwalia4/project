@@ -22,7 +22,6 @@
 import java.sql.SQLException;
 
 import com.hexaware.FTP111.model.Menu;
-
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></td>
     </tr>
@@ -34,8 +33,8 @@ import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></t
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>14</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l14s0'>public class MenuMapper implements ResultSetMapper&lt;Menu> {</pre>
+      <td class='line'>13</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l13s0'>public class MenuMapper implements ResultSetMapper&lt;Menu> {</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 34</li>
         </ol>
@@ -52,7 +51,7 @@ import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></t
      */</div><span>    /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>22</td><td>&nbsp;</td>
+      <td class='line'>21</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final Menu map(final int idx, final ResultSet rs, final StatementContext ctx) throws SQLException {</pre></td>
     </tr>
     <tr>
@@ -62,16 +61,24 @@ import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></t
        */</div><span>      /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>26</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l26s0'>    return new Menu(rs.getInt("MEN_ITEM_ID"), rs.getString("MEN_FOOD_TYPE"),</pre>
+      <td class='line'>25</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l25s0'>    Menu menu = new Menu(rs.getInt("MEN_ITEM_ID"), rs.getString("MEN_FOOD_TYPE"),</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 35x2</li>
+          <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l26s0'>        rs.getString("MEN_VEG_NON_VEG"), rs.getString("MEN_ITEM_NAME"),</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 35</li>
         </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>27</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l27s0'>      rs.getString("MEN_VEG_NON_VEG"), rs.getString("MEN_ITEM_NAME"),</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l27s0'>        rs.getInt("MEN_CALORIES"));</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 35</li>
         </ol>
@@ -79,18 +86,50 @@ import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></t
     </tr>
     <tr>
       <td class='line'>28</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l28s0'>      rs.getInt("MEN_CALORIES"));</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l28s0'>    menu.setVendorId(rs.getInt("VEN_ID"));</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 35</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>29</td><td>&nbsp;</td>
+      <td class='line'>29</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l29s0'>    menu.setVendorName(rs.getString("VEN_NAME"));</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>30</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l30s0'>    menu.setMenVenPrice(rs.getDouble("MEN_VEN_PRICE"));</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l31s0'>    menu.setMenVenRating(rs.getInt("MEN_VEN_RATING"));</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>32</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l32s0'>    return menu;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.MenuMapperTest#testMap: 35</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
-      <td class='line'>30</td><td>&nbsp;</td>
+      <td class='line'>34</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

@@ -18,7 +18,7 @@ public class WalletTest {
    */
   @Before
   public final void setUp() {
-    walletDetails = new Wallet(1, 500, "Net_Banking");
+    walletDetails = new Wallet(1, 2, 500, "Net_Banking");
     walletDetails.setCustomerId(5);
     walletDetails.setWalletTransStatus("approved");
   }
@@ -105,8 +105,8 @@ public class WalletTest {
    */
   @Test
   public final void testEmptyObjs() {
-    Wallet w1 = new Wallet(2, 35000, "cash");
-    Wallet w2 = new Wallet(2, 35000, "cash");
+    Wallet w1 = new Wallet(2, 2, 35000, "cash");
+    Wallet w2 = new Wallet(2, 2, 35000, "cash");
     assertFalse(w2.equals(null));
   }
   /**
@@ -114,8 +114,8 @@ public class WalletTest {
    */
   @Test
   public final void testHashWallId() {
-    Wallet w1 = new Wallet(2, 35000, "cash");
-    Wallet w2 = new Wallet(2, 35000, "cash");
+    Wallet w1 = new Wallet(2, 2, 35000, "cash");
+    Wallet w2 = new Wallet(2, 2, 35000, "cash");
     assertTrue(w1.hashCode() == w2.hashCode());
     w2.setWalletTranId(26);
     assertFalse(w1.hashCode() == w2.hashCode());
@@ -126,8 +126,8 @@ public class WalletTest {
    */
   @Test
   public final void testHashwalletCurrentBalance() {
-    Wallet w1 = new Wallet(2, 35000, "cash");
-    Wallet w2 = new Wallet(2, 35000, "cash");
+    Wallet w1 = new Wallet(2, 2, 35000, "cash");
+    Wallet w2 = new Wallet(2, 2, 35000, "cash");
     assertTrue(w1.hashCode() == w2.hashCode());
     w2.setWalletCurrentBalance(225386);
     assertFalse(w1.hashCode() == w2.hashCode());
@@ -138,8 +138,8 @@ public class WalletTest {
    */
   @Test
   public final void testHashwalletPaymentMethod() {
-    Wallet w1 = new Wallet(2, 35000, "cash");
-    Wallet w2 = new Wallet(2, 35000, "cash");
+    Wallet w1 = new Wallet(2, 2, 35000, "cash");
+    Wallet w2 = new Wallet(2, 2, 35000, "cash");
     assertTrue(w1.hashCode() == w2.hashCode());
     w2.setWalletPaymentMethod("paypal");
     assertFalse(w1.hashCode() == w2.hashCode());
@@ -149,8 +149,8 @@ public class WalletTest {
    */
   @Test
   public final void testEquals() {
-    Wallet w1 = new Wallet(2, 35000, "cash");
-    Wallet w2 = new Wallet(2, 35000, "cash");
+    Wallet w1 = new Wallet(2, 2, 35000, "cash");
+    Wallet w2 = new Wallet(2, 2, 35000, "cash");
     assertTrue(w1.equals(w2) && w2.equals(w1));
   }
   /**
@@ -158,8 +158,8 @@ public class WalletTest {
    */
   @Test
   public final void testNotEquals() {
-    Wallet w1 = new Wallet(5, 354500, "paypal");
-    Wallet w2 = new Wallet(2, 35000, "cash");
+    Wallet w1 = new Wallet(5, 2, 354500, "paypal");
+    Wallet w2 = new Wallet(2, 2, 35000, "cash");
     assertFalse(w1.equals(w2) && w2.equals(w1));
   }
 }

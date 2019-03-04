@@ -1,0 +1,60 @@
+<div id="sidebar-wrapper">
+    <nav id="spy">
+        <ul class="sidebar-nav nav">
+            <li class="sidebar-brand">
+                <a href="#home"><h2><span class="fa fa-home solo">Vendor Dashboard</span></h2></a>
+            </li>
+            <li><br>
+                <a href="#anch1" [routerLink]="['vendordetails']" data-scroll>
+                    <span class="fa fa-anchor solo">Vendor Information</span>
+                </a>
+            </li>
+            <li><br>
+                <a href="#anch1" [routerLink]="['vendorHistory']" data-scroll>
+                    <span class="fa fa-anchor solo">Order History</span>
+                </a>
+            </li>
+            <li>
+                <a href="#anch2" [routerLink]="['vendororderdetails']"data-scroll>
+                    <span class="fa fa-anchor solo">Pending Orders</span>
+                </a>
+            </li><br>
+                        <li>
+                <a href="#anch2" [routerLink]="['addItem']"data-scroll>
+                    <span class="fa fa-anchor solo">Add Item</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div> 
+        <router-outlet></router-outlet>
+</div>
+
+<!-- <div id="sidebar-wrapper">
+    <nav id="spy">
+        <ul class="sidebar-nav nav">
+            <li class="sidebar-brand">
+                <a href="#home"><h2><span class="fa fa-home solo">Vendor Dashboard</span></h2></a>
+            </li>
+            <li><br>
+                <a href="#anch1" [routerLink]="['vendordetails']" data-scroll>
+                    <span class="fa fa-anchor solo">Vendor Information</span>
+                </a>
+            </li>
+            <li>
+                <a href="#anch1" [routerLink]="['vendorHistory']" data-scroll>
+                    <span class="fa fa-anchor solo">Order History</span>
+                </a>
+            </li>
+            <li>
+                <a href="#anch2" [routerLink]="['vendororderdetails']"data-scroll>
+                    <span class="fa fa-anchor solo">Pending Orders</span>
+                </a>
+            </li><br>
+        </ul>
+    </nav>
+</div>
+<div> 
+        <router-outlet></router-outlet>
+</div> -->

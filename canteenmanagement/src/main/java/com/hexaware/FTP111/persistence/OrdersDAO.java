@@ -20,7 +20,7 @@ public interface OrdersDAO {
 * @return the all the Orders record.
 * @param orderId to intialize the order Id.
  */
-  @SqlQuery("Select o.ord_Id, o.cus_id, o.wal_tran_id, o.ord_total_price,"
+  @SqlQuery("Select o.ord_Id, o.cus_id, o.ven_id, o.wal_tran_id, o.ord_total_price,"
       + "o.ord_status, o.ord_date_time " + "FROM orders o where o.ord_Id = :orderId;")
     @Mapper(OrdersMapper.class)
     List<Orders> orderDetails(@Bind ("orderId")int orderId);
@@ -28,12 +28,12 @@ public interface OrdersDAO {
 * @return the all the Orders record.
 * @param venId to intialize the vendor id.
  */
-  @SqlQuery("Select o.ord_Id, o.wal_tran_id, t.ORD_QUANTITY, o.ORD_TOTAL_PRICE, o.ORD_DATE_TIME, t.ord_item_id,t.ven_id,o.cus_id,"
-             + " ord_item_price,t.ord_status"
-             + " from (orders o inner join order_Item t on o.ord_Id = t.ord_Id)"
-             + " Where t.ord_status = 'Pending' and t.ven_id = :venId;")
+  @SqlQuery(" SELECT  o.ord_Id, o.wal_tran_id, t.ORD_QUANTITY, o.ORD_TOTAL_PRICE, o.ORD_DATE_TIME, t.ord_item_id,t.ven_id,o.cus_id, "
+            + " t.ord_item_price,t.ord_status, v.ven_name FROM orders o inner join order_Item t "
+            + " on o.ord_Id = t.ord_Id JOIN VENDOR as v on o.ven_id= v.ven_id having t.ord_status = 'Pending' and ven_id = :venId;")
      @Mapper(OrdersMapper.class)
      List<Orders> showOrders(@Bind ("venId")int venId);
+
 /**
 * @return the all the updating order by customer.
 * @param order to initialize Orders object.
@@ -54,25 +54,46 @@ public interface OrdersDAO {
 * @return the all the updating order by customer.
 * @param cusId to initialize customer Id.
 */
-  @SqlQuery("Select o.ord_Id,"
-              + " o.cus_id,"
-              + " o.wal_tran_id,"
-              + " o.ord_total_price,"
-              + " o.ord_status,"
-              + " o.ord_date_time "
-              + " FROM orders o "
-              + " where o.cus_Id = :cusId;")
+  @SqlQuery("  Select o.ord_Id, "
+            + "o.cus_id, "
+            + " v.ven_name, "
+            + " v.ven_id, "
+            + " o.wal_tran_id, "
+            + " o.ord_total_price, "
+            + " o.ord_status, "
+            + " o.ord_date_time "
+            + " FROM orders o inner join vendor v on "
+            + " o.ven_Id = v.ven_Id and o.cus_Id = :cusId; ")
     @Mapper(OrdersMapper.class)
     List<Orders> getOrderDetails(@Bind ("cusId")int cusId);
+/**
+* @return the all the updating order by customer.
+* @param venId to initialize customer Id.
+*/
+  @SqlQuery("  Select o.ord_Id, "
+            + "o.cus_id, "
+            + " v.ven_name, "
+            + " v.ven_id, "
+            + " o.wal_tran_id, "
+            + " o.ord_total_price, "
+            + " o.ord_status, "
+            + " o.ord_date_time "
+            + " FROM orders o inner join vendor v on "
+            + " o.ven_Id = v.ven_Id and o.ven_Id = :venId; ")
+    @Mapper(OrdersMapper.class)
+    List<Orders> showOrdersForVendor(@Bind ("venId")int venId);
 /**
 * @param orderstat to initialize order status.
 * @param orderOption to initialize order option.
 * @param venId to initialize vendor id.
+* @param comments to initialize comments.
  */
-  @SqlUpdate("update order_item oi inner join orders o on oi.ord_id = o.ord_id"
-           + " set oi.ord_status =:orderstat,"
-          + "o.ord_status = :orderstat where o.ord_Id =:orderOption and o.ven_id = :venId;")
-    void updatePendingOrders(@Bind("orderOption")int orderOption, @Bind("orderstat")OrderStatus orderstat, @Bind("venId")int venId);
+  @SqlUpdate("update order_item oi inner join orders o on oi.ord_id = o.ord_id "
+           + " set oi.ord_status = :orderstat, oi.comments = :comments, "
+          + " o.ord_status = :orderstat where o.ord_Id = :orderOption and o.ven_id = :venId;")
+    void updatePendingOrders(@Bind("orderOption")int orderOption, @Bind("orderstat")OrderStatus orderstat,
+                            @Bind("comments")String comments, @Bind("venId")int venId);
+
 
 /**
 * @param orderOption to initialize order option.

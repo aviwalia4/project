@@ -131,28 +131,24 @@ import com.hexaware.FTP111.model.OrderStatus;</div><span>import ...</span></pre>
       <td class='line'></td><td>&nbsp;</td>
       <td class='comment' onclick='showHideLines(this)'><div>/**
 * Call the data base connection.
-* @param orderId to Intitalize the orderId.
-* @return the array of ordersDetails object.
- */</div><span>/*...*/</span></td>
+* @param venId to intialize the venId.
+* @return the array of showOrders object.
+*/</div><span>/*...*/</span></td>
     </tr>
     <tr>
       <td class='line'>45</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  public static final List&lt;Orders> orderDetails(final int orderId) {</pre></td>
+      <td><pre class='prettyprint'>  public static final List&lt;Orders> showOrdersForVendor(final int venId) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>46</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>    List&lt;Orders> orderlist = dao().orderDetails(orderId);</pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 96</li>
-        </ol>
+      <td class='line'>46</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l46s0'>    List&lt;Orders> orderList = dao().showOrdersForVendor(venId);</pre>
+        <ol style='display:none'></ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>47</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>    return orderlist;</pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 96</li>
-        </ol>
+      <td class='line'>47</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l47s0'>    return orderList;</pre>
+        <ol style='display:none'></ol>
       </td>
     </tr>
     <tr>
@@ -163,27 +159,27 @@ import com.hexaware.FTP111.model.OrderStatus;</div><span>import ...</span></pre>
       <td class='line'></td><td>&nbsp;</td>
       <td class='comment' onclick='showHideLines(this)'><div>/**
 * Call the data base connection.
-* @param orders to Intitalize the Orders order.
-* @return the array of setPlaceOrder object.
+* @param orderId to Intitalize the orderId.
+* @return the array of ordersDetails object.
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
       <td class='line'>54</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  public static final int setPlaceOrder(final Orders orders) {</pre></td>
+      <td><pre class='prettyprint'>  public static final List&lt;Orders> orderDetails(final int orderId) {</pre></td>
     </tr>
     <tr>
       <td class='line'>55</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>    int orderPrice = dao().setPlaceOrder(orders);</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>    List&lt;Orders> orderlist = dao().orderDetails(orderId);</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 96</li>
         </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>56</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>    return orderPrice;</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>    return orderlist;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 96</li>
         </ol>
       </td>
     </tr>
@@ -195,28 +191,92 @@ import com.hexaware.FTP111.model.OrderStatus;</div><span>import ...</span></pre>
       <td class='line'></td><td>&nbsp;</td>
       <td class='comment' onclick='showHideLines(this)'><div>/**
 * Call the data base connection.
+* @param orders to Intitalize the Orders order.
+* @return the array of setPlaceOrder object.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final int setPlaceOrder(final Orders orders) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>    int orderPrice = dao().setPlaceOrder(orders);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>    return orderPrice;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* Call the data base connection.
 * @param orderItem to Intitalize the orderItem.
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>62</td><td>&nbsp;</td>
+      <td class='line'>71</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public static final void updateOrderItems(final OrderItem orderItem) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>63</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>    dao().updateOrderItems(orderItem);</pre>
+      <td class='line'>72</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>    dao().updateOrderItems(orderItem);</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#updateOrderItemsTest: 189</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>64</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>  }</pre>
+      <td class='line'>73</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#updateOrderItemsTest: 189</li>
         </ol>
       </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td>&nbsp;</td>
+      <td><pre class='comment'>// /**</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * Call the data base connection.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * @param orderId to Intitalize the orderId.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * @param comments to Intitalize the comments.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='comment'>//  */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td>&nbsp;</td>
+      <td><pre class='comment'>//   public static final void updateComment(final int orderId, final String comments) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='comment'>//     dao().updateComment(orderId, comments);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td>&nbsp;</td>
+      <td><pre class='comment'>//   }</pre></td>
     </tr>
     <tr>
       <td class='line'></td><td>&nbsp;</td>
@@ -227,31 +287,31 @@ import com.hexaware.FTP111.model.OrderStatus;</div><span>import ...</span></pre>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>70</td><td>&nbsp;</td>
+      <td class='line'>87</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public static final List&lt;Orders> getOrderDetails(final int cusId) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>71</td><td>&nbsp;</td>
+      <td class='line'>88</td><td>&nbsp;</td>
       <td><pre class='comment'>    //Validators.validateCustomerId(cusId);</pre></td>
     </tr>
     <tr>
-      <td class='line'>72</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>    List&lt;Orders> orderlist = dao().getOrderDetails(cusId);</pre>
+      <td class='line'>89</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l89s0'>    List&lt;Orders> orderlist = dao().getOrderDetails(cusId);</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 140</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>73</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>    return orderlist;</pre>
+      <td class='line'>90</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>    return orderlist;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 140</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>74</td><td>&nbsp;</td>
+      <td class='line'>91</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -260,23 +320,24 @@ import com.hexaware.FTP111.model.OrderStatus;</div><span>import ...</span></pre>
 * @param orderOption to initialize order option.
 * @param orderstat to Intitalize the order status.
 * @param venId to initialize vendor id.
+* @param comments to initialize comments.
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>80</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  public static final void updatePendingOrders(final int orderOption, final OrderStatus orderstat, final int venId) {</pre></td>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static final void updatePendingOrders(final int orderOption, final OrderStatus orderstat, final String comments, final int venId) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>81</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>    dao().updatePendingOrders(orderOption, orderstat, venId);</pre>
+      <td class='line'>99</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l99s0'>    dao().updatePendingOrders(orderOption, orderstat, comments, venId);</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#updatePendingOrdersTest: 211</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>82</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>  }</pre>
+      <td class='line'>100</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#updatePendingOrdersTest: 211</li>
         </ol>
@@ -291,27 +352,27 @@ import com.hexaware.FTP111.model.OrderStatus;</div><span>import ...</span></pre>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>88</td><td>&nbsp;</td>
+      <td class='line'>106</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public static final double getRefundAmount(final int venId, final int orderOption) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>89</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l89s0'>    double refundAmount = dao().refundAmount(venId, orderOption);</pre>
+      <td class='line'>107</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l107s0'>    double refundAmount = dao().refundAmount(venId, orderOption);</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getRefundAmount: 240</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>90</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>    return refundAmount;</pre>
+      <td class='line'>108</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>    return refundAmount;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getRefundAmount: 240</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>91</td><td>&nbsp;</td>
+      <td class='line'>109</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -324,27 +385,27 @@ import com.hexaware.FTP111.model.OrderStatus;</div><span>import ...</span></pre>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>98</td><td>&nbsp;</td>
+      <td class='line'>116</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public static final int getCusId(final int venId, final int orderOption) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>99</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l99s0'>    int cusId = dao().getCusId(venId, orderOption);</pre>
+      <td class='line'>117</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l117s0'>    int cusId = dao().getCusId(venId, orderOption);</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getCusId: 264</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>100</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>    return cusId;</pre>
+      <td class='line'>118</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l118s0'>    return cusId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getCusId: 264</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>101</td><td>&nbsp;</td>
+      <td class='line'>119</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -355,27 +416,27 @@ import com.hexaware.FTP111.model.OrderStatus;</div><span>import ...</span></pre>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>106</td><td>&nbsp;</td>
+      <td class='line'>124</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public static final int getWalTransId(final int orderOption) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>107</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l107s0'>    int wallId = dao().getWalTransId(orderOption);</pre>
+      <td class='line'>125</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l125s0'>    int wallId = dao().getWalTransId(orderOption);</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getWalTransId: 287</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>108</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>    return wallId;</pre>
+      <td class='line'>126</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>    return wallId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getWalTransId: 287</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>109</td><td>&nbsp;</td>
+      <td class='line'>127</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -386,27 +447,27 @@ import com.hexaware.FTP111.model.OrderStatus;</div><span>import ...</span></pre>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>114</td><td>&nbsp;</td>
+      <td class='line'>132</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public static final void changeTotal(final double refundAmount, final int orderOption) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>115</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>    dao().updateTotal(refundAmount, orderOption);</pre>
+      <td class='line'>133</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l133s0'>    dao().updateTotal(refundAmount, orderOption);</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#changeTotal: 311</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>116</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l116s0'>  }</pre>
+      <td class='line'>134</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l134s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#changeTotal: 311</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>117</td><td>&nbsp;</td>
+      <td class='line'>135</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

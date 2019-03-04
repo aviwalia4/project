@@ -1,0 +1,32 @@
+<div class="container">
+        <form #form="ngForm" (ngSubmit)="submitForm(form)">
+        <div class="form-group">
+            <label>Food Name</label>
+ 
+            <select class="form-control select2" ngModel #selectedMenuId="ngModel" required (change)="onMenuSelected(selectedMenuId.value)" name="menu">
+               <option *ngFor="let m of menu" [value]="m.menItemId">{{m.menItemName}}</option> 
+            </select>
+          </div>
+          <div class="form-group">
+              <label>Vendor</label>
+              <select class="form-control select2" ngModel #selectedVendorId="ngModel" required (change)="selectedVendor(selectedVendorId.value)" name="vendor">
+                  <option *ngFor="let vendor of vendors" [value]="vendor.venId">{{vendor.vendorName}} {{vendor.venId}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword89">Quantity</label><br>
+                <input type = "text" name="selectedQuantity" required (change)="selectedQty(selectedQuantity.value)" ngModel #selectedQuantity="ngModel" name="selectedQuantity" class="form-control" id="Quantity">
+              </div>
+        <div><h4>Total Order Price:{{ totalPrice }}</h4></div>
+          <div class="form-group" *ngIf="wallet && wallet.length > 0">
+            <label>Wallet</label>
+            <select required (change)="selectedWallet(selectedwallet)" ngModel #selectedwallet="ngModel" name="selectedwallet" class="form-control" id="Wallet">
+                <option [value]="w.walletTranId" *ngFor="let w of AvailableWallets" >{{w.walletPaymentMethod}}  Wallet Amount:{{w.walletCurrentBalance}}</option>
+            </select>
+          </div>
+          <div *ngIf="wallet && wallet.length === 0">
+            <span class="alert alert-danger">You don't have sufficient balance.</span>
+          </div>
+        <button type="submit" class="btn btn-primary" value="place order" [disabled]="form.invalid">Place Order</button>
+      </form>
+</div>

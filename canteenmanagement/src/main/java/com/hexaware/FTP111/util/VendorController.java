@@ -11,8 +11,12 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import com.hexaware.FTP111.model.Vendor;
+import com.hexaware.FTP111.model.Menu;
 import com.hexaware.FTP111.model.Orders;
+import com.hexaware.FTP111.model.OrderStatus;
+import com.hexaware.FTP111.model.OrderItem;
 import com.hexaware.FTP111.factory.VendorFactory;
+import com.hexaware.FTP111.factory.WalletFactory;
 import com.hexaware.FTP111.factory.OrdersFactory;
 import java.util.List;
 /**
@@ -35,29 +39,57 @@ public class VendorController {
 /**
 * Return vendor details.
 * @param venId to Intitalize the menId.
-* @param ordId to Intitalize the ord Id.
+* @param orderItem to Intitalize the orderItem.
 * @return the vendor details.
  */
   @GET
-  @Path("/{venId}/orders/{ordId}")
+  @Path("/{venId}/orderItem")
   @Produces(MediaType.APPLICATION_JSON)
-  public final List<Orders> fetchOrderDetailsByVenId(@PathParam ("venId") final int venId,  @PathParam ("ordId") final int ordId) {
+  public final List<Orders> fetchOrderDetailsByVenId(@PathParam ("venId") final int venId, final OrderItem orderItem) {
     Validators.validateVendorId(venId);
     return OrdersFactory.showOrders(venId);
   }
 /**
+* Return vendor orders details.
+* @param venId to Intitalize the menId.
+* @param orders to Intitalize the orders.
+* @return the vendor orders details.
+ */
+  @GET
+  @Path("/{venId}/orders")
+  @Produces(MediaType.APPLICATION_JSON)
+  public final List<Orders> showOrdersForVendor(@PathParam ("venId") final int venId, final Orders orders) {
+    Validators.validateVendorId(venId);
+    return OrdersFactory.showOrdersForVendor(venId);
+  }
+/**
 * Return orders details.
 * @param ordId to Intitalize the ordId.
-* @param orders to Intitalize the orders.
+* @param orderItem to Intitalize the order item.
 * @param venId to Intitalize the venId.
  */
   @PUT
-  @Path("/{venId}/orders/{ordId}")
+  @Path("/{venId}/orderItem/{ordItemId}")
   @Consumes(MediaType.APPLICATION_JSON)
-  public final void updateOrderStatusApproved(@PathParam ("venId") final int venId, @PathParam ("ordId") final int ordId, final Orders orders) {
+  public final void updateOrderStatusApproved(@PathParam ("venId") final int venId, @PathParam ("ordItemId") final int ordId,
+                                              final OrderItem orderItem) {
     Validators.validateVendorIdAndOrdId(venId, ordId);
-    System.out.println(orders.getOrderStatus());
-    OrdersFactory.updatePendingOrders(ordId, orders.getOrderStatus(), venId);
+    System.out.println(orderItem.getOrderStatus());
+    if (orderItem.getOrderStatus() == OrderStatus.APPROVED) {
+      OrdersFactory.updatePendingOrders(ordId, orderItem.getOrderStatus(), orderItem.getComments(), venId);
+      // OrdersFactory.updateComments(orderItem.getOrdId(), orderItem.getComments());
+
+    } else if (orderItem.getOrderStatus() == OrderStatus.REJECTED) {
+      OrdersFactory.updatePendingOrders(ordId, orderItem.getOrderStatus(), orderItem.getComments(), venId);
+      double refundAmount = OrdersFactory.getRefundAmount(venId, ordId);
+      VendorFactory.updateRefund(refundAmount, venId);
+      int cusId = OrdersFactory.getCusId(venId, ordId);
+      int walTranId = OrdersFactory.getWalTransId(ordId);
+      WalletFactory.refundCustomer(refundAmount, cusId, walTranId);
+      OrdersFactory.changeTotal(refundAmount, ordId);
+      // OrdersFactory.updateComments(orderItem.getOrdId(), orderItem.getComments());
+    }
+    OrdersFactory.updatePendingOrders(ordId, orderItem.getOrderStatus(), orderItem.getComments(), venId);
 
   }
 /**
@@ -69,10 +101,31 @@ public class VendorController {
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   public final Response vendorLogin(final Vendor vendor) {
-    int venId = vendor.getVendorId();
+    int vendorId = vendor.getVendorId();
     String venPass = vendor.getVenPass();
-    Validators.validateVenIdandPass(venId, venPass);
-    return Response.status(Response.Status.OK).entity("valid").build();
+    Validators.validateVenIdandPass(vendorId, venPass);
+    return Response.status(Response.Status.OK).build();
+  }
+/**
+* @param menuAdd to Intitalize the menuAdd.
+* @return menuAdd.
+ */
+  @POST
+  @Path("/{venId}/menu")
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  public final Response addFoodItem(final Menu menuAdd) {
+    String menFoodType = menuAdd.getMenFoodType();
+    String menVegNonVeg = menuAdd.getMenVegNonVeg();
+    String menItemName = menuAdd.getMenItemName();
+    int menCalories = menuAdd.getMenCalories();
+    int menItemId = menuAdd.getMenItemId();
+    int vendorId = menuAdd.getVendorId();
+    double menVenPrice = menuAdd.getMenVenPrice();
+    Menu menuAddIt = new Menu(menFoodType, menVegNonVeg, menItemName, menCalories, menItemId, vendorId, menVenPrice);
+    VendorFactory.addFoodItem(menuAddIt);
+    VendorFactory.addFoodItem1(menuAddIt);
+    return Response.status(Response.Status.OK).build();
   }
 }
 

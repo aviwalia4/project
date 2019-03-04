@@ -1,0 +1,42 @@
+<div class="container">
+<form #Form="ngForm" (ngSubmit)="submitForm(form)">
+
+                  <div class="form-group">
+            <label>FOOD TYPE</label>
+ 
+            <select class="form-control select2" ngModel #ItemFoodType="ngModel" required (change)="menFoodType(ItemFoodType.value)" name="ItemFoodType">
+                      <option value="NORTH">NORTH</option>
+                      <option value="SOUTH">SOUTH</option>
+            </select>
+          </div>
+                  <div class="form-group">
+            <label>VEG/NON VEG</label>
+ 
+            <select class="form-control select2" ngModel #itemVegNonVeg="ngModel" required (change)="menVegNonVeg(itemVegNonVeg.value)" name="itemVegNonVeg">
+                      <option value="VEG">VEG</option>
+                      <option value="NON VEG">NON VEG</option>
+            </select>
+          </div>
+
+                <div class="form-group">
+                <label>ITEM NAME</label><br>
+                <input type = "text" name="addItemName" required (change)="addName(addItemName.value)" ngModel #addItemName="ngModel" class="form-control" id="addItemName">
+              </div>
+                <div class="form-group">
+                <label>CALORIES</label><br>
+                <input type = "text" name="addItemCalories" required (change)="addCalories(addItemCalories.value)" ngModel #addItemCalories="ngModel" class="form-control" id="addItemCalories">
+              </div>
+                <div class="form-group">
+                <label>VENDOR ID</label><br>
+                <input type = "text" name="venItemId" required (change)="venId(venItemId.value)" ngModel #venItemId="ngModel" class="form-control" id="venItemId">
+              </div>
+                <div class="form-group">
+                <label>PRICE</label><br>
+                <input type = "text" name="itemPrice" required (change)="price(itemPrice.value)" ngModel #itemPrice="ngModel" class="form-control" id="itemPrice">
+              </div>
+              <div>
+              <button type="submit" class="btn btn-primary" value="ADD ITEM" [disabled]="Form.invalid">ADD ITEM</button>
+              </div>
+              </form>
+
+              </div>

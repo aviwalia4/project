@@ -5,6 +5,7 @@ package com.hexaware.FTP111.model;
 import java.util.Objects;
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 //import java.util.List;
 
@@ -26,23 +27,47 @@ public class Orders {
   private int orderId;
   private int cusId;
   private int venId;
+  private String vendorName;
   private int walTransId;
   private double orderTotalPrice;
   private OrderStatus orderStatus;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm")
   private Date orderDate;
 
 /**
 * @param argOrderId to initialize Order id.
+* @param argVenId to initialize Vendor id.
+* @param argCusId to initialize Customer Id.
+* @param argVendorName to initialize vendor name used to get details through constructor.
+* @param argWalTransId to initialize WalTransId id.
+* @param argOrderTotalPrice to initialize OrderTotalPrice.
+* @param argOrderStatus to initialize Orderstatus.
+* used to get details through constructor.
+ */
+  public Orders(final int argOrderId, final int argCusId, final int argVenId, final String argVendorName, final int argWalTransId,
+      final double argOrderTotalPrice, final OrderStatus argOrderStatus) {
+    this.orderId = argOrderId;
+    this.venId = argVenId;
+    this.cusId = argCusId;
+    this.vendorName = argVendorName;
+    this.walTransId = argWalTransId;
+    this.orderTotalPrice = argOrderTotalPrice;
+    this.orderStatus = argOrderStatus;
+  }
+/**
+* @param argOrderId to initialize Order id.
+* @param argVenId to initialize Vendor id.
 * @param argCusId to initialize Customer Id.
 * @param argWalTransId to initialize WalTransId id.
 * @param argOrderTotalPrice to initialize OrderTotalPrice.
 * @param argOrderStatus to initialize Orderstatus.
 * used to get details through constructor.
  */
-  public Orders(final int argOrderId, final int argCusId, final int argWalTransId,
+  public Orders(final int argOrderId, final int argCusId, final int argVenId, final int argWalTransId,
       final double argOrderTotalPrice, final OrderStatus argOrderStatus) {
     this.orderId = argOrderId;
     this.cusId = argCusId;
+    this.venId = argVenId;
     this.walTransId = argWalTransId;
     this.orderTotalPrice = argOrderTotalPrice;
     this.orderStatus = argOrderStatus;
@@ -86,6 +111,7 @@ public class Orders {
     this.orderStatus = argOrderStatus;
     this.venId = argVenId;
   }
+
   @Override
     public final boolean equals(final Object obj) {
     if (obj == null) {
@@ -97,6 +123,7 @@ public class Orders {
     Orders orders = (Orders) obj;
     if (Objects.equals(orderId, orders.getOrderId())
         && Objects.equals(cusId, orders.getCusId())
+         && Objects.equals(vendorName, orders.getVendorName())
         && Objects.equals(walTransId, orders.getWalTransId())
         && Objects.equals(orderTotalPrice, orders.getOrderTotalPrice())
         && Objects.equals(orderStatus, orders.getOrderStatus())
@@ -107,7 +134,7 @@ public class Orders {
   }
   @Override
     public final int hashCode() {
-    return Objects.hash(orderId, cusId, venId, walTransId, orderTotalPrice, orderStatus, orderDate);
+    return Objects.hash(orderId, cusId, venId, vendorName, walTransId, orderTotalPrice, orderStatus, orderDate);
   }
 /* setting up the setters for orders */
 /**
@@ -145,6 +172,12 @@ public class Orders {
  */
   public final void setOrderStatus(final OrderStatus argOrderStatus) {
     this.orderStatus = argOrderStatus;
+  }
+/**
+* @param argVendorName Initialize the vendor Name.
+ */
+  public final void setVendorName(final String argVendorName) {
+    this.vendorName = argVendorName;
   }
   /**
 * @param argOrderDate initialize the Orderstatus.
@@ -194,6 +227,12 @@ public class Orders {
  */
   public final Date getOrderDate() {
     return this.orderDate;
+  }
+/**
+* @return this vendor Name.
+ */
+  public final String getVendorName() {
+    return this.vendorName;
   }
 }
 

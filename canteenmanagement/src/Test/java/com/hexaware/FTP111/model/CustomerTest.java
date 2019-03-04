@@ -101,7 +101,7 @@ public class CustomerTest {
  */
   @Test
   public final void testGetClass() {
-    Wallet wallet = new Wallet(1, 10.00, "hirir");
+    Wallet wallet = new Wallet(1, 2, 10.00, "hirir");
     assertFalse(testingCus.equals(wallet));
   }
 /**

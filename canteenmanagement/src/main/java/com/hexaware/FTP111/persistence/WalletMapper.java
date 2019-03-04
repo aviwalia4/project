@@ -22,7 +22,7 @@ public class WalletMapper implements ResultSetMapper<Wallet> {
       /**
        * @return Wallet
        */
-    return new Wallet(rs.getInt("WAL_TRAN_ID"), rs.getDouble("WAL_CURRENT_BALANCE"), rs.getString("WAL_PAYMENT_METHOD"));
+    return new Wallet(rs.getInt("WAL_TRAN_ID"), rs.getInt("CUS_ID"), rs.getDouble("WAL_CURRENT_BALANCE"), rs.getString("WAL_PAYMENT_METHOD"));
   }
 }
 

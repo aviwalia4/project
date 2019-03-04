@@ -34,18 +34,18 @@ public class OrdersFactoryTest {
       }
     };
     List<Orders> list = new ArrayList<Orders>();
-    Orders order1 = new Orders(10, 20, 12, 10.00, OrderStatus.PENDING);
-    Orders order2 = new Orders(20, 30, 22, 25.12, OrderStatus.APPROVED);
-    Orders order3 = new Orders(80, 40, 38, 37.78, OrderStatus.PENDING);
+    Orders order1 = new Orders(10, 2, 3, "hello", 12, 10.00, OrderStatus.PENDING);
+    Orders order2 = new Orders(20, 2, 3, "hello", 22, 25.12, OrderStatus.APPROVED);
+    Orders order3 = new Orders(80, 2, 3, "hello", 38, 37.78, OrderStatus.PENDING);
     list.add(order1);
     list.add(order2);
     list.add(order3);
 
     new Expectations() { {
         List<Orders> list = new ArrayList<Orders>();
-        Orders order1 = new Orders(10, 20, 12, 10.00, OrderStatus.PENDING);
-        Orders order2 = new Orders(20, 30, 22, 25.12, OrderStatus.APPROVED);
-        Orders order3 = new Orders(80, 40, 38, 37.78, OrderStatus.PENDING);
+        Orders order1 = new Orders(10, 2, 3, "hello", 12, 10.00, OrderStatus.PENDING);
+        Orders order2 = new Orders(20, 2, 3, "hello", 22, 25.12, OrderStatus.APPROVED);
+        Orders order3 = new Orders(80, 2, 3, "hello", 38, 37.78, OrderStatus.PENDING);
         list.add(order1);
         list.add(order2);
         list.add(order3);
@@ -74,9 +74,9 @@ public class OrdersFactoryTest {
       }
     };
     List<Orders> list = new ArrayList<Orders>();
-    Orders order1 = new Orders(10, 20, 12, 90.12, OrderStatus.PENDING);
-    Orders order2 = new Orders(20, 30, 22, 30.25, OrderStatus.APPROVED);
-    Orders order3 = new Orders(80, 40, 38, 90.99, OrderStatus.PENDING);
+    Orders order1 = new Orders(10, 2, 3, "hello", 12, 90.12, OrderStatus.PENDING);
+    Orders order2 = new Orders(20, 2, 3, "hello", 22, 30.25, OrderStatus.APPROVED);
+    Orders order3 = new Orders(80, 2, 3, "hello", 38, 90.99, OrderStatus.PENDING);
 
     list.add(order1);
     list.add(order2);
@@ -84,9 +84,9 @@ public class OrdersFactoryTest {
 
     new Expectations() { {
         List<Orders> list = new ArrayList<Orders>();
-        Orders order1 = new Orders(10, 20, 12, 90.12, OrderStatus.PENDING);
-        Orders order2 = new Orders(20, 30, 22, 30.25, OrderStatus.APPROVED);
-        Orders order3 = new Orders(80, 40, 38, 90.99, OrderStatus.PENDING);
+        Orders order1 = new Orders(10, 2, 3, "hello", 12, 90.12, OrderStatus.PENDING);
+        Orders order2 = new Orders(20, 2, 3, "hello", 22, 30.25, OrderStatus.APPROVED);
+        Orders order3 = new Orders(80, 2, 3, "hello", 38, 90.99, OrderStatus.PENDING);
         list.add(order1);
         list.add(order2);
         list.add(order3);
@@ -115,9 +115,9 @@ public class OrdersFactoryTest {
         }
     };
     List<Orders> list = new ArrayList<Orders>();
-    Orders order1 = new Orders(10, 20, 12, 10.00, OrderStatus.PENDING);
-    Orders order2 = new Orders(20, 30, 22, 25.12, OrderStatus.APPROVED);
-    Orders order3 = new Orders(80, 40, 38, 37.78, OrderStatus.PENDING);
+    Orders order1 = new Orders(10, 2, 3, "hello", 12, 10.00, OrderStatus.PENDING);
+    Orders order2 = new Orders(20, 2, 3, "hello", 22, 25.12, OrderStatus.APPROVED);
+    Orders order3 = new Orders(80, 2, 3, "hello", 38, 37.78, OrderStatus.PENDING);
 
 
     list.add(order1);
@@ -126,9 +126,9 @@ public class OrdersFactoryTest {
 
     new Expectations() { {
         List<Orders> list = new ArrayList<Orders>();
-        Orders order1 = new Orders(10, 20, 12, 10.00, OrderStatus.PENDING);
-        Orders order2 = new Orders(20, 30, 22, 25.12, OrderStatus.APPROVED);
-        Orders order3 = new Orders(80, 40, 38, 37.78, OrderStatus.PENDING);
+        Orders order1 = new Orders(10, 2, 3, "hello", 12, 10.00, OrderStatus.PENDING);
+        Orders order2 = new Orders(20, 2, 3, "hello", 22, 25.12, OrderStatus.APPROVED);
+        Orders order3 = new Orders(80, 2, 3, "hello", 38, 37.78, OrderStatus.PENDING);
 
         list.add(order1);
         list.add(order2);
@@ -205,12 +205,12 @@ public class OrdersFactoryTest {
         }
     };
     new Expectations() { {
-        dao.updatePendingOrders(11, OrderStatus.APPROVED, 20);
+        dao.updatePendingOrders(11, OrderStatus.APPROVED, "thank you for ordering", 20);
         }
     };
-    OrdersFactory.updatePendingOrders(11, OrderStatus.APPROVED, 20);
+    OrdersFactory.updatePendingOrders(11, OrderStatus.APPROVED, "thank you for ordering", 20);
     new Verifications() { {
-            dao.updatePendingOrders(11, OrderStatus.APPROVED, 20); times = 1;
+            dao.updatePendingOrders(11, OrderStatus.APPROVED,  "thank you for ordering", 20); times = 1;
         }
     };
   }

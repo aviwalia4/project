@@ -15,7 +15,7 @@ public class MenuDetailsTest {
    */
   @Before
     public final void setUp() {
-    mend = new MenuDetails(12, 1, 12.0, 4, 23);
+    mend = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
   }
 
 /**
@@ -24,7 +24,9 @@ public class MenuDetailsTest {
   @Test
     public final void testMenD() {
     assertEquals(12, mend.getMenItemId());
+    assertEquals("DOSA", mend.getMenItemName());
     assertEquals(1, mend.getVenId());
+    assertEquals("HARI STALLS", mend.getVendorName());
     assertEquals(12.0, mend.getMenVenPrice(), 0);
     assertEquals(4, mend.getMenVenRating());
     assertEquals(23, mend.getMenCalories());
@@ -38,6 +40,15 @@ public class MenuDetailsTest {
     mend.setMenItemId(201);
     assertNotEquals(214, mend.getMenItemId());
   }
+/**
+* for testing.
+ */
+  @Test
+    public final void testSetMenItemName() {
+    assertEquals("DOSA", mend.getMenItemName());
+    mend.setMenItemName("CHAPATI");
+    assertNotEquals("DAL MAKHANI", mend.getMenItemName());
+  }
 
 /**
 * for testing.
@@ -47,6 +58,15 @@ public class MenuDetailsTest {
     assertEquals(1, mend.getVenId());
     mend.setVenId(54);
     assertNotEquals(12, mend.getVenId());
+  }
+/**
+* for testing.
+ */
+  @Test
+    public final void testSetVenName() {
+    assertEquals("HARI STALLS", mend.getVendorName());
+    mend.setVendorName("JENNI HALWAI");
+    assertNotEquals("Aman Bakers", mend.getVendorName());
   }
 
 /**
@@ -92,8 +112,12 @@ public class MenuDetailsTest {
     mend = new MenuDetails();
     int menItemId = 0;
     assertEquals(menItemId, mend.getMenItemId(), 0);
+    String menItemName = null;
+    assertEquals(menItemName, mend.getMenItemName(), null);
     int venId = 0;
     assertEquals(venId, mend.getVenId(), 0);
+    String vendorName = null;
+    assertEquals(vendorName, mend.getVendorName(), null);
     double menVenPrice = 0.0;
     assertEquals(menVenPrice, mend.getMenVenPrice(), 0.0);
     int menVenRating = 0;
@@ -108,8 +132,8 @@ public class MenuDetailsTest {
  */
   @Test
   public final void testEmptyObjs() {
-    MenuDetails md1 = new MenuDetails(12, 1, 12.0, 4, 23);
-    MenuDetails md2 = new MenuDetails(12, 1, 12.0, 4, 23);
+    MenuDetails md1 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
+    MenuDetails md2 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
     assertFalse(md2.equals(null));
   }
 
@@ -119,8 +143,8 @@ public class MenuDetailsTest {
  */
   @Test
   public final void testGetClass() {
-    MenuDetails md1 = new MenuDetails(12, 1, 12.0, 4, 23);
-    MenuDetails md2 = new MenuDetails(12, 1, 12.0, 4, 23);
+    MenuDetails md1 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
+    MenuDetails md2 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
     Customer cus = new Customer();
     assertFalse(md2.equals(cus) && cus.equals(md2));
   }
@@ -132,8 +156,8 @@ public class MenuDetailsTest {
 
   @Test
     public final void testHashcodeMDID() {
-    MenuDetails md1 = new MenuDetails(12, 1, 12.0, 4, 23);
-    MenuDetails md2 = new MenuDetails(12, 1, 12.0, 4, 23);
+    MenuDetails md1 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
+    MenuDetails md2 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
     assertTrue(md1.hashCode() == md2.hashCode());
     md2.setMenItemId(556);
     assertFalse(md1.hashCode() == md2.hashCode());
@@ -145,8 +169,8 @@ public class MenuDetailsTest {
 
   @Test
     public final void testHashcodeMDVI() {
-    MenuDetails md1 = new MenuDetails(12, 1, 12.0, 4, 23);
-    MenuDetails md2 = new MenuDetails(12, 1, 12.0, 4, 23);
+    MenuDetails md1 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
+    MenuDetails md2 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
     assertTrue(md1.hashCode() == md2.hashCode());
     md2.setVenId(121);
     assertFalse(md1.hashCode() == md2.hashCode());
@@ -158,8 +182,8 @@ public class MenuDetailsTest {
 
   @Test
     public final void testHashcodeMDVP() {
-    MenuDetails md1 = new MenuDetails(12, 1, 12.0, 4, 23);
-    MenuDetails md2 = new MenuDetails(12, 1, 12.0, 4, 23);
+    MenuDetails md1 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
+    MenuDetails md2 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
     assertTrue(md1.hashCode() == md2.hashCode());
     md2.setMenVenPrice(215);
     assertFalse(md1.hashCode() == md2.hashCode());
@@ -171,8 +195,8 @@ public class MenuDetailsTest {
 
   @Test
     public final void testHashcodeMDVR() {
-    MenuDetails md1 = new MenuDetails(12, 1, 12.0, 4, 23);
-    MenuDetails md2 = new MenuDetails(12, 1, 12.0, 4, 23);
+    MenuDetails md1 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
+    MenuDetails md2 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
     assertTrue(md1.hashCode() == md2.hashCode());
     md2.setMenVenRating(45);
     assertFalse(md1.hashCode() == md2.hashCode());
@@ -184,8 +208,8 @@ public class MenuDetailsTest {
 
   @Test
     public final void testHashcodeMDC() {
-    MenuDetails md1 = new MenuDetails(12, 1, 12.0, 4, 23);
-    MenuDetails md2 = new MenuDetails(12, 1, 12.0, 4, 23);
+    MenuDetails md1 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
+    MenuDetails md2 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
     assertTrue(md1.hashCode() == md2.hashCode());
     md2.setMenCalories(211);
     assertFalse(md1.hashCode() == md2.hashCode());
@@ -196,14 +220,20 @@ public class MenuDetailsTest {
  */
   @Test
     public final void testEquals() {
-    MenuDetails md1 = new MenuDetails(12, 1, 12.0, 4, 23);
-    MenuDetails md2 = new MenuDetails(12, 1, 12.0, 4, 23);
+    MenuDetails md1 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
+    MenuDetails md2 = new MenuDetails(12, "DOSA", 1, "HARI STALLS", 12.0, 4, 23);
     assertTrue(md1.equals(md2) && md2.equals(md1));
 
     md2.setMenItemId(51);
     assertFalse(md1.equals(md2) && md2.equals(md1));
 
+    md2.setMenItemName("DOSA");
+    assertFalse(md1.equals(md2) && md2.equals(md1));
+
     md2.setVenId(154);
+    assertFalse(md1.equals(md2) && md2.equals(md1));
+
+    md2.setVendorName("HARI STALLS");
     assertFalse(md1.equals(md2) && md2.equals(md1));
 
     md2.setMenVenPrice(125.0);

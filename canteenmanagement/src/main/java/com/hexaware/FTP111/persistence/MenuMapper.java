@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.hexaware.FTP111.model.Menu;
-
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import org.skife.jdbi.v2.StatementContext;
 /**
@@ -23,8 +22,13 @@ public class MenuMapper implements ResultSetMapper<Menu> {
       /**
        * @return Menu
        */
-    return new Menu(rs.getInt("MEN_ITEM_ID"), rs.getString("MEN_FOOD_TYPE"),
-      rs.getString("MEN_VEG_NON_VEG"), rs.getString("MEN_ITEM_NAME"),
-      rs.getInt("MEN_CALORIES"));
+    Menu menu = new Menu(rs.getInt("MEN_ITEM_ID"), rs.getString("MEN_FOOD_TYPE"),
+        rs.getString("MEN_VEG_NON_VEG"), rs.getString("MEN_ITEM_NAME"),
+        rs.getInt("MEN_CALORIES"));
+    menu.setVendorId(rs.getInt("VEN_ID"));
+    menu.setVendorName(rs.getString("VEN_NAME"));
+    menu.setMenVenPrice(rs.getDouble("MEN_VEN_PRICE"));
+    menu.setMenVenRating(rs.getInt("MEN_VEN_RATING"));
+    return menu;
   }
 }

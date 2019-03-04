@@ -87,7 +87,7 @@ import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></t
     </tr>
     <tr>
       <td class='line'>29</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l29s0'>    orders.setOrderStatus(OrderStatus.valueOf(rs.getString("ORD_STATUS")));</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l29s0'>    orders.setVenId(rs.getInt("VEN_ID"));</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
         </ol>
@@ -95,7 +95,7 @@ import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></t
     </tr>
     <tr>
       <td class='line'>30</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l30s0'>    orders.setOrderDate(rs.getDate("ORD_DATE_TIME"));</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l30s0'>    orders.setOrderStatus(OrderStatus.valueOf(rs.getString("ORD_STATUS")));</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
         </ol>
@@ -103,18 +103,34 @@ import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></t
     </tr>
     <tr>
       <td class='line'>31</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l31s0'>    return orders;</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l31s0'>    orders.setOrderDate(rs.getDate("ORD_DATE_TIME"));</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>32</td><td>&nbsp;</td>
+      <td class='line'>32</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l32s0'>    orders.setVendorName(rs.getString("VEN_NAME"));</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l33s0'>    return orders;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
-      <td class='line'>33</td><td>&nbsp;</td>
+      <td class='line'>35</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

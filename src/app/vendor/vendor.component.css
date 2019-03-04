@@ -1,0 +1,21 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.row{
+  text-align: center;
+padding-left:500px;
+padding-top:30px;
+}
+img {
+  border-radius: 50%;
+}

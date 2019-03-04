@@ -22,11 +22,13 @@ public class Wallet {
   }
 /**
 * @param argWalletTranId to Initialize Wallet Transaction Id.
+* @param argcustomerId to Initialize customer Id.
 * @param argWalletCurrentBalance to Initialize Wallet Current Balance.
 * @param argWalletPaymentMethod to Initialize wallet payment method.
  */
-  public Wallet(final int argWalletTranId, final double argWalletCurrentBalance, final String argWalletPaymentMethod) {
+  public Wallet(final int argWalletTranId, final int argcustomerId, final double argWalletCurrentBalance, final String argWalletPaymentMethod) {
     this.walletTranId = argWalletTranId;
+    this.customerId = argcustomerId;
     this.walletCurrentBalance = argWalletCurrentBalance;
     this.walletPaymentMethod = argWalletPaymentMethod;
   }

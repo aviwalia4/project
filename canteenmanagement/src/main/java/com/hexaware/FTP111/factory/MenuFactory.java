@@ -27,9 +27,6 @@ public class MenuFactory {
 * Call the data base connection.
 * @return the connection object.
  */
-//  public static List showMenu() {
-//    List<Menu> menu = dao().show();
-//    return menu.toArray(new Menu[menu.size()]);
   public static final List<Menu> showMenu() {
     List<Menu> menu = dao().show();
     return menu;
@@ -43,6 +40,13 @@ public class MenuFactory {
     List<MenuDetails> foodlist = dao().createOrder(menId);
     return foodlist;
   }
+// /**
+// * Call the data base connection.
+// * @param menuAdd to Intitalize the orderItem.
+//  */
+//   public static final void addFoodItem(final Menu menuAdd) {
+//     dao().addFoodItem(menuAdd);
+//   }
 /**
 * @return the Menu Item Id.
 * @param menItemId to Initialize menu Item Id.

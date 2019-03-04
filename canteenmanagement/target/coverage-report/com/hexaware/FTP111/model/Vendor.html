@@ -15,24 +15,11 @@
       <td class='line'>1</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>package com.hexaware.FTP111.model;</pre></td>
     </tr>
-    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
-    <tr>
-      <td class='line'>3</td><td>&nbsp;</td>
-      <td><pre class='comment'>//import com.hexaware.FTP111.persistence.DbConnection;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>4</td><td>&nbsp;</td>
-      <td><pre class='comment'>//import com.hexaware.FTP111.persistence.OrdersDAO;</pre></td>
-    </tr>
     <tr>
       <td class='line'></td><td>&nbsp;</td>
       <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.Objects;</div><span>import ...</span></pre></td>
-    </tr>
-    <tr>
-      <td class='line'>8</td><td>&nbsp;</td>
-      <td><pre class='comment'>//import java.util.List;</pre></td>
+import java.util.Objects;
+</div><span>import ...</span></pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -43,36 +30,44 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>14</td><td>&nbsp;</td>
+      <td class='line'>9</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>@JsonIgnoreProperties(ignoreUnknown = true)</pre></td>
     </tr>
     <tr>
-      <td class='line'>15</td><td>&nbsp;</td>
+      <td class='line'>10</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>public class Vendor {</pre></td>
     </tr>
     <tr>
+      <td class='line'>11</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 41 Writes: 48'>vendorId</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>12</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 39 Writes: 48'>vendorName</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 36 Writes: 2'>venPass</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 36 Writes: 2'>vendorFeedback</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 39 Writes: 48'>vendorPhone</span>;</pre></td>
+    </tr>
+    <tr>
       <td class='line'>16</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 33 Writes: 40'>vendorId</span>;</pre></td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 39 Writes: 48'>vendorAccNo</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'>17</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 28 Writes: 2'>venPass</span>;</pre></td>
+      <td><pre class='prettyprint'>  private double <span class='instance covered' title='Reads: 39 Writes: 48'>vendorBalance</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'>18</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 28 Writes: 2'>vendorFeedback</span>;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>19</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 31 Writes: 40'>vendorPhone</span>;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>20</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 31 Writes: 40'>vendorAccNo</span>;</pre></td>
-    </tr>
-    <tr>
-      <td class='line'>21</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private double <span class='instance covered' title='Reads: 31 Writes: 40'>vendorBalance</span>;</pre></td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 39 Writes: 48'>vendorEmail</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'></td><td>&nbsp;</td>
@@ -81,21 +76,21 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
 */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>25</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l25s0'>  public Vendor() {</pre>
+      <td class='line'>22</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l22s0'>  public Vendor() {</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 175</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 95</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 186</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 117</li>
         </ol>
       </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>27</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l27s0'>  }</pre>
+      <td class='line'>24</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l24s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 175</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 95</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 186</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 117</li>
         </ol>
       </td>
     </tr>
@@ -103,91 +98,184 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
       <td class='line'></td><td>&nbsp;</td>
       <td class='comment' onclick='showHideLines(this)'><div>/**
 * @param argVendorId
+* @param argVendorName
 * @param argVenPass
 * @param argVendorFeedback
 * @param argVendorPhone
 * @param argVendorAccNo
 * @param argVendorBalance
+* @param argVendorEmail
  */
 /**
 * @param argVendorId to initialize vendor id used to get details through constructor.
+* @param argVendorName to initialize vendor name used to get details through constructor.
 * @param argVendorPhone to initialize vendor Phone used to get details through constructor.
 * @param argVendorAccNo to initialize vendor Acc. No. used to get details through constructor.
 * @param argVendorBalance to initialize vendor Balance used to get details through constructor.
+* @param argVendorEmail to initialize vendor email through constructor.
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>42</td><td class='count'>38</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l42s0'>  public Vendor(final int argVendorId, final String argVendorPhone, final String argVendorAccNo, final double argVendorBalance) {</pre>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Vendor(final int argVendorId, final String argVendorName, final String argVendorPhone,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>      final String argVendorAccNo, final double argVendorBalance, final String argVendorEmail) {</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 124, 125, 126, 130x3</li>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 32</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x9</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 110, 111</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 139, 140</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 34</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x11</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 136, 137</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 176, 177</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>43</td><td class='count'>38</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>    this.vendorId = argVendorId;</pre>
+      <td class='line'>45</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>    this.vendorId = argVendorId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 124, 125, 126, 130x3</li>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 32</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x9</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 110, 111</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 139, 140</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 34</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x11</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 136, 137</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 176, 177</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>44</td><td class='count'>38</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>    this.vendorPhone = argVendorPhone;</pre>
+      <td class='line'>46</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>    this.vendorName = argVendorName;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 124, 125, 126, 130x3</li>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 32</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x9</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 110, 111</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 139, 140</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 34</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x11</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 136, 137</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 176, 177</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>45</td><td class='count'>38</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>    this.vendorAccNo = argVendorAccNo;</pre>
+      <td class='line'>47</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>    this.vendorPhone = argVendorPhone;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 124, 125, 126, 130x3</li>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 32</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x9</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 110, 111</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 139, 140</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 34</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x11</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 136, 137</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 176, 177</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>46</td><td class='count'>38</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>    this.vendorBalance = argVendorBalance;</pre>
+      <td class='line'>48</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>    this.vendorAccNo = argVendorAccNo;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 124, 125, 126, 130x3</li>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 32</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x9</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 110, 111</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 139, 140</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 34</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x11</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 136, 137</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 176, 177</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>47</td><td class='count'>38</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>  }</pre>
+      <td class='line'>49</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>    this.vendorBalance = argVendorBalance;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 124, 125, 126, 130x3</li>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 32</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x9</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 110, 111</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 139, 140</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 34</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x11</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 136, 137</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 176, 177</li>
         </ol>
       </td>
     </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l50s0'>    this.vendorEmail = argVendorEmail;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 124, 125, 126, 130x3</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 34</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x11</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 136, 137</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 176, 177</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>46</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 124, 125, 126, 130x3</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 34</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#setUp: 22x11</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 136, 137</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 176, 177</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='comment'>// /**</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * @param argVendorId to initialize vendor id used to get details through constructor.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * @param argVendorPhone to initialize vendor Phone used to get details through constructor.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * @param argVendorAccNo to initialize vendor Acc. No. used to get details through constructor.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * @param argVendorBalance to initialize vendor Balance used to get details through constructor.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='comment'>// * @param argVendorEmail to initialize vendor email through constructor.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='comment'>//  */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td>&nbsp;</td>
+      <td><pre class='comment'>//   public Vendor(final int argVendorId, final String argVendorPhone,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='comment'>//       final String argVendorAccNo, final double argVendorBalance, final String argVendorEmail) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='comment'>//     this.vendorId = argVendorId;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='comment'>//     this.vendorPhone = argVendorPhone;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='comment'>//     this.vendorAccNo = argVendorAccNo;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='comment'>//     this.vendorBalance = argVendorBalance;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='comment'>//     this.vendorEmail = argVendorEmail;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='comment'>//   }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'></td><td>&nbsp;</td>
       <td class='comment' onclick='showHideLines(this)'><div>/**
@@ -195,24 +283,52 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>51</td><td>&nbsp;</td>
+      <td class='line'>71</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setVendorId(final int argVendorId) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>52</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>    this.vendorId = argVendorId;</pre>
+      <td class='line'>72</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>    this.vendorId = argVendorId;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenId: 40</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenId: 131</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenId: 42</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenId: 157</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>53</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>  }</pre>
+      <td class='line'>73</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenId: 40</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenId: 131</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenId: 42</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenId: 157</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argVendorName Initialize the vendor Name.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setVendorName(final String argVendorName) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l78s0'>    this.vendorName = argVendorName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenName: 51</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenName: 168</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenName: 51</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenName: 168</li>
         </ol>
       </td>
     </tr>
@@ -223,22 +339,22 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>57</td><td>&nbsp;</td>
+      <td class='line'>83</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setVenPass(final String argVenPass) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>58</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l58s0'>    this.venPass = argVenPass;</pre>
+      <td class='line'>84</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>    this.venPass = argVenPass;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPass: 48, 50</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPass: 60, 62</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>59</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>  }</pre>
+      <td class='line'>85</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPass: 48, 50</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPass: 60, 62</li>
         </ol>
       </td>
     </tr>
@@ -249,22 +365,22 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>63</td><td>&nbsp;</td>
+      <td class='line'>89</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setVendorFeedback(final String argVendorFeedback) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>64</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>    this.vendorFeedback = argVendorFeedback;</pre>
+      <td class='line'>90</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>    this.vendorFeedback = argVendorFeedback;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenFeedback: 58, 60</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenFeedback: 70, 72</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>65</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>  }</pre>
+      <td class='line'>91</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l91s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenFeedback: 58, 60</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenFeedback: 70, 72</li>
         </ol>
       </td>
     </tr>
@@ -275,24 +391,24 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>69</td><td>&nbsp;</td>
+      <td class='line'>95</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setVendorPhone(final String argVendorPhone) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>70</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l70s0'>    this.vendorPhone = argVendorPhone;</pre>
+      <td class='line'>96</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l96s0'>    this.vendorPhone = argVendorPhone;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPhone: 69</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 142</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPhone: 81</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 179</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>71</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l71s0'>  }</pre>
+      <td class='line'>97</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPhone: 69</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 142</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPhone: 81</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 179</li>
         </ol>
       </td>
     </tr>
@@ -303,24 +419,24 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>75</td><td>&nbsp;</td>
+      <td class='line'>101</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setVendorAccNo(final String argVendorAccNo) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>76</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l76s0'>    this.vendorAccNo = argVendorAccNo;</pre>
+      <td class='line'>102</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>    this.vendorAccNo = argVendorAccNo;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenAccNo: 78</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenAccNo: 153</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenAccNo: 90</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenAccNo: 190</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>77</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>  }</pre>
+      <td class='line'>103</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l103s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenAccNo: 78</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenAccNo: 153</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenAccNo: 90</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenAccNo: 190</li>
         </ol>
       </td>
     </tr>
@@ -331,24 +447,52 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>81</td><td>&nbsp;</td>
+      <td class='line'>107</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setVendorBalance(final double argVendorBalance) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>82</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>    this.vendorBalance = argVendorBalance;</pre>
+      <td class='line'>108</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>    this.vendorBalance = argVendorBalance;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenBalance: 87</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenBalance: 164</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenBalance: 99</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenBalance: 201</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>83</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l83s0'>  }</pre>
+      <td class='line'>109</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenBalance: 87</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenBalance: 164</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenBalance: 99</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenBalance: 201</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argVendorEmail Initialize the vendor Email.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setVendorEmail(final String argVendorEmail) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l114s0'>    this.vendorEmail = argVendorEmail;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenEmail: 108</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenEmail: 212</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenEmail: 108</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenEmail: 212</li>
         </ol>
       </td>
     </tr>
@@ -359,25 +503,52 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>87</td><td>&nbsp;</td>
+      <td class='line'>119</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final int getVendorId() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>88</td><td class='count'>11</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>    return this.vendorId;</pre>
+      <td class='line'>120</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l120s0'>    return this.vendorId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 33</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 97</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenId: 39, 41</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 183</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 35</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 119</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenId: 41, 43</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 231</li>
           <li>com.hexaware.FTP111.test.model.VendorTest#testVendor: 29</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>89</td><td>&nbsp;</td>
+      <td class='line'>121</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return this vendor Name.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getVendorName() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>    return this.vendorName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 36</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 121</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenName: 50, 52</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVendor: 30</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -387,21 +558,21 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>93</td><td>&nbsp;</td>
+      <td class='line'>131</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final String getVenPass() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>94</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l94s0'>    return this.venPass;</pre>
+      <td class='line'>132</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l132s0'>    return this.venPass;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPass: 49, 51</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPass: 61, 63</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>95</td><td>&nbsp;</td>
+      <td class='line'>133</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -411,21 +582,21 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>99</td><td>&nbsp;</td>
+      <td class='line'>137</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final String getVendorFeedback() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>100</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>    return this.vendorFeedback;</pre>
+      <td class='line'>138</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l138s0'>    return this.vendorFeedback;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenFeedback: 59, 61</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenFeedback: 71, 73</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>101</td><td>&nbsp;</td>
+      <td class='line'>139</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -435,24 +606,24 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>105</td><td>&nbsp;</td>
+      <td class='line'>143</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final String getVendorPhone() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>106</td><td class='count'>10</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>    return this.vendorPhone;</pre>
+      <td class='line'>144</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l144s0'>    return this.vendorPhone;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 34</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPhone: 68, 70</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 99</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVendor: 30</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 37</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenPhone: 80, 82</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 123</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVendor: 31</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>107</td><td>&nbsp;</td>
+      <td class='line'>145</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -462,24 +633,24 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>111</td><td>&nbsp;</td>
+      <td class='line'>149</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final String getVendorAccNo() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>112</td><td class='count'>10</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>    return this.vendorAccNo;</pre>
+      <td class='line'>150</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l150s0'>    return this.vendorAccNo;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 35</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenAccNo: 77, 79</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 101</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVendor: 31</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 38</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenAccNo: 89, 91</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 125</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVendor: 32</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>113</td><td>&nbsp;</td>
+      <td class='line'>151</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -489,211 +660,260 @@ import java.util.Objects;</div><span>import ...</span></pre></td>
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>117</td><td>&nbsp;</td>
+      <td class='line'>155</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final double getVendorBalance() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>118</td><td class='count'>10</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l118s0'>    return this.vendorBalance;</pre>
+      <td class='line'>156</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l156s0'>    return this.vendorBalance;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 36</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 103</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVenBalance: 86, 88</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testVendor: 32</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 39</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 127</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenBalance: 98, 100</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVendor: 33</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>119</td><td>&nbsp;</td>
+      <td class='line'>157</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
-      <td class='line'>120</td><td>&nbsp;</td>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return this vendor email.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>161</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getVendorEmail() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l162s0'>    return this.vendorEmail;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 40</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVenEmail: 107, 109</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#vendorDefault: 129</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testVendor: 34</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>163</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>165</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>121</td><td>&nbsp;</td>
+      <td class='line'>166</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final boolean equals(final Object obj) {</pre></td>
     </tr>
     <tr>
       <td></td><td class='count'>8</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#8e7100' onclick='hidePath()'>Path coverage: 4/9</span>
-        <span class='covered' onclick="showPath(this,'l122s0 l123s0')">A: 1</span>
-        <span class='covered' onclick="showPath(this,'l122s0 l125s0 l126s0')">B: 1</span>
-        <span class='covered' onclick="showPath(this,'l122s0 l125s0 l128s0 l129s0 l129s1 l130s0 l130s1 l131s0 l131s1 l132s0 l132s1 l133s0 l133s1 l134s0 l135s0')">C: 5</span>
-        <span class='covered' onclick="showPath(this,'l122s0 l125s0 l128s0 l129s0 l137s0')">D: 1</span>
-        <span class='uncovered' onclick="showPath(this,'l122s0 l125s0 l128s0 l129s0 l129s1 l130s0 l137s0')">E: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l122s0 l125s0 l128s0 l129s0 l129s1 l130s0 l130s1 l131s0 l137s0')">F: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l122s0 l125s0 l128s0 l129s0 l129s1 l130s0 l130s1 l131s0 l131s1 l132s0 l137s0')">G: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l122s0 l125s0 l128s0 l129s0 l129s1 l130s0 l130s1 l131s0 l131s1 l132s0 l132s1 l133s0 l137s0')">H: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l122s0 l125s0 l128s0 l129s0 l129s1 l130s0 l130s1 l131s0 l131s1 l132s0 l132s1 l133s0 l133s1 l134s0 l137s0')">I: 0</span>
+        <span style='cursor:default; background-color:#a25d00' onclick='hidePath()'>Path coverage: 4/11</span>
+        <span class='covered' onclick="showPath(this,'l167s0 l168s0')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l167s0 l170s0 l171s0')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l167s0 l170s0 l173s0 l174s0 l174s1 l175s0 l175s1 l176s0 l176s1 l177s0 l177s1 l178s0 l178s1 l179s0 l179s1 l180s0 l180s1 l181s0 l182s0')">C: 5</span>
+        <span class='covered' onclick="showPath(this,'l167s0 l170s0 l173s0 l174s0 l184s0')">D: 1</span>
+        <span class='uncovered' onclick="showPath(this,'l167s0 l170s0 l173s0 l174s0 l174s1 l175s0 l184s0')">E: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l167s0 l170s0 l173s0 l174s0 l174s1 l175s0 l175s1 l176s0 l184s0')">F: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l167s0 l170s0 l173s0 l174s0 l174s1 l175s0 l175s1 l176s0 l176s1 l177s0 l184s0')">G: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l167s0 l170s0 l173s0 l174s0 l174s1 l175s0 l175s1 l176s0 l176s1 l177s0 l177s1 l178s0 l184s0')">H: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l167s0 l170s0 l173s0 l174s0 l174s1 l175s0 l175s1 l176s0 l176s1 l177s0 l177s1 l178s0 l178s1 l179s0 l184s0')">I: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l167s0 l170s0 l173s0 l174s0 l174s1 l175s0 l175s1 l176s0 l176s1 l177s0 l177s1 l178s0 l178s1 l179s0 l179s1 l180s0 l184s0')">J: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l167s0 l170s0 l173s0 l174s0 l174s1 l175s0 l175s1 l176s0 l176s1 l177s0 l177s1 l178s0 l178s1 l179s0 l179s1 l180s0 l180s1 l181s0 l184s0')">K: 0</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>122</td><td class='count'>8</td>
-      <td><pre class='prettyprint jmp'>    <span id='l122s0' title='Executions: 8' class='covered cp' onclick='showHide(this,0)'>if (obj == null)</span> {</pre>
+      <td class='line'>167</td><td class='count'>8</td>
+      <td><pre class='prettyprint jmp'>    <span id='l167s0' title='Executions: 8' class='covered cp' onclick='showHide(this,0)'>if (obj == null)</span> {</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 112</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testCusEmptyObjs: 121</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 183</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 138</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testCusEmptyObjs: 147</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 231</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>123</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l123s0'>      return false;</pre>
+      <td class='line'>168</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l168s0'>      return false;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 112</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEmptyObjs: 138</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>124</td><td>&nbsp;</td>
+      <td class='line'>169</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>125</td><td class='count'>7</td>
-      <td><pre class='prettyprint jmp'>    <span id='l125s0' title='Executions: 7' class='covered cp' onclick='showHide(this,0)'>if (getClass() != obj.getClass())</span> {</pre>
+      <td class='line'>170</td><td class='count'>7</td>
+      <td><pre class='prettyprint jmp'>    <span id='l170s0' title='Executions: 7' class='covered cp' onclick='showHide(this,0)'>if (getClass() != obj.getClass())</span> {</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testCusEmptyObjs: 121</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 183</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testCusEmptyObjs: 147</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 231</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>126</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>      return false;</pre>
+      <td class='line'>171</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l171s0'>      return false;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testCusEmptyObjs: 121</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testCusEmptyObjs: 147</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>127</td><td>&nbsp;</td>
+      <td class='line'>172</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>128</td><td class='count'>6</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l128s0'>    Vendor vendor = (Vendor) obj;</pre>
+      <td class='line'>173</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l173s0'>    Vendor vendor = (Vendor) obj;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 183</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 231</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>129</td><td class='count'>6</td>
-      <td><pre class='prettyprint jmp'>    <span id='l129s0' title='Executions: 6' class='covered cp' onclick='showHide(this,0)'>if (Objects.equals(vendorId, vendor.getVendorId())</span></pre>
+      <td class='line'>174</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>    <span id='l174s0' title='Executions: 6' class='covered cp' onclick='showHide(this,0)'>if (Objects.equals(vendorId, vendor.getVendorId())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 183</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 231</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>130</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l130s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(venPass, vendor.getVenPass())</span></pre>
+      <td class='line'>175</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l175s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(vendorName, vendor.getVendorName())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>131</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l131s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(vendorFeedback, vendor.getVendorFeedback())</span></pre>
+      <td class='line'>176</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>         && <span id='l176s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(venPass, vendor.getVenPass())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>132</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l132s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(vendorPhone, vendor.getVendorPhone())</span></pre>
+      <td class='line'>177</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l177s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(vendorFeedback, vendor.getVendorFeedback())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>133</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l133s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(vendorAccNo, vendor.getVendorAccNo())</span></pre>
+      <td class='line'>178</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l178s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(vendorPhone, vendor.getVendorPhone())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>134</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l134s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(vendorBalance, vendor.getVendorBalance())) {</span></pre>
+      <td class='line'>179</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l179s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(vendorAccNo, vendor.getVendorAccNo())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>135</td><td class='count'>5</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l135s0'>      return true;</pre>
+      <td class='line'>180</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l180s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(vendorBalance, vendor.getVendorBalance())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 174x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>136</td><td>&nbsp;</td>
+      <td class='line'>181</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l181s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(vendorEmail, vendor.getVendorEmail())) {</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l182s0'>      return true;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.VendorFactoryTest#testVendorShow: 141x3</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testEquals: 222x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>183</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>137</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l137s0'>    return false;</pre>
+      <td class='line'>184</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l184s0'>    return false;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 183</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testNotEquals: 231</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>138</td><td>&nbsp;</td>
+      <td class='line'>185</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
-      <td class='line'>139</td><td>&nbsp;</td>
+      <td class='line'>186</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>140</td><td>&nbsp;</td>
+      <td class='line'>187</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public final int hashCode() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>141</td><td class='count'>16</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l141s0'>    return Objects.hash(vendorId, venPass, vendorFeedback, vendorPhone, vendorAccNo, vendorBalance);</pre>
+      <td class='line'>188</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l188s0'>    return Objects.hash(vendorId, vendorName, venPass, vendorFeedback, vendorPhone, vendorAccNo, vendorBalance, vendorEmail);</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 141x2, 143x2</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenId: 130x2, 132x2</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenAccNo: 152x2, 154x2</li>
-          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenBalance: 163x2, 165x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenPhn: 178x2, 180x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenName: 167x2, 169x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenId: 156x2, 158x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenAccNo: 189x2, 191x2</li>
+          <li>com.hexaware.FTP111.test.model.VendorTest#testHashVenEmail: 211x2, 213</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>142</td><td>&nbsp;</td>
+      <td class='line'>189</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
-      <td class='line'>143</td><td>&nbsp;</td>
+      <td class='line'>190</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

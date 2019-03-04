@@ -113,44 +113,75 @@ class CliMain {
       mainMenu();
     }
     List<MenuDetails> foodlist = MenuFactory.getMenuDetails(foodId);
-    System.out.println("----------------------------------------------------------------------------------------------------------------------");
-    System.out.printf("%4s %17s %19s %25s %25s", "Menu Item Id", "Vendor Id", "Menu Vendor Price", "Menu Vendor Rating", "Calories");
+    System.out.println("--------------------------------------------------------------------------------------------------------------------");
+    System.out.printf("%10s %17s %10s %18s %15s %20s %15s", "Menu Item Id", "Menu Item Name", "Vendor Id", "Vendor Name", "Menu Price",
+                   "Menu Vendor Rating", "Calories");
     System.out.println();
-    System.out.println("----------------------------------------------------------------------------------------------------------------------");
+    System.out.println("---------------------------------------------------------------------------------------------------------------------");
     for (MenuDetails md : foodlist) {
-      System.out.format("%4s %20s %20s %25s %25s", md.getMenItemId(), md.getVenId(), Math.round(md.getMenVenPrice()), md.getMenVenRating(),
-          +md.getMenCalories());
+      System.out.format("%10s %17s %10s %18s %15s %20s %15s", md.getMenItemId(), md.getMenItemName(), md.getVenId(), md.getVendorName(),
+                        +Math.round(md.getMenVenPrice()), md.getMenVenRating(), md.getMenCalories());
       System.out.println();
     }
-    System.out.println("--------------------------------------------------------------------------------------------------------------");
+    System.out.println("---------------------------------------------------------------------------------------------------------------------");
   }
 /**
 *  method display all the items ordered by the customer.
  */
   private void orderDetails() {
-    System.out.println("Enter Customer Id :");
-    int cusId = option.nextInt();
-    System.out.println("Enter Password");
-    String cusPass = option.next();
-    try {
-      Validators.validateCustomerId(cusId, cusPass);
-    } catch (IllegalArgumentException e) {
-      System.out.println(e.getMessage());
-      mainMenu();
-    }
-    List<Orders> orderlist = OrdersFactory.getOrderDetails(cusId);
-    System.out.println("---------------------------------------------------------------------------------------------------"
-        + "-----------------");
-    System.out.printf("%5s %10s %18s %18s %15s %20s", "Order Id", "Customer Id", "Wallet Trans Id",
-                      "Order Total Price", "Order Status", "Order Date Time");
-    System.out.println();
-    System.out.println("------------------------------------------------------------------------------------------------------------");
-    for (Orders o : orderlist) {
-      System.out.format("%3s %10s %15s %15s %20s %22s", o.getOrderId(), o.getCusId(), o.getWalTransId(),
-          +Math.round(o.getOrderTotalPrice()), o.getOrderStatus(), o.getOrderDate());
+    System.out.println("Order history: \n 1.Customer Order History \n 2. Vendor Order History");
+    int choice = option.nextInt();
+    if (choice == 1) {
+      System.out.println("Enter Customer Id :");
+      int cusId = option.nextInt();
+      System.out.println("Enter Password");
+      String cusPass = option.next();
+      try {
+        Validators.validateCustomerId(cusId, cusPass);
+      } catch (IllegalArgumentException e) {
+        System.out.println(e.getMessage());
+        mainMenu();
+      }
+      List<Orders> orderlist = OrdersFactory.getOrderDetails(cusId);
+      System.out.println("---------------------------------------------------------------------------------------------------"
+          + "-----------------");
+      System.out.printf("%5s %12s %18s %18s %15s %20s", "Order Id", "Vendor Name", "Vendor Id", "Wallet Trans Id",
+                        "Order Total Price", "Order Status", "Order Date Time");
       System.out.println();
+      System.out.println("------------------------------------------------------------------------------------------------------------");
+      for (Orders o : orderlist) {
+        System.out.format("%3s %12s %15s %15s %20s %22s", o.getOrderId(), o.getVendorName(), o.getVenId(), o.getWalTransId(),
+            +Math.round(o.getOrderTotalPrice()), o.getOrderStatus(), o.getOrderDate());
+        System.out.println();
+      }
+      System.out.println("-------------------------------------------------------------------------------------------------------------");
+    } else if (choice == 2) {
+      System.out.println("Enter the Vendor Id");
+      int venId = option.nextInt();
+      System.out.println("Enter the Vendor Password");
+      String venPass = option.next();
+      try {
+        Validators.validateVenIdandPass(venId, venPass);
+      } catch (IllegalArgumentException e) {
+        System.out.println(e.getMessage());
+        System.out.println();
+        mainMenu();
+      }
+      List<Orders> orderlist = OrdersFactory.showOrdersForVendor(venId);
+      System.out.println("---------------------------------------------------------------------------------------------------"
+              + "-----------------");
+      System.out.printf("%5s %10s %15s %18s %15s %20s", "Order Id", "Customer Id", "Vendor Name", "Wallet Trans Id",
+                            "Order Total Price", "Order Status", "Order Date Time");
+      System.out.println();
+      System.out.println("------------------------------------------------------------------------------------------------------------");
+      for (Orders o : orderlist) {
+        System.out.format("%3s %10s %15s %15s %20s %22s", o.getOrderId(), o.getCusId(), o.getVendorName(), o.getWalTransId(),
+              +Math.round(o.getOrderTotalPrice()), o.getOrderStatus(), o.getOrderDate());
+        System.out.println();
+      }
+      System.out.println("-------------------------------------------------------------------------------------------------------------");
     }
-    System.out.println("-------------------------------------------------------------------------------------------------------------");
+
   }
 /**
 * vendorDetails display all the details of a vendor.
@@ -170,11 +201,13 @@ class CliMain {
     //Vendor[] vendorlist = VendorFactory.vendorDetails();
     List<Vendor> vendorlist = VendorFactory.vendorDetails(venId);
     System.out.println("----------------------------------------------------------------------------------------------------------------------");
-    System.out.printf("%4s %17s %19s %25s", "Vendor Id", "Vendor Phone", "Vendor AccNo", "Vendor Balance");
+    System.out.printf("%4s %17s %17s %19s %20s %25s", "Vendor Id", "Vendor Name", "Vendor Phone", "Vendor AccNo", "Vendor Balance",
+        "Vendor Email");
     System.out.println();
     System.out.println("----------------------------------------------------------------------------------------------------------------------");
     for (Vendor v : vendorlist) {
-      System.out.format("%4d %20s %20s %25s", v.getVendorId(), v.getVendorPhone(), v.getVendorAccNo(), Math.round(v.getVendorBalance()));
+      System.out.format("%4d %20s %20s %20s %20s %25s", v.getVendorId(), v.getVendorName(), v.getVendorPhone(), v.getVendorAccNo(),
+          Math.round(v.getVendorBalance()), v.getVendorEmail());
       System.out.println();
     }
     System.out.println("----------------------------------------------------------------------------------------------------------------------");
@@ -318,11 +351,13 @@ class CliMain {
       int orderOption = option.nextInt();
       System.out.println("Enter \n 1.TO APPROVE \n 2.TO REJECT");
       int optionValue = option.nextInt();
+      System.out.println("Enter the comments:");
+      String comments = option.next();
       if (optionValue == 1) {
-        OrdersFactory.updatePendingOrders(orderOption, OrderStatus.APPROVED, venId);
+        OrdersFactory.updatePendingOrders(orderOption, OrderStatus.APPROVED, comments, venId);
         System.out.println("ORDER APPROVED");
       } else if (optionValue == 2) {
-        OrdersFactory.updatePendingOrders(orderOption, OrderStatus.REJECTED, venId);
+        OrdersFactory.updatePendingOrders(orderOption, OrderStatus.REJECTED, comments, venId);
         System.out.println("ORDER REJECTED");
         double refundAmount = OrdersFactory.getRefundAmount(venId, orderOption);
       // System.out.println("venId" + venId);

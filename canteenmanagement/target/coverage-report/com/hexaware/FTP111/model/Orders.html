@@ -29,11 +29,12 @@
       <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.util.Objects;
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFormat;
 </div><span>import ...</span></pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>9</td><td>&nbsp;</td>
+      <td class='line'>10</td><td>&nbsp;</td>
       <td><pre class='comment'>//import java.util.List;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -45,11 +46,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>15</td><td>&nbsp;</td>
+      <td class='line'>16</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>@JsonIgnoreProperties(ignoreUnknown = true)</pre></td>
     </tr>
     <tr>
-      <td class='line'>16</td><td>&nbsp;</td>
+      <td class='line'>17</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>public class Orders {</pre></td>
     </tr>
     <tr>
@@ -59,15 +60,15 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>20</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l20s0'>  public Orders() {</pre>
+      <td class='line'>21</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l21s0'>  public Orders() {</pre>
         <ol style='display:none'></ol>
       </td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>22</td><td class='count'>0</td>
-      <td><pre class='prettyprint uncovered' id='l22s0'>  }</pre>
+      <td class='line'>23</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l23s0'>  }</pre>
         <ol style='display:none'></ol>
       </td>
     </tr>
@@ -78,38 +79,154 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>26</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 65 Writes: 149'>orderId</span>;</pre></td>
-    </tr>
-    <tr>
       <td class='line'>27</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 61 Writes: 152'>cusId</span>;</pre></td>
+      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 69 Writes: 161'>orderId</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'>28</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private int <span class='instance uncovered' title='Reads: 29 Writes: 85'>venId</span>;</pre></td>
+      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 65 Writes: 164'>cusId</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'>29</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 61 Writes: 152'>walTransId</span>;</pre></td>
+      <td><pre class='prettyprint'>  private int <span class='instance uncovered' title='Reads: 33 Writes: 160'>venId</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'>30</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private double <span class='instance covered' title='Reads: 61 Writes: 152'>orderTotalPrice</span>;</pre></td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 62 Writes: 69'>vendorName</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'>31</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private OrderStatus <span class='instance covered' title='Reads: 60 Writes: 105'>orderStatus</span>;</pre></td>
+      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 65 Writes: 164'>walTransId</span>;</pre></td>
     </tr>
     <tr>
       <td class='line'>32</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private Date <span class='instance covered' title='Reads: 54 Writes: 1'>orderDate</span>;</pre></td>
+      <td><pre class='prettyprint'>  private double <span class='instance covered' title='Reads: 65 Writes: 164'>orderTotalPrice</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private OrderStatus <span class='instance covered' title='Reads: 64 Writes: 113'>orderStatus</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm")</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private Date <span class='instance covered' title='Reads: 58 Writes: 1'>orderDate</span>;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
       <td class='line'></td><td>&nbsp;</td>
       <td class='comment' onclick='showHideLines(this)'><div>/**
 * @param argOrderId to initialize Order id.
+* @param argVenId to initialize Vendor id.
+* @param argCusId to initialize Customer Id.
+* @param argVendorName to initialize vendor name used to get details through constructor.
+* @param argWalTransId to initialize WalTransId id.
+* @param argOrderTotalPrice to initialize OrderTotalPrice.
+* @param argOrderStatus to initialize Orderstatus.
+* used to get details through constructor.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Orders(final int argOrderId, final int argCusId, final int argVenId, final String argVendorName, final int argWalTransId,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>      final double argOrderTotalPrice, final OrderStatus argOrderStatus) {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>    this.orderId = argOrderId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l50s0'>    this.venId = argVenId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>    this.cusId = argCusId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l52s0'>    this.vendorName = argVendorName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>    this.walTransId = argWalTransId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>    this.orderTotalPrice = argOrderTotalPrice;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>    this.orderStatus = argOrderStatus;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argOrderId to initialize Order id.
+* @param argVenId to initialize Vendor id.
 * @param argCusId to initialize Customer Id.
 * @param argWalTransId to initialize WalTransId id.
 * @param argOrderTotalPrice to initialize OrderTotalPrice.
@@ -118,77 +235,55 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>42</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  public Orders(final int argOrderId, final int argCusId, final int argWalTransId,</pre></td>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Orders(final int argOrderId, final int argCusId, final int argVenId, final int argWalTransId,</pre></td>
     </tr>
     <tr>
-      <td class='line'>43</td><td class='count'>62</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>      final double argOrderTotalPrice, final OrderStatus argOrderStatus) {</pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
-        </ol>
+      <td class='line'>67</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l67s0'>      final double argOrderTotalPrice, final OrderStatus argOrderStatus) {</pre>
+        <ol style='display:none'></ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>44</td><td class='count'>62</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>    this.orderId = argOrderId;</pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
-        </ol>
+      <td class='line'>68</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l68s0'>    this.orderId = argOrderId;</pre>
+        <ol style='display:none'></ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>45</td><td class='count'>62</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l45s0'>    this.cusId = argCusId;</pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
-        </ol>
+      <td class='line'>69</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l69s0'>    this.cusId = argCusId;</pre>
+        <ol style='display:none'></ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>46</td><td class='count'>62</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l46s0'>    this.walTransId = argWalTransId;</pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
-        </ol>
+      <td class='line'>70</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l70s0'>    this.venId = argVenId;</pre>
+        <ol style='display:none'></ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>47</td><td class='count'>62</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>    this.orderTotalPrice = argOrderTotalPrice;</pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
-        </ol>
+      <td class='line'>71</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l71s0'>    this.walTransId = argWalTransId;</pre>
+        <ol style='display:none'></ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>48</td><td class='count'>62</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l48s0'>    this.orderStatus = argOrderStatus;</pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
-        </ol>
+      <td class='line'>72</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l72s0'>    this.orderTotalPrice = argOrderTotalPrice;</pre>
+        <ol style='display:none'></ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>49</td><td class='count'>62</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>  }</pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 37, 38, 39, 44x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 118, 119, 120, 127x3</li>
-          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 77, 78</li>
-        </ol>
+      <td class='line'>73</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l73s0'>    this.orderStatus = argOrderStatus;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l74s0'>  }</pre>
+        <ol style='display:none'></ol>
       </td>
     </tr>
     <tr>
@@ -202,72 +297,72 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>57</td><td>&nbsp;</td>
+      <td class='line'>82</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public Orders(final int argOrderId, final int argCusId, final int argWalTransId,</pre></td>
     </tr>
     <tr>
-      <td class='line'>58</td><td class='count'>45</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l58s0'>      final double argOrderTotalPrice) {</pre>
+      <td class='line'>83</td><td class='count'>49</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l83s0'>      final double argOrderTotalPrice) {</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x20, 38x20</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 191, 192</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 182, 183</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x22, 38x22</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 202, 203</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 193, 194</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>59</td><td class='count'>45</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>    this.orderId = argOrderId;</pre>
+      <td class='line'>84</td><td class='count'>49</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>    this.orderId = argOrderId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x20, 38x20</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 191, 192</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 182, 183</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x22, 38x22</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 202, 203</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 193, 194</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>60</td><td class='count'>45</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>    this.cusId = argCusId;</pre>
+      <td class='line'>85</td><td class='count'>49</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>    this.cusId = argCusId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x20, 38x20</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 191, 192</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 182, 183</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x22, 38x22</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 202, 203</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 193, 194</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>61</td><td class='count'>45</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>    this.walTransId = argWalTransId;</pre>
+      <td class='line'>86</td><td class='count'>49</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>    this.walTransId = argWalTransId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x20, 38x20</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 191, 192</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 182, 183</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x22, 38x22</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 202, 203</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 193, 194</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>62</td><td class='count'>45</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>    this.orderTotalPrice = argOrderTotalPrice;</pre>
+      <td class='line'>87</td><td class='count'>49</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>    this.orderTotalPrice = argOrderTotalPrice;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x20, 38x20</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 191, 192</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 182, 183</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x22, 38x22</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 202, 203</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 193, 194</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>63</td><td class='count'>45</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>  }</pre>
+      <td class='line'>88</td><td class='count'>49</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x20, 38x20</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 191, 192</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 182, 183</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup1: 37x22, 38x22</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 202, 203</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 193, 194</li>
         </ol>
       </td>
     </tr>
@@ -282,60 +377,60 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>71</td><td>&nbsp;</td>
+      <td class='line'>96</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public Orders(final int argCusId, final int argVenId,</pre></td>
     </tr>
     <tr>
-      <td class='line'>72</td><td class='count'>43</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>      final double argOrderTotalPrice, final int argWalTransId) {</pre>
+      <td class='line'>97</td><td class='count'>47</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>      final double argOrderTotalPrice, final int argWalTransId) {</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 161, 165, 167</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x20, 46x20</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x22, 46x22</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>73</td><td class='count'>43</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>    this.cusId = argCusId;</pre>
+      <td class='line'>98</td><td class='count'>47</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>    this.cusId = argCusId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 161, 165, 167</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x20, 46x20</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x22, 46x22</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>74</td><td class='count'>43</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>    this.venId = argVenId;</pre>
+      <td class='line'>99</td><td class='count'>47</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l99s0'>    this.venId = argVenId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 161, 165, 167</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x20, 46x20</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x22, 46x22</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>75</td><td class='count'>43</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>    this.orderTotalPrice = argOrderTotalPrice;</pre>
+      <td class='line'>100</td><td class='count'>47</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>    this.orderTotalPrice = argOrderTotalPrice;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 161, 165, 167</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x20, 46x20</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x22, 46x22</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>76</td><td class='count'>43</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l76s0'>    this.walTransId = argWalTransId;</pre>
+      <td class='line'>101</td><td class='count'>47</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l101s0'>    this.walTransId = argWalTransId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 161, 165, 167</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x20, 46x20</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x22, 46x22</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>77</td><td class='count'>43</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>  }</pre>
+      <td class='line'>102</td><td class='count'>47</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 161, 165, 167</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x20, 46x20</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup2: 45x22, 46x22</li>
         </ol>
       </td>
     </tr>
@@ -349,272 +444,287 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>84</td><td class='count'>40</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>  public Orders(final int argOrderId, final OrderStatus argOrderStatus, final int argVenId) {</pre>
+      <td class='line'>109</td><td class='count'>44</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>  public Orders(final int argOrderId, final OrderStatus argOrderStatus, final int argVenId) {</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup3: 53x20, 54x20</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup3: 53x22, 54x22</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>85</td><td class='count'>40</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>    this.orderId = argOrderId;</pre>
+      <td class='line'>110</td><td class='count'>44</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l110s0'>    this.orderId = argOrderId;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup3: 53x20, 54x20</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup3: 53x22, 54x22</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>86</td><td class='count'>40</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>    this.orderStatus = argOrderStatus;</pre>
+      <td class='line'>111</td><td class='count'>44</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l111s0'>    this.orderStatus = argOrderStatus;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup3: 53x20, 54x20</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup3: 53x22, 54x22</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>87</td><td class='count'>40</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>    this.venId = argVenId;</pre>
+      <td class='line'>112</td><td class='count'>44</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>    this.venId = argVenId;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup3: 53x20, 54x20</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup3: 53x22, 54x22</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>88</td><td class='count'>40</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>  }</pre>
+      <td class='line'>113</td><td class='count'>44</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l113s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#setup3: 53x20, 54x20</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#setup3: 53x22, 54x22</li>
         </ol>
       </td>
     </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
-      <td class='line'>89</td><td>&nbsp;</td>
+      <td class='line'>115</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>90</td><td>&nbsp;</td>
+      <td class='line'>116</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public final boolean equals(final Object obj) {</pre></td>
     </tr>
     <tr>
       <td></td><td class='count'>19</td>
       <td class='paths'>
-        <span style='cursor:default; background-color:#8e7100' onclick='hidePath()'>Path coverage: 4/9</span>
-        <span class='covered' onclick="showPath(this,'l91s0 l92s0')">A: 1</span>
-        <span class='covered' onclick="showPath(this,'l91s0 l94s0 l95s0')">B: 1</span>
-        <span class='covered' onclick="showPath(this,'l91s0 l94s0 l97s0 l98s0 l98s1 l99s0 l99s1 l100s0 l100s1 l101s0 l101s1 l102s0 l102s1 l103s0 l104s0')">C: 15</span>
-        <span class='covered' onclick="showPath(this,'l91s0 l94s0 l97s0 l98s0 l106s0')">D: 2</span>
-        <span class='uncovered' onclick="showPath(this,'l91s0 l94s0 l97s0 l98s0 l98s1 l99s0 l106s0')">E: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l91s0 l94s0 l97s0 l98s0 l98s1 l99s0 l99s1 l100s0 l106s0')">F: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l91s0 l94s0 l97s0 l98s0 l98s1 l99s0 l99s1 l100s0 l100s1 l101s0 l106s0')">G: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l91s0 l94s0 l97s0 l98s0 l98s1 l99s0 l99s1 l100s0 l100s1 l101s0 l101s1 l102s0 l106s0')">H: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l91s0 l94s0 l97s0 l98s0 l98s1 l99s0 l99s1 l100s0 l100s1 l101s0 l101s1 l102s0 l102s1 l103s0 l106s0')">I: 0</span>
+        <span style='cursor:default; background-color:#996600' onclick='hidePath()'>Path coverage: 4/10</span>
+        <span class='covered' onclick="showPath(this,'l117s0 l118s0')">A: 1</span>
+        <span class='covered' onclick="showPath(this,'l117s0 l120s0 l121s0')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l117s0 l120s0 l123s0 l124s0 l124s1 l125s0 l125s1 l126s0 l126s1 l127s0 l127s1 l128s0 l128s1 l129s0 l129s1 l130s0 l131s0')">C: 15</span>
+        <span class='covered' onclick="showPath(this,'l117s0 l120s0 l123s0 l124s0 l133s0')">D: 2</span>
+        <span class='uncovered' onclick="showPath(this,'l117s0 l120s0 l123s0 l124s0 l124s1 l125s0 l133s0')">E: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l117s0 l120s0 l123s0 l124s0 l124s1 l125s0 l125s1 l126s0 l133s0')">F: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l117s0 l120s0 l123s0 l124s0 l124s1 l125s0 l125s1 l126s0 l126s1 l127s0 l133s0')">G: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l117s0 l120s0 l123s0 l124s0 l124s1 l125s0 l125s1 l126s0 l126s1 l127s0 l127s1 l128s0 l133s0')">H: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l117s0 l120s0 l123s0 l124s0 l124s1 l125s0 l125s1 l126s0 l126s1 l127s0 l127s1 l128s0 l128s1 l129s0 l133s0')">I: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l117s0 l120s0 l123s0 l124s0 l124s1 l125s0 l125s1 l126s0 l126s1 l127s0 l127s1 l128s0 l128s1 l129s0 l129s1 l130s0 l133s0')">J: 0</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>91</td><td class='count'>19</td>
-      <td><pre class='prettyprint jmp'>    <span id='l91s0' title='Executions: 19' class='covered cp' onclick='showHide(this,0)'>if (obj == null)</span> {</pre>
+      <td class='line'>117</td><td class='count'>19</td>
+      <td><pre class='prettyprint jmp'>    <span id='l117s0' title='Executions: 19' class='covered cp' onclick='showHide(this,0)'>if (obj == null)</span> {</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2, 174, 175</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals1: 164</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2, 185, 186</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals1: 175</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>92</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l92s0'>      return false;</pre>
+      <td class='line'>118</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l118s0'>      return false;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 174</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 185</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>93</td><td>&nbsp;</td>
+      <td class='line'>119</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>94</td><td class='count'>18</td>
-      <td><pre class='prettyprint jmp'>    <span id='l94s0' title='Executions: 18' class='covered cp' onclick='showHide(this,0)'>if (getClass() != obj.getClass())</span> {</pre>
+      <td class='line'>120</td><td class='count'>18</td>
+      <td><pre class='prettyprint jmp'>    <span id='l120s0' title='Executions: 18' class='covered cp' onclick='showHide(this,0)'>if (getClass() != obj.getClass())</span> {</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2, 175</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals1: 164</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 184</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2, 186</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals1: 175</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 195</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>95</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l95s0'>      return false;</pre>
+      <td class='line'>121</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>      return false;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 175</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 186</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>96</td><td>&nbsp;</td>
+      <td class='line'>122</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>97</td><td class='count'>17</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>    Orders orders = (Orders) obj;</pre>
+      <td class='line'>123</td><td class='count'>17</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l123s0'>    Orders orders = (Orders) obj;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals1: 164</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 184</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals1: 175</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 195</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>98</td><td class='count'>17</td>
-      <td><pre class='prettyprint jmp'>    <span id='l98s0' title='Executions: 17' class='covered cp' onclick='showHide(this,0)'>if (Objects.equals(orderId, orders.getOrderId())</span></pre>
+      <td class='line'>124</td><td class='count'>17</td>
+      <td><pre class='prettyprint jmp'>    <span id='l124s0' title='Executions: 17' class='covered cp' onclick='showHide(this,0)'>if (Objects.equals(orderId, orders.getOrderId())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals1: 164</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 184</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals1: 175</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 195</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>99</td><td class='count'>15</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l99s0' title='Executions: 15' class='covered cp' onclick='showHide(this,0)'>Objects.equals(cusId, orders.getCusId())</span></pre>
+      <td class='line'>125</td><td class='count'>15</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l125s0' title='Executions: 15' class='covered cp' onclick='showHide(this,0)'>Objects.equals(cusId, orders.getCusId())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>100</td><td class='count'>15</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l100s0' title='Executions: 15' class='covered cp' onclick='showHide(this,0)'>Objects.equals(walTransId, orders.getWalTransId())</span></pre>
+      <td class='line'>126</td><td class='count'>15</td>
+      <td><pre class='prettyprint jmp'>         && <span id='l126s0' title='Executions: 15' class='covered cp' onclick='showHide(this,0)'>Objects.equals(vendorName, orders.getVendorName())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>101</td><td class='count'>15</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l101s0' title='Executions: 15' class='covered cp' onclick='showHide(this,0)'>Objects.equals(orderTotalPrice, orders.getOrderTotalPrice())</span></pre>
+      <td class='line'>127</td><td class='count'>15</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l127s0' title='Executions: 15' class='covered cp' onclick='showHide(this,0)'>Objects.equals(walTransId, orders.getWalTransId())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>102</td><td class='count'>15</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l102s0' title='Executions: 15' class='covered cp' onclick='showHide(this,0)'>Objects.equals(orderStatus, orders.getOrderStatus())</span></pre>
+      <td class='line'>128</td><td class='count'>15</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l128s0' title='Executions: 15' class='covered cp' onclick='showHide(this,0)'>Objects.equals(orderTotalPrice, orders.getOrderTotalPrice())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>103</td><td class='count'>15</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l103s0' title='Executions: 15' class='covered cp' onclick='showHide(this,0)'>Objects.equals(orderDate, orders.getOrderDate())) {</span></pre>
+      <td class='line'>129</td><td class='count'>15</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l129s0' title='Executions: 15' class='covered cp' onclick='showHide(this,0)'>Objects.equals(orderStatus, orders.getOrderStatus())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>104</td><td class='count'>15</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>      return true;</pre>
+      <td class='line'>130</td><td class='count'>15</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l130s0' title='Executions: 15' class='covered cp' onclick='showHide(this,0)'>Objects.equals(orderDate, orders.getOrderDate())) {</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>105</td><td>&nbsp;</td>
+      <td class='line'>131</td><td class='count'>15</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l131s0'>      return true;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>106</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>    return false;</pre>
+      <td class='line'>133</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l133s0'>    return false;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals1: 164</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 184</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals1: 175</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testNotEquals2: 195</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>107</td><td>&nbsp;</td>
+      <td class='line'>134</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
-      <td class='line'>108</td><td>&nbsp;</td>
+      <td class='line'>135</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>109</td><td>&nbsp;</td>
+      <td class='line'>136</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public final int hashCode() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>110</td><td class='count'>24</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l110s0'>    return Objects.hash(orderId, cusId, venId, walTransId, orderTotalPrice, orderStatus, orderDate);</pre>
+      <td class='line'>137</td><td class='count'>28</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l137s0'>    return Objects.hash(orderId, cusId, venId, vendorName, walTransId, orderTotalPrice, orderStatus, orderDate);</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrderTotalPrice: 246x2, 248x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeCusId: 209x2, 211x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrdId: 200x2, 202x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeVenId: 218x2, 220x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeWalTranId: 228x2, 230</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrderTotalPrice: 257x2, 259x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeCusId: 220x2, 222x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrdId: 211x2, 213x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeVenId: 229x2, 231x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeVendorName: 266x2, 268</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>111</td><td>&nbsp;</td>
+      <td class='line'>138</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
-      <td class='line'>112</td><td>&nbsp;</td>
+      <td class='line'>139</td><td>&nbsp;</td>
       <td><pre class='comment'>/* setting up the setters for orders */</pre></td>
     </tr>
     <tr>
@@ -624,24 +734,24 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>116</td><td>&nbsp;</td>
+      <td class='line'>143</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setOrderId(final int argOrderId) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>117</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l117s0'>    this.orderId = argOrderId;</pre>
+      <td class='line'>144</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l144s0'>    this.orderId = argOrderId;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrdId: 201</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderId: 103</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrdId: 212</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderId: 104</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>118</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l118s0'>  }</pre>
+      <td class='line'>145</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l145s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrdId: 201</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderId: 103</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrdId: 212</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderId: 104</li>
         </ol>
       </td>
     </tr>
@@ -652,24 +762,24 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>122</td><td>&nbsp;</td>
+      <td class='line'>149</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setCusId(final int argCusId) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>123</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l123s0'>    this.cusId = argCusId;</pre>
+      <td class='line'>150</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l150s0'>    this.cusId = argCusId;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeCusId: 210</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testCusId: 113</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeCusId: 221</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testCusId: 134</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>124</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l124s0'>  }</pre>
+      <td class='line'>151</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l151s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeCusId: 210</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testCusId: 113</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeCusId: 221</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testCusId: 134</li>
         </ol>
       </td>
     </tr>
@@ -680,24 +790,26 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>128</td><td>&nbsp;</td>
+      <td class='line'>155</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setVenId(final int argVenId) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>129</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l129s0'>    this.venId = argVenId;</pre>
+      <td class='line'>156</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l156s0'>    this.venId = argVenId;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeVenId: 219</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testVenId: 123</li>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeVenId: 230</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testVenId: 124</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>130</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l130s0'>  }</pre>
+      <td class='line'>157</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l157s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeVenId: 219</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testVenId: 123</li>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeVenId: 230</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testVenId: 124</li>
         </ol>
       </td>
     </tr>
@@ -708,24 +820,24 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>134</td><td>&nbsp;</td>
+      <td class='line'>161</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setWalTransId(final int argWalTransId) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>135</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l135s0'>    this.walTransId = argWalTransId;</pre>
+      <td class='line'>162</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l162s0'>    this.walTransId = argWalTransId;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testWalTransId: 133</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeWalTranId: 229</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testWalTransId: 144</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeWalTranId: 240</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>136</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l136s0'>  }</pre>
+      <td class='line'>163</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l163s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testWalTransId: 133</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeWalTranId: 229</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testWalTransId: 144</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeWalTranId: 240</li>
         </ol>
       </td>
     </tr>
@@ -736,24 +848,24 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>140</td><td>&nbsp;</td>
+      <td class='line'>167</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setOrderTotalPrice(final double argOrderTotalPrice) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>141</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l141s0'>    this.orderTotalPrice = argOrderTotalPrice;</pre>
+      <td class='line'>168</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l168s0'>    this.orderTotalPrice = argOrderTotalPrice;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrderTotalPrice: 247</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderTotalPrice: 153</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrderTotalPrice: 258</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderTotalPrice: 164</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>142</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l142s0'>  }</pre>
+      <td class='line'>169</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l169s0'>  }</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrderTotalPrice: 247</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderTotalPrice: 153</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrderTotalPrice: 258</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderTotalPrice: 164</li>
         </ol>
       </td>
     </tr>
@@ -764,26 +876,56 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>146</td><td>&nbsp;</td>
+      <td class='line'>173</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setOrderStatus(final OrderStatus argOrderStatus) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>147</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l147s0'>    this.orderStatus = argOrderStatus;</pre>
+      <td class='line'>174</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l174s0'>    this.orderStatus = argOrderStatus;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrderStatus: 238</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderStatus: 143</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrderStatus: 249</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderStatus: 154</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>148</td><td class='count'>3</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l148s0'>  }</pre>
+      <td class='line'>175</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l175s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrderStatus: 238</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderStatus: 143</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeOrderStatus: 249</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrderStatus: 154</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @param argVendorName Initialize the vendor Name.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>179</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setVendorName(final String argVendorName) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>180</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l180s0'>    this.vendorName = argVendorName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeVendorName: 267</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testVendorName: 114</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>181</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l181s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testHashCodeVendorName: 267</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testVendorName: 114</li>
         </ol>
       </td>
     </tr>
@@ -794,27 +936,27 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>  /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>152</td><td>&nbsp;</td>
+      <td class='line'>185</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setOrderDate(final Date argOrderDate) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>153</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l153s0'>    this.orderDate = argOrderDate;</pre>
+      <td class='line'>186</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l186s0'>    this.orderDate = argOrderDate;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>154</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l154s0'>  }</pre>
+      <td class='line'>187</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l187s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 33</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>155</td><td>&nbsp;</td>
+      <td class='line'>188</td><td>&nbsp;</td>
       <td><pre class='comment'>/* setting up the getters for orders */</pre></td>
     </tr>
     <tr>
@@ -824,27 +966,27 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>159</td><td>&nbsp;</td>
+      <td class='line'>192</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final int getOrderId() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>160</td><td class='count'>24</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l160s0'>    return this.orderId;</pre>
+      <td class='line'>193</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l193s0'>    return this.orderId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 34</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
           <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor1: 61</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor2: 72</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor2: 73</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>161</td><td>&nbsp;</td>
+      <td class='line'>194</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -854,27 +996,27 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>165</td><td>&nbsp;</td>
+      <td class='line'>198</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final int getCusId() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>166</td><td class='count'>22</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l166s0'>    return this.cusId;</pre>
+      <td class='line'>199</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l199s0'>    return this.cusId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 35</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
           <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor1: 62</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor2: 73</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor2: 74</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>167</td><td>&nbsp;</td>
+      <td class='line'>200</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -884,21 +1026,21 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>171</td><td>&nbsp;</td>
+      <td class='line'>204</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final int getVenId() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>172</td><td class='count'>5</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l172s0'>    return this.venId;</pre>
+      <td class='line'>205</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l205s0'>    return this.venId;</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor3: 83</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor4: 94</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testVenId: 122, 124, 125</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor3: 84</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor4: 95</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testVenId: 123, 125, 126</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>173</td><td>&nbsp;</td>
+      <td class='line'>206</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -908,25 +1050,25 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>177</td><td>&nbsp;</td>
+      <td class='line'>210</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final int getWalTransId() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>178</td><td class='count'>22</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l178s0'>    return this.walTransId;</pre>
+      <td class='line'>211</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l211s0'>    return this.walTransId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 36</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testWalTransId: 132, 134, 135</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testWalTransId: 143, 145, 146</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>179</td><td>&nbsp;</td>
+      <td class='line'>212</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -936,27 +1078,27 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>183</td><td>&nbsp;</td>
+      <td class='line'>216</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final double getOrderTotalPrice() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>184</td><td class='count'>22</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l184s0'>    return this.orderTotalPrice;</pre>
+      <td class='line'>217</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l217s0'>    return this.orderTotalPrice;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 37</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor1: 64</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor2: 75</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor1: 65</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor2: 76</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>185</td><td>&nbsp;</td>
+      <td class='line'>218</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -966,27 +1108,27 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>189</td><td>&nbsp;</td>
+      <td class='line'>222</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final OrderStatus getOrderStatus() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>190</td><td class='count'>21</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l190s0'>    return this.orderStatus;</pre>
+      <td class='line'>223</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l223s0'>    return this.orderStatus;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
           <li>com.hexaware.FTP111.persistence.OrdersMapperTest#testMap: 38</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor1: 65</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor4: 93</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor1: 66</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor4: 94</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>191</td><td>&nbsp;</td>
+      <td class='line'>224</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -996,28 +1138,57 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>195</td><td>&nbsp;</td>
+      <td class='line'>228</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final Date getOrderDate() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>196</td><td class='count'>15</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l196s0'>    return this.orderDate;</pre>
+      <td class='line'>229</td><td class='count'>15</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l229s0'>    return this.orderDate;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
           <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 173x2</li>
-          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 193x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>197</td><td>&nbsp;</td>
+      <td class='line'>230</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
-      <td class='line'>198</td><td>&nbsp;</td>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+* @return this vendor Name.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>234</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getVendorName() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>235</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l235s0'>    return this.vendorName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#testGetshowOrders: 56x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#getOrderDetailsTest: 141x3</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#setPlaceOrderTest: 165, 167</li>
+          <li>com.hexaware.FTP111.factory.OrdersFactoryTest#orderDetailsTest: 97x3</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals1: 184x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testEquals2: 204x2</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testOrdersConstructor1: 63</li>
+          <li>com.hexaware.FTP111.test.model.OrdersTest#testVendorName: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>236</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>237</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

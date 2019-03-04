@@ -37,7 +37,7 @@ import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></t
       <td class='line'>14</td><td class='count'>1</td>
       <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l14s0'>public class VendorMapper implements ResultSetMapper&lt;Vendor> {</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 31</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 33</li>
         </ol>
       </td>
     </tr>
@@ -62,19 +62,27 @@ import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></t
        */</div><span>      /*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>26</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l26s0'>    return new Vendor(rs.getInt("VEN_ID"), rs.getString("VEN_PHONE"), rs.getString("VEN_ACCOUNT_NO"), rs.getDouble("VEN_BALANCE"));</pre>
+      <td class='line'>26</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l26s0'>    return new Vendor(rs.getInt("VEN_ID"), rs.getString("VEN_NAME"), rs.getString("VEN_PHONE"), rs.getString("VEN_ACCOUNT_NO"),</pre>
         <ol style='display:none'>
-          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 32</li>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 34x2</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>27</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  }</pre></td>
+      <td class='line'>27</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l27s0'>      rs.getDouble("VEN_BALANCE"),  rs.getString("VEN_EMAIL"));</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.persistence.VendorMapperTest#testMap: 34</li>
+        </ol>
+      </td>
     </tr>
     <tr>
       <td class='line'>28</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

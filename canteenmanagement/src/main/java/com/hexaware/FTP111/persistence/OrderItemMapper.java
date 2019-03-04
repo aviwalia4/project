@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.hexaware.FTP111.model.OrderItem;
+import com.hexaware.FTP111.model.OrderStatus;
 
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import org.skife.jdbi.v2.StatementContext;
@@ -24,8 +25,13 @@ public class OrderItemMapper implements ResultSetMapper<OrderItem> {
      /**
        * @return Pending Orders to vendor.
        */
-    // return new OrderItem(rs.getInt("VEN_ID"), rs.getInt("MEN_ITEM_ID"), rs.getDouble("ORD_ITEM_PRICE"), rs.getInt("ORD_ID"));
-    return new OrderItem(rs.getInt("ORD_ITEM_ID"), rs.getInt("VEN_ID"), rs.getInt("CUS_ID"), rs.getDouble("ORD_ITEM_PRICE"),
-      rs.getString("ORD_STATUS"));
+    OrderItem orders = new OrderItem(rs.getInt("CUS_ID"),
+        rs.getInt("MEN_ITEM_ID"),
+        rs.getInt("ORD_ITEM_ID"),
+        rs.getDouble("ORD_ITEM_PRICE"),
+        rs.getInt("ORD_ID"),
+        rs.getString("COMMENTS"));
+    orders.setOrderStatus(OrderStatus.valueOf(rs.getString("ORD_STATUS")));
+    return orders;
   }
 }

@@ -12,5 +12,7 @@ public enum OrderStatus {
     /** Pending. */
     PENDING,
     /** Rejected. */
-    REJECTED;
+    REJECTED,
+    /** Partial. */
+    PARTIAL;
 }

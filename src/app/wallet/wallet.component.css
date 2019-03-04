@@ -1,0 +1,22 @@
+/* .container {
+    margin: auto;
+    width: 25%;
+    padding: 10px;
+  } */
+
+  .container{
+    margin: auto;
+    padding-top:100px;
+    padding-left: 200px
+    }
+    .image{
+    background-color: #47494d;
+    height:599px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    }
+    html *{
+      -webkit-font-smoothing: antialiased;
+    }
+    

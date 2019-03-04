@@ -16,7 +16,8 @@ public class OrderItem {
   private int ordId;
   private int orderQuantity;
   private double ordItemPrice;
-  private String ordStatus;
+  private OrderStatus orderStatus;
+  private String comments;
 /**
 * Default Constructor.
  */
@@ -40,21 +41,40 @@ public class OrderItem {
     this.ordId = argOrdId;
   }
 
+/**
+* @param argCusId to intitalize Customer Id.
+* @param argMenItemId to intitalize menu item Id.
+* @param argOrdItemId to intitalize order item Id.
+* @param argOrdItemPrice to intitalize order item price.
+* @param argOrdId to intitalize order Id.
+* @param argComments to intitalize comments.
+ */
+  public OrderItem(final int argCusId, final int argMenItemId, final int argOrdItemId, final double argOrdItemPrice,
+                  final int argOrdId, final String argComments) {
+    this.cusId = argCusId;
+    this.menItemId = argMenItemId;
+    this.ordItemId = argOrdItemId;
+    this.ordItemPrice = argOrdItemPrice;
+    this.ordId = argOrdId;
+    this.comments = argComments;
+
+  }
+
 
 /**
 * @param argCusId to intitalize customer Id.
 * @param argOrdItemId to intitalize order item Id.
 * @param argVenId to intitalize vendor Id.
 * @param argOrdItemPrice to intitalize order item price.
-* @param argOrdStatus to intitalize order status.
+* @param argOrderStatus to intitalize order status.
  */
   public OrderItem(final int argOrdItemId, final int argVenId, final int argCusId,
-                   final double argOrdItemPrice, final String argOrdStatus) {
+                   final double argOrdItemPrice, final OrderStatus argOrderStatus) {
     this.ordItemId = argOrdItemId;
     this.venId = argVenId;
     this.cusId = argCusId;
     this.ordItemPrice = argOrdItemPrice;
-    this.ordStatus = argOrdStatus;
+    this.orderStatus = argOrderStatus;
   }
 
   @Override
@@ -72,14 +92,15 @@ public class OrderItem {
         && Objects.equals(venId, ordit1.getVenId())
         && Objects.equals(orderQuantity, ordit1.getOrderQuantity())
         && Objects.equals(ordItemPrice, ordit1.getOrdItemPrice())
-        && Objects.equals(ordStatus, ordit1.getOrdStatus())) {
+        && Objects.equals(orderStatus, ordit1.getOrderStatus())
+        && Objects.equals(comments, ordit1.getComments())) {
       return true;
     }
     return false;
   }
   @Override
     public final int hashCode() {
-    return Objects.hash(cusId, ordItemId, menItemId, venId, ordId, orderQuantity, ordItemPrice, ordStatus);
+    return Objects.hash(cusId, ordItemId, menItemId, venId, ordId, orderQuantity, ordItemPrice, orderStatus, comments);
   }
 
 
@@ -120,10 +141,16 @@ public class OrderItem {
     this.ordItemPrice = argOrdItemPrice;
   }
 /**
-* @param argOrdStatus to Intitalize the order status.
+* @param argOrderStatus initialize the Orderstatus.
  */
-  public final void setOrdStatus(final String argOrdStatus) {
-    this.ordStatus = argOrdStatus;
+  public final void setOrderStatus(final OrderStatus argOrderStatus) {
+    this.orderStatus = argOrderStatus;
+  }
+/**
+* @param argComments to Intitalize the comments.
+ */
+  public final void setComments(final String argComments) {
+    this.comments = argComments;
   }
 /**
 * @param argCusId to Intitalize the customer Id.
@@ -171,8 +198,14 @@ public class OrderItem {
 /**
 * @return this ord status.
  */
-  public final String getOrdStatus() {
-    return this.ordStatus;
+  public final OrderStatus getOrderStatus() {
+    return this.orderStatus;
+  }
+/**
+* @return this comments.
+ */
+  public final String getComments() {
+    return this.comments;
   }
 /**
 * @return this cutomer Id.

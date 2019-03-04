@@ -26,8 +26,10 @@ public class OrdersMapper implements ResultSetMapper<Orders> {
     Orders orders = new Orders(rs.getInt("ORD_ID"), rs.getInt("CUS_ID"),
         rs.getInt("WAL_TRAN_ID"),
         rs.getDouble("ORD_TOTAL_PRICE"));
+    orders.setVenId(rs.getInt("VEN_ID"));
     orders.setOrderStatus(OrderStatus.valueOf(rs.getString("ORD_STATUS")));
     orders.setOrderDate(rs.getDate("ORD_DATE_TIME"));
+    orders.setVendorName(rs.getString("VEN_NAME"));
     return orders;
   }
 }

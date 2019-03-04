@@ -1,0 +1,66 @@
+<div id="sidebar-wrapper">
+        <nav id="spy">
+            <ul class="sidebar-nav nav">
+                <li class="sidebar-brand">
+                    <a href="#home"><h2><span class="fa fa-home solo">Customer Dashboard</span></h2></a>
+                </li>
+                <li><br>
+                    <a href="#anch1" [routerLink]="['walletdetails']" data-scroll>
+                        <span class="fa fa-anchor solo">Wallet Information</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#anch1"  [routerLink]="['details']" data-scroll>
+                        <span class="fa fa-anchor solo">Customer Details</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#anch2" [routerLink]="['customerOrder']" data-scroll>
+                        <span class="fa fa-anchor solo">Order History</span>
+                    </a>
+                </li><br>
+                <li>
+                        <a href="#anch2" [routerLink]="['placeorder']" data-scroll>
+                            <span class="fa fa-anchor solo">Place Order</span>
+                        </a>
+                    </li><br>
+            </ul>
+        </nav>
+    </div>
+    <div> 
+            <router-outlet></router-outlet>
+    </div>
+
+
+<!-- <div id="sidebar-wrapper">
+    <nav id="spy">
+        <ul class="sidebar-nav nav">
+            <li class="sidebar-brand">
+                <a href="#home"><span class="fa fa-home solo">Customer Dashboard</span></a>
+            </li>
+            <li>
+                <a href="#anch1" data-scroll>
+                    <span class="fa fa-anchor solo"> <a href="#section3" [routerLink]="['walletdetails']">Wallet Information</a></span>
+                </a>
+            </li><br>
+            <li>
+                <a href="#anch1" [routerLink]="['details']"data-scroll>
+                    <span class="fa fa-anchor solo">Customer Details</span>
+                </a>
+            </li><br>
+            <li>
+                    <a href="#anch1" data-scroll>
+                    <span class="fa fa-anchor solo"> <a href="#section2" [routerLink]="['customerOrder']"> Order History</a></span>
+                </a>
+            </li><br>
+            <li>
+                <a href="#anch3"[routerLink]="['placeorder']" data-scroll>
+                    <span class="fa fa-anchor solo">Place Order</span>
+                </a>
+            </li><br>
+        </ul>
+    </nav>
+</div>
+<div> 
+<router-outlet></router-outlet>
+</div> -->

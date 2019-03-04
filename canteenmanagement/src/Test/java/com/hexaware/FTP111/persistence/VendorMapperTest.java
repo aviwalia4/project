@@ -23,23 +23,30 @@ public class VendorMapperTest {
     new Expectations() {
         {
           resultSet.getInt("VEN_ID"); result = 20;
+          resultSet.getString("VEN_NAME"); result = "heya";
           resultSet.getString("VEN_PHONE"); result = "9915520082";
           resultSet.getString("VEN_ACCOUNT_NO"); result = "34112544";
           resultSet.getDouble("VEN_BALANCE"); result = 3555.0;
+          resultSet.getString("VEN_EMAIL"); result = "jaga@gmail.com";
       }
     };
     VendorMapper vendorMapper = new VendorMapper();
     Vendor vendor = vendorMapper.map(20, resultSet, null);
     assertEquals(20, vendor.getVendorId());
+    assertEquals("heya", vendor.getVendorName());
     assertEquals("9915520082", vendor.getVendorPhone());
     assertEquals("34112544", vendor.getVendorAccNo());
     assertEquals(3555.0, vendor.getVendorBalance(), 0);
+    assertEquals("jaga@gmail.com", vendor.getVendorEmail());
+
 
     new Verifications() { {
         resultSet.getInt("VEN_ID"); times = 1;
+        resultSet.getString("VEN_NAME"); times = 1;
         resultSet.getString("VEN_PHONE"); times = 1;
         resultSet.getString("VEN_ACCOUNT_NO"); times = 1;
         resultSet.getDouble("VEN_BALANCE"); times = 1;
+        resultSet.getString("VEN_EMAIL"); times = 1;
       } };
   }
 }

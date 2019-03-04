@@ -40,13 +40,13 @@ public class MenuFactoryTest {
     };
 
     List<MenuDetails> menuDetailsList = new ArrayList();
-    menuDetailsList.add(new MenuDetails(15, 21, 54.0, 4, 45));
-    menuDetailsList.add(new MenuDetails(25, 29, 49.0, 2, 87));
+    menuDetailsList.add(new MenuDetails(15, "DOSA", 21, "HARI STALLS", 54.0, 4, 45));
+    menuDetailsList.add(new MenuDetails(25, "DOSA", 29, "HARI STALLS", 49.0, 2, 87));
 
     new Expectations() { {
         List<MenuDetails> menuDetailsList2 = new ArrayList();
-        menuDetailsList2.add(new MenuDetails(15, 21, 54.0, 4, 45));
-        menuDetailsList2.add(new MenuDetails(25, 29, 49.0, 2, 87));
+        menuDetailsList2.add(new MenuDetails(15, "DOSA", 21, "HARI STALLS", 54.0, 4, 45));
+        menuDetailsList2.add(new MenuDetails(25, "DOSA", 29, "HARI STALLS", 49.0, 2, 87));
         dao.createOrder(1); result = menuDetailsList2;
         }
     };

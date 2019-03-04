@@ -121,17 +121,17 @@ public class VendorFactoryTest {
         return dao;
       } };
     List<Vendor> list = new ArrayList<Vendor>();
-    Vendor o1 = new Vendor(1, "Bye", "Hey", 20.0);
-    Vendor o2 = new Vendor(2, "Nope", "Wow", 30.0);
-    Vendor o3 = new Vendor(3, "Sia", "Yo", 40.0);
+    Vendor o1 = new Vendor(1, "jaga", "Bye", "Hey", 20.0, "jaga@gmail.com");
+    Vendor o2 = new Vendor(2, "gaga", "Nope", "Wow", 30.0, "gaga@gmail.com");
+    Vendor o3 = new Vendor(3, "heya", "Sia", "Yo", 40.0, "heya@gmail.com");
     list.add(o1);
     list.add(o2);
     list.add(o3);
     new Expectations() { {
         List<Vendor> list = new ArrayList<Vendor>();
-        Vendor o1 = new Vendor(1, "Bye", "Hey", 20.0);
-        Vendor o2 = new Vendor(2, "Nope", "Wow", 30.0);
-        Vendor o3 = new Vendor(3, "Sia", "Yo", 40.0);
+        Vendor o1 = new Vendor(1, "jaga", "Bye", "Hey", 20.0, "jaga@gmail.com");
+        Vendor o2 = new Vendor(2, "gaga", "Nope", "Wow", 30.0, "gaga@gmail.com");
+        Vendor o3 = new Vendor(3, "heya", "Sia", "Yo", 40.0, "heya@gmail.com");
         list.add(o1);
         list.add(o2);
         list.add(o3);

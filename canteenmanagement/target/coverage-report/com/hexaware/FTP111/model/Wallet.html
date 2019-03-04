@@ -55,7 +55,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
     </tr>
     <tr>
       <td class='line'>15</td><td>&nbsp;</td>
-      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 24 Writes: 16'>customerId</span>;</pre></td>
+      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 24 Writes: 51'>customerId</span>;</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
     <tr>
@@ -85,25 +85,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       <td class='line'></td><td>&nbsp;</td>
       <td class='comment' onclick='showHideLines(this)'><div>/**
 * @param argWalletTranId to Initialize Wallet Transaction Id.
+* @param argcustomerId to Initialize customer Id.
 * @param argWalletCurrentBalance to Initialize Wallet Current Balance.
 * @param argWalletPaymentMethod to Initialize wallet payment method.
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>28</td><td class='count'>35</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l28s0'>  public Wallet(final int argWalletTranId, final double argWalletCurrentBalance, final String argWalletPaymentMethod) {</pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 66, 67, 68, 72x3</li>
-          <li>com.hexaware.FTP111.Models.WalletTest#setUp: 21x8</li>
-          <li>com.hexaware.FTP111.Models.WalletTest#testHashwalletCurrentBalance: 129, 130</li>
-          <li>com.hexaware.FTP111.Models.WalletTest#testEmptyObjs: 108, 109</li>
-          <li>com.hexaware.FTP111.Models.WalletTest#testHashWallId: 117</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
       <td class='line'>29</td><td class='count'>35</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l29s0'>    this.walletTranId = argWalletTranId;</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l29s0'>  public Wallet(final int argWalletTranId, final int argcustomerId, final double argWalletCurrentBalance, final String argWalletPaymentMethod) {</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 66, 67, 68, 72x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#setUp: 21x8</li>
@@ -115,7 +104,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
     </tr>
     <tr>
       <td class='line'>30</td><td class='count'>35</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l30s0'>    this.walletCurrentBalance = argWalletCurrentBalance;</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l30s0'>    this.walletTranId = argWalletTranId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 66, 67, 68, 72x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#setUp: 21x8</li>
@@ -127,7 +116,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
     </tr>
     <tr>
       <td class='line'>31</td><td class='count'>35</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l31s0'>    this.walletPaymentMethod = argWalletPaymentMethod;</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l31s0'>    this.customerId = argcustomerId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 66, 67, 68, 72x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#setUp: 21x8</li>
@@ -139,7 +128,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
     </tr>
     <tr>
       <td class='line'>32</td><td class='count'>35</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l32s0'>  }</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l32s0'>    this.walletCurrentBalance = argWalletCurrentBalance;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 66, 67, 68, 72x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#setUp: 21x8</li>
@@ -150,30 +139,54 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>33</td><td>&nbsp;</td>
+      <td class='line'>33</td><td class='count'>35</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l33s0'>    this.walletPaymentMethod = argWalletPaymentMethod;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 66, 67, 68, 72x3</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#setUp: 21x8</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testHashwalletCurrentBalance: 129, 130</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testEmptyObjs: 108, 109</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testHashWallId: 117</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td class='count'>35</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l34s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 66, 67, 68, 72x3</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#setUp: 21x8</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testHashwalletCurrentBalance: 129, 130</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testEmptyObjs: 108, 109</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testHashWallId: 117</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>34</td><td>&nbsp;</td>
+      <td class='line'>36</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final boolean equals(final Object obj) {</pre></td>
     </tr>
     <tr>
       <td></td><td class='count'>9</td>
       <td class='paths'>
         <span style='cursor:default; background-color:#7f8000' onclick='hidePath()'>Path coverage: 4/8</span>
-        <span class='covered' onclick="showPath(this,'l35s0 l36s0')">A: 2</span>
-        <span class='covered' onclick="showPath(this,'l35s0 l38s0 l39s0')">B: 1</span>
-        <span class='covered' onclick="showPath(this,'l35s0 l38s0 l41s0 l42s0 l42s1 l43s0 l43s1 l44s0 l44s1 l45s0 l45s1 l46s0 l47s0')">C: 5</span>
-        <span class='covered' onclick="showPath(this,'l35s0 l38s0 l41s0 l42s0 l49s0')">D: 1</span>
-        <span class='uncovered' onclick="showPath(this,'l35s0 l38s0 l41s0 l42s0 l42s1 l43s0 l49s0')">E: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l35s0 l38s0 l41s0 l42s0 l42s1 l43s0 l43s1 l44s0 l49s0')">F: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l35s0 l38s0 l41s0 l42s0 l42s1 l43s0 l43s1 l44s0 l44s1 l45s0 l49s0')">G: 0</span>
-        <span class='uncovered' onclick="showPath(this,'l35s0 l38s0 l41s0 l42s0 l42s1 l43s0 l43s1 l44s0 l44s1 l45s0 l45s1 l46s0 l49s0')">H: 0</span>
+        <span class='covered' onclick="showPath(this,'l37s0 l38s0')">A: 2</span>
+        <span class='covered' onclick="showPath(this,'l37s0 l40s0 l41s0')">B: 1</span>
+        <span class='covered' onclick="showPath(this,'l37s0 l40s0 l43s0 l44s0 l44s1 l45s0 l45s1 l46s0 l46s1 l47s0 l47s1 l48s0 l49s0')">C: 5</span>
+        <span class='covered' onclick="showPath(this,'l37s0 l40s0 l43s0 l44s0 l51s0')">D: 1</span>
+        <span class='uncovered' onclick="showPath(this,'l37s0 l40s0 l43s0 l44s0 l44s1 l45s0 l51s0')">E: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l37s0 l40s0 l43s0 l44s0 l44s1 l45s0 l45s1 l46s0 l51s0')">F: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l37s0 l40s0 l43s0 l44s0 l44s1 l45s0 l45s1 l46s0 l46s1 l47s0 l51s0')">G: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l37s0 l40s0 l43s0 l44s0 l44s1 l45s0 l45s1 l46s0 l46s1 l47s0 l47s1 l48s0 l51s0')">H: 0</span>
       </td>
     </tr>
     <tr>
-      <td class='line'>35</td><td class='count'>9</td>
-      <td><pre class='prettyprint jmp'>    <span id='l35s0' title='Executions: 9' class='covered cp' onclick='showHide(this,0)'>if (obj == null)</span> {</pre>
+      <td class='line'>37</td><td class='count'>9</td>
+      <td><pre class='prettyprint jmp'>    <span id='l37s0' title='Executions: 9' class='covered cp' onclick='showHide(this,0)'>if (obj == null)</span> {</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testGetClass: 100</li>
@@ -185,8 +198,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>36</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l36s0'>      return false;</pre>
+      <td class='line'>38</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l38s0'>      return false;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#testEmptyObjs: 110</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testObjectIsNull: 92</li>
@@ -194,12 +207,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>37</td><td>&nbsp;</td>
+      <td class='line'>39</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>38</td><td class='count'>7</td>
-      <td><pre class='prettyprint jmp'>    <span id='l38s0' title='Executions: 7' class='covered cp' onclick='showHide(this,0)'>if (getClass() != obj.getClass())</span> {</pre>
+      <td class='line'>40</td><td class='count'>7</td>
+      <td><pre class='prettyprint jmp'>    <span id='l40s0' title='Executions: 7' class='covered cp' onclick='showHide(this,0)'>if (getClass() != obj.getClass())</span> {</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testGetClass: 100</li>
@@ -209,20 +222,20 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>39</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l39s0'>      return false;</pre>
+      <td class='line'>41</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l41s0'>      return false;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#testGetClass: 100</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>40</td><td>&nbsp;</td>
+      <td class='line'>42</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>41</td><td class='count'>6</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l41s0'>    Wallet wal = (Wallet) obj;</pre>
+      <td class='line'>43</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l43s0'>    Wallet wal = (Wallet) obj;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testEquals: 154x2</li>
@@ -231,36 +244,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>42</td><td class='count'>6</td>
-      <td><pre class='prettyprint jmp'>    <span id='l42s0' title='Executions: 6' class='covered cp' onclick='showHide(this,0)'>if (Objects.equals(walletTranId, wal.getWalletTranId())</span></pre>
+      <td class='line'>44</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>    <span id='l44s0' title='Executions: 6' class='covered cp' onclick='showHide(this,0)'>if (Objects.equals(walletTranId, wal.getWalletTranId())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testEquals: 154x2</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testNotEquals: 163</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>43</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l43s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(walletPaymentMethod, wal.getWalletPaymentMethod())</span></pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
-          <li>com.hexaware.FTP111.Models.WalletTest#testEquals: 154x2</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td class='line'>44</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l44s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(walletCurrentBalance, wal.getWalletCurrentBalance())</span></pre>
-        <ol style='display:none'>
-          <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
-          <li>com.hexaware.FTP111.Models.WalletTest#testEquals: 154x2</li>
         </ol>
       </td>
     </tr>
     <tr>
       <td class='line'>45</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l45s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(walletTransStatus, wal.getWalletTransStatus())</span></pre>
+      <td><pre class='prettyprint jmp'>        && <span id='l45s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(walletPaymentMethod, wal.getWalletPaymentMethod())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testEquals: 154x2</li>
@@ -269,7 +264,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
     </tr>
     <tr>
       <td class='line'>46</td><td class='count'>5</td>
-      <td><pre class='prettyprint jmp'>        && <span id='l46s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(customerId, wal.getCustomerId())) {</span></pre>
+      <td><pre class='prettyprint jmp'>        && <span id='l46s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(walletCurrentBalance, wal.getWalletCurrentBalance())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testEquals: 154x2</li>
@@ -278,7 +273,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
     </tr>
     <tr>
       <td class='line'>47</td><td class='count'>5</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l47s0'>      return true;</pre>
+      <td><pre class='prettyprint jmp'>        && <span id='l47s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(walletTransStatus, wal.getWalletTransStatus())</span></pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testEquals: 154x2</li>
@@ -286,32 +281,50 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>48</td><td>&nbsp;</td>
+      <td class='line'>48</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l48s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>Objects.equals(customerId, wal.getCustomerId())) {</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testEquals: 154x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>      return true;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
+          <li>com.hexaware.FTP111.Models.WalletTest#testEquals: 154x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    }</pre></td>
     </tr>
     <tr>
-      <td class='line'>49</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>    return false;</pre>
+      <td class='line'>51</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l51s0'>    return false;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#testNotEquals: 163</li>
         </ol>
       </td>
     </tr>
     <tr>
-      <td class='line'>50</td><td>&nbsp;</td>
+      <td class='line'>52</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
-      <td class='line'>51</td><td>&nbsp;</td>
+      <td class='line'>53</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  @Override</pre></td>
     </tr>
     <tr>
-      <td class='line'>52</td><td>&nbsp;</td>
+      <td class='line'>54</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>    public final int hashCode() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>53</td><td class='count'>12</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>    return Objects.hash(walletTranId, walletPaymentMethod, walletCurrentBalance, walletTransStatus, customerId);</pre>
+      <td class='line'>55</td><td class='count'>12</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>    return Objects.hash(walletTranId, walletPaymentMethod, walletCurrentBalance, walletTransStatus, customerId);</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#testHashwalletCurrentBalance: 131x2, 133x2</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testHashWallId: 119x2, 121x2</li>
@@ -320,7 +333,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>54</td><td>&nbsp;</td>
+      <td class='line'>56</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
@@ -331,12 +344,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>59</td><td>&nbsp;</td>
+      <td class='line'>61</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setWalletTranId(final int argWalletTranId) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>60</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>    this.walletTranId = argWalletTranId;</pre>
+      <td class='line'>62</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>    this.walletTranId = argWalletTranId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetWalletTranId: 40</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testHashWallId: 120</li>
@@ -344,8 +357,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>61</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>  }</pre>
+      <td class='line'>63</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetWalletTranId: 40</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testHashWallId: 120</li>
@@ -359,12 +372,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>65</td><td>&nbsp;</td>
+      <td class='line'>67</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setWalletPaymentMethod(final String argWalletPaymentMethod) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>66</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>    this.walletPaymentMethod = argWalletPaymentMethod;</pre>
+      <td class='line'>68</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>    this.walletPaymentMethod = argWalletPaymentMethod;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetWalletPaymentMethod: 49</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testHashwalletPaymentMethod: 144</li>
@@ -372,8 +385,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>67</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>  }</pre>
+      <td class='line'>69</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l69s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetWalletPaymentMethod: 49</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testHashwalletPaymentMethod: 144</li>
@@ -387,12 +400,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>71</td><td>&nbsp;</td>
+      <td class='line'>73</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setWalletTransStatus(final String argWalletTransStatus) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>72</td><td class='count'>16</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>    this.walletTransStatus = argWalletTransStatus;</pre>
+      <td class='line'>74</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>    this.walletTransStatus = argWalletTransStatus;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#setUp: 23x15</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetWalletTransStatus: 76</li>
@@ -400,8 +413,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>73</td><td class='count'>16</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>  }</pre>
+      <td class='line'>75</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#setUp: 23x15</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetWalletTransStatus: 76</li>
@@ -415,12 +428,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>77</td><td>&nbsp;</td>
+      <td class='line'>79</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setWalletCurrentBalance(final double argWalletCurrentBalance) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>78</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l78s0'>    this.walletCurrentBalance = argWalletCurrentBalance;</pre>
+      <td class='line'>80</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l80s0'>    this.walletCurrentBalance = argWalletCurrentBalance;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#testHashwalletCurrentBalance: 132</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetWalletCurrentBalance: 58</li>
@@ -428,8 +441,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>79</td><td class='count'>2</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>  }</pre>
+      <td class='line'>81</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#testHashwalletCurrentBalance: 132</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetWalletCurrentBalance: 58</li>
@@ -443,12 +456,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>83</td><td>&nbsp;</td>
+      <td class='line'>85</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final void setCustomerId(final int argCustomerId) {</pre></td>
     </tr>
     <tr>
-      <td class='line'>84</td><td class='count'>16</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>    this.customerId = argCustomerId;</pre>
+      <td class='line'>86</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>    this.customerId = argCustomerId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#setUp: 22x15</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetCustomerId: 67</li>
@@ -456,8 +469,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>85</td><td class='count'>16</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>  }</pre>
+      <td class='line'>87</td><td class='count'>16</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>  }</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.Models.WalletTest#setUp: 22x15</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetCustomerId: 67</li>
@@ -471,12 +484,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>89</td><td>&nbsp;</td>
+      <td class='line'>91</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final int getWalletTranId() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>90</td><td class='count'>10</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>    return this.walletTranId;</pre>
+      <td class='line'>92</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l92s0'>    return this.walletTranId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetWalletTranId: 39, 41</li>
@@ -488,7 +501,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>91</td><td>&nbsp;</td>
+      <td class='line'>93</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -498,12 +511,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>95</td><td>&nbsp;</td>
+      <td class='line'>97</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final String getWalletPaymentMethod() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>96</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l96s0'>    return this.walletPaymentMethod;</pre>
+      <td class='line'>98</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l98s0'>    return this.walletPaymentMethod;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testWalletconstructor: 32</li>
@@ -514,7 +527,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>97</td><td>&nbsp;</td>
+      <td class='line'>99</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -524,12 +537,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>101</td><td>&nbsp;</td>
+      <td class='line'>103</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final String getWalletTransStatus() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>102</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>    return this.walletTransStatus;</pre>
+      <td class='line'>104</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>    return this.walletTransStatus;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testEquals: 154x2</li>
@@ -538,7 +551,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>103</td><td>&nbsp;</td>
+      <td class='line'>105</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -548,12 +561,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>107</td><td>&nbsp;</td>
+      <td class='line'>109</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final double getWalletCurrentBalance() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>108</td><td class='count'>9</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>    return this.walletCurrentBalance;</pre>
+      <td class='line'>110</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l110s0'>    return this.walletCurrentBalance;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetWalletCurrentBalance: 57, 59</li>
@@ -564,7 +577,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>109</td><td>&nbsp;</td>
+      <td class='line'>111</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
@@ -574,12 +587,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */</div><span>/*...*/</span></td>
     </tr>
     <tr>
-      <td class='line'>113</td><td>&nbsp;</td>
+      <td class='line'>115</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  public final int getCustomerId() {</pre></td>
     </tr>
     <tr>
-      <td class='line'>114</td><td class='count'>7</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l114s0'>    return this.customerId;</pre>
+      <td class='line'>116</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l116s0'>    return this.customerId;</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.factory.WalletFactoryTest#showWalletTest: 84x3</li>
           <li>com.hexaware.FTP111.Models.WalletTest#testSetCustomerId: 66, 68</li>
@@ -588,11 +601,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
       </td>
     </tr>
     <tr>
-      <td class='line'>115</td><td>&nbsp;</td>
+      <td class='line'>117</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>  }</pre></td>
     </tr>
     <tr>
-      <td class='line'>116</td><td>&nbsp;</td>
+      <td class='line'>118</td><td>&nbsp;</td>
       <td><pre class='prettyprint'>}</pre></td>
     </tr>
   </table>

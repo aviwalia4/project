@@ -62,7 +62,7 @@ import org.skife.jdbi.v2.StatementContext;</div><span>import ...</span></pre></t
     </tr>
     <tr>
       <td class='line'>25</td><td class='count'>1</td>
-      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l25s0'>    return new Wallet(rs.getInt("WAL_TRAN_ID"), rs.getDouble("WAL_CURRENT_BALANCE"), rs.getString("WAL_PAYMENT_METHOD"));</pre>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l25s0'>    return new Wallet(rs.getInt("WAL_TRAN_ID"), rs.getInt("CUS_ID"), rs.getDouble("WAL_CURRENT_BALANCE"), rs.getString("WAL_PAYMENT_METHOD"));</pre>
         <ol style='display:none'>
           <li>com.hexaware.FTP111.persistence.WalletMapperTest#testMap: 33</li>
         </ol>

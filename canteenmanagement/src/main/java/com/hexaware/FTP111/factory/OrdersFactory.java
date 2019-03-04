@@ -39,6 +39,15 @@ public class OrdersFactory {
   }
 /**
 * Call the data base connection.
+* @param venId to intialize the venId.
+* @return the array of showOrders object.
+*/
+  public static final List<Orders> showOrdersForVendor(final int venId) {
+    List<Orders> orderList = dao().showOrdersForVendor(venId);
+    return orderList;
+  }
+/**
+* Call the data base connection.
 * @param orderId to Intitalize the orderId.
 * @return the array of ordersDetails object.
  */
@@ -62,6 +71,14 @@ public class OrdersFactory {
   public static final void updateOrderItems(final OrderItem orderItem) {
     dao().updateOrderItems(orderItem);
   }
+// /**
+// * Call the data base connection.
+// * @param orderId to Intitalize the orderId.
+// * @param comments to Intitalize the comments.
+//  */
+//   public static final void updateComment(final int orderId, final String comments) {
+//     dao().updateComment(orderId, comments);
+//   }
 /**
 * Call the data base connection.
 * @param cusId to Intitalize the cusId.
@@ -76,9 +93,10 @@ public class OrdersFactory {
 * @param orderOption to initialize order option.
 * @param orderstat to Intitalize the order status.
 * @param venId to initialize vendor id.
+* @param comments to initialize comments.
  */
-  public static final void updatePendingOrders(final int orderOption, final OrderStatus orderstat, final int venId) {
-    dao().updatePendingOrders(orderOption, orderstat, venId);
+  public static final void updatePendingOrders(final int orderOption, final OrderStatus orderstat, final String comments, final int venId) {
+    dao().updatePendingOrders(orderOption, orderstat, comments, venId);
   }
 /**
 * @param orderOption to initialize order option.

@@ -24,7 +24,7 @@ public class MenuDetailsMapper implements ResultSetMapper<MenuDetails> {
       /**
        * @return MenuDetails
        */
-    return new MenuDetails(rs.getInt("MEN_ITEM_ID"), rs.getInt("VEN_ID"),
+    return new MenuDetails(rs.getInt("MEN_ITEM_ID"), rs.getString("MEN_ITEM_NAME"), rs.getInt("VEN_ID"), rs.getString("VEN_NAME"),
       rs.getDouble("MEN_VEN_PRICE"), rs.getInt("MEN_VEN_RATING"), rs.getInt("MEN_CALORIES"));
   }
 }
